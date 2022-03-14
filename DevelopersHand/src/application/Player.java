@@ -7,6 +7,7 @@ public class Player {
   private String name;
   private ArrayList<String> skills;
   //private ArrayList<Card> deck;
+  private String objective;
   private int XP;
   private int bugs;
   
@@ -41,6 +42,20 @@ private ArrayList<String> getSkills() {
  */
 private void setSkills(ArrayList<String> skills) {
 	this.skills = new ArrayList<String>();
+}
+
+/**
+ * @return the objective
+ */
+private String getObjective() {
+	return objective;
+}
+
+/**
+ * @param objective the objective to set
+ */
+private void setObjective(String objective) {
+	this.objective = objective;
 }
 
 /**
