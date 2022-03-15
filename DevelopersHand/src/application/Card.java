@@ -11,10 +11,7 @@ public class Card {
 	private String description;
 	private Image picture;
 	private String story;
-	private int XP;
-	private boolean isBug;
 	private String color;
-	private boolean drawCard;
 	
 	/**
 	 * Constructor for a basic Card object.
@@ -81,44 +78,6 @@ public class Card {
 	}
 	
 	/**
-	 * @return the XP of the Card object.
-	 */
-	public int getXP() {
-		return this.XP;
-	}
-	
-	/**
-	 * @param xp is the XP of the Card object.
-	 */
-	public void setXP(int xp) {
-		this.XP = xp;
-	}
-	
-	/**
-	 * @return true if Card object is a bug, or false otherwise.
-	 */
-	public boolean isBug() {
-		if(this.isBug == true) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	
-	/**
-	 * @param b is the boolean value to set for isBug in Card object.
-	 */
-	public void setBug(boolean b) {
-		if(b == true) {
-			this.isBug = true;
-		}
-		else {
-			this.isBug = false;
-		}
-	}
-	
-	/**
 	 * @return the color of the Card object.
 	 */
 	public String getColor() {
@@ -130,29 +89,5 @@ public class Card {
 	 */
 	public void setColor(String c) {
 		this.color = c;
-	}
-	
-	/**
-	 * @return true if this Card object results in drawing any cards, false otherwise.
-	 */
-	public boolean drawAnything() {
-		if(this.drawCard == true) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-	
-	/**
-	 * @param b is the boolean value to set drawCard to in Card object.
-	 */
-	public void setDraw(boolean b) {
-		if(b == true) {
-			this.drawCard = true;
-		}
-		else {
-			this.drawCard = false;
-		}
 	}
 }
