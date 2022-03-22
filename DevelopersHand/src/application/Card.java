@@ -16,9 +16,17 @@ public class Card {
 	/**
 	 * Constructor for a basic Card object.
 	 * @param String n is the name of the Card.
+	 * @param String d is the description of the Card.
+	 * @param Image p is the picture of the Card.
+	 * @param String s is the story of the Card.
+	 * @param String c is the color of the Card.
 	 */
-	public Card(String n) {
+	public Card(String n, String d, Image p, String s, String c) {
 		this.setName(n);
+		this.setDescription(d);
+		this.setPicture(p);
+		this.setStory(s);
+		this.setColor(c);
 	}
 	
 	/**
