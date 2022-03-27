@@ -13,7 +13,6 @@ public class Player {
   
   public Player(String name){
 	this.setName(name);
-    this.setXP(XP);
   }
 
 /**
@@ -68,8 +67,8 @@ private int getXP() {
 /**
  * @param xP the xP to set
  */
-private void setXP(int xP) {
-	XP = xP;
+private void setXP(int XP) {
+	XP = XP;
 }
 
 /**
