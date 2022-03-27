@@ -3,90 +3,128 @@ package application;
 import java.util.*;
 
 public class Player {
-  
-  private String name;
-  private ArrayList<String> skills;
-  //private ArrayList<Card> deck;
-  private String objective;
-  private int XP;
-  private int bugs;
-  
-  public Player(String name){
-	this.setName(name);
-  }
 
-/**
- * @return the name
- */
-private String getName() {
-	return name;
-}
+	private String name;
+	private ArrayList<String> skills;
+	private ArrayList<Card> hand;
+	private String objective;
+	private int XP;
+	private int RP;
+	private int bugs;
 
-/**
- * @param name the name to set
- */
-private void setName(String name) {
-	this.name = name;
-}
+	public Player(String name) {
+		this.setName(name);
+	}
 
-/**
- * @return the skills
- */
-private ArrayList<String> getSkills() {
-	return skills;
-}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
 
-/**
- * @param skills the skills to set
- */
-private void setSkills(ArrayList<String> skills) {
-	this.skills = new ArrayList<String>();
-}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
-/**
- * @return the objective
- */
-private String getObjective() {
-	return objective;
-}
+	/**
+	 * @return the skills
+	 */
+	public ArrayList<String> getSkills() {
+		return skills;
+	}
 
-/**
- * @param objective the objective to set
- */
-private void setObjective(String objective) {
-	this.objective = objective;
-}
+	/**
+	 * @param skills the skills to set
+	 */
+	public void setSkills(ArrayList<String> skills) {
+		this.skills = new ArrayList<String>();
+	}
 
-/**
- * @return the xP
- */
-private int getXP() {
-	return XP;
-}
+	/**
+	 * @return the objective
+	 */
+	public String getObjective() {
+		return objective;
+	}
 
-/**
- * @param xP the xP to set
- */
-private void setXP(int XP) {
-	XP = XP;
-}
+	/**
+	 * @param objective the objective to set
+	 */
+	public void setObjective(String objective) {
+		this.objective = objective;
+	}
 
-/**
- * @return the bugs
- */
-private int getBugs() {
-	return bugs;
-}
+	/**
+	 * @return the xP
+	 */
+	public int getXP() {
+		return XP;
+	}
 
-/**
- * @param bugs the bugs to set
- */
-private void setBugs(int bugs) {
-	this.bugs = bugs;
-}
-  
-  
-  
-  
-  
+	/**
+	 * @param xP the xP to set
+	 */
+	public void setXP(int XP) {
+		this.XP = XP;
+	}
+
+	/**
+	 * @return the rP
+	 */
+	public int getRP() {
+		return RP;
+	}
+
+	/**
+	 * @param rP the rP to set
+	 */
+	public void setRP(int RP) {
+		this.RP = RP;
+	}
+
+	/**
+	 * @return the bugs
+	 */
+	public int getBugs() {
+		return bugs;
+	}
+
+	/**
+	 * @param bugs the bugs to set
+	 */
+	public void setBugs(int bugs) {
+		this.bugs = bugs;
+	}
+
+	/**
+	 * @return the hand
+	 */
+	public ArrayList<Card> getHand() {
+		return hand;
+	}
+
+	/**
+	 * @param hand the hand to set
+	 */
+	public void setHand(ArrayList<Card> hand) {
+		this.hand = hand;
+	}
+	
+	/**
+	 * @param c The card to remove from this.hand
+	 */
+	public void removeFromHand(Card c) {
+		this.hand.remove(c);
+	}
+
+	/**
+	 * @param c The card to add to this.hand
+	 */
+	public void addToHand(Card c) {
+		this.hand.add(c);
+	}
 }
