@@ -1,4 +1,4 @@
-package application;
+package application.controller;
 
 import java.io.File;
 import java.net.URL;
@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class SampleController {
+public class GameController {
 
     @FXML
     private BorderPane borderPane;
@@ -32,7 +32,7 @@ public class SampleController {
     @FXML
     void goMain(ActionEvent event) {
     	try {
-        	URL playURL = new File("src/application/MainMenu.fxml").toURI().toURL();
+        	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
         	borderPane = FXMLLoader.load(playURL);
         	Scene scene = new Scene(borderPane);
         	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());

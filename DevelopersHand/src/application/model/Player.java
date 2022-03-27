@@ -1,7 +1,11 @@
-package application;
+package application.model;
 
 import java.util.*;
 
+/** 
+ * This class is a basic definition of a Player object. It contains 
+ * a definition, constructor, getters, and setters.
+ */
 public class Player {
 
 	private String name;
