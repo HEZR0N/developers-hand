@@ -1,5 +1,6 @@
 package application.model;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 
 /** 
  * This class is a basic definition of a Card object. It contains 
@@ -11,7 +12,7 @@ public class Card {
 	private String description;
 	private Image picture;
 	private String story;
-	private String color;
+	private Color color;
 	
 	/**
 	 * Constructor for a basic Card object.
@@ -21,7 +22,7 @@ public class Card {
 	 * @param String s is the story of the Card.
 	 * @param String c is the color of the Card.
 	 */
-	public Card(String n, String d, Image p, String s, String c) {
+	public Card(String n, String d, Image p, String s, Color c) {
 		this.setName(n);
 		this.setDescription(d);
 		this.setPicture(p);
@@ -88,14 +89,14 @@ public class Card {
 	/**
 	 * @return the color of the Card object.
 	 */
-	public String getColor() {
+	public Color getColor() {
 		return this.color;
 	}
 	
 	/**
 	 * @param c is the color to set the Card object.
 	 */
-	public void setColor(String c) {
+	public void setColor(Color c) {
 		this.color = c;
 	}
 }
