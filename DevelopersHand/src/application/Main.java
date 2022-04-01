@@ -21,7 +21,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root,800,500);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Developer's Hand");
-			Image logo = new Image(new FileInputStream("src\\developers-hand-logo.png"));
+			Image logo = new Image("images/developers-hand-logo.png");
 			primaryStage.getIcons().add(logo);
 			primaryStage.setScene(scene);
 			primaryStage.setMaxHeight(800);
