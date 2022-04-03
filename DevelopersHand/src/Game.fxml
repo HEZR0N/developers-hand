@@ -71,6 +71,7 @@
             <Button layoutX="572.0" layoutY="316.0" mnemonicParsing="false" text="Collect" />
             <Button layoutX="623.0" layoutY="412.0" mnemonicParsing="false" text="View Your Hand" />
             <Button layoutX="672.0" layoutY="316.0" mnemonicParsing="false" text="Play a card" />
+            <Button fx:id="buttonPause" layoutX="65.0" layoutY="15.0" mnemonicParsing="false" onAction="#pauseGame" text="Pause" />
          </children>
       </AnchorPane>
    </bottom>
