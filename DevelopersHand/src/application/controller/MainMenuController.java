@@ -2,7 +2,6 @@ package application.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import javafx.event.ActionEvent;
@@ -12,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -52,6 +52,8 @@ public class MainMenuController {
     	Stage stage = new Stage();
     	Scene scene = new Scene(root);
     	stage.setTitle("About");
+    	Image logo = new Image("developers-hand-logo.png");
+    	stage.getIcons().add(logo);
     	stage.setScene(scene);
     	stage.initModality(Modality.APPLICATION_MODAL);
     	stage.show();
@@ -76,7 +78,9 @@ public class MainMenuController {
     	Parent root = FXMLLoader.load(url);
     	Stage stage = new Stage();
     	Scene scene = new Scene(root);
-    	stage.setTitle("About");
+    	stage.setTitle("Rules");
+    	Image logo = new Image("developers-hand-logo.png");
+    	stage.getIcons().add(logo);
     	stage.setScene(scene);
     	stage.initModality(Modality.APPLICATION_MODAL);
     	stage.show();
