@@ -10,7 +10,7 @@
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="707.0" style="-fx-background-color: #171B2A;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="228.0" style="-fx-alignment: ce;" text="ABOUT" textFill="#d74125">
+            <Label layoutX="228.0" text="ABOUT" textFill="#d74125">
                <font>
                   <Font name="Arial Rounded MT Bold" size="40.0" />
                </font>
