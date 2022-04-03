@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #171B2A;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="246.0" text="Label" textFill="#d74125">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="40.0" />
+               </font>
+            </Label>
+            <Text fill="WHITE" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.Each round a player can either" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      i.Draw a scenario card and get an objective (Card added to hand)" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a.You can only ever have one objective. Drawn another, and current objective is overwritten." wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     ii.Draw 2 action cards" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    iii.Draw 1 action card and play 1 action card" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    iv.Play 2 action cards" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.When playing an action card, what can happen" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      i.Skill level up (Gain XP, possible objective)" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     ii.Code merged (Gain XP, possible objective)" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    iii.Bug introduced (Lose Current Objective, Gain one bug)" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    iv.To resolve a bug, player selects card, clicks resolve, and loses one action card (Gains XP, possible objective)" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3.Lose Condition: have 3 unresolved bugs (Shows poor time management and lack of skill)" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.Win Condition: Gain 123 XP: Get promoted from intern to developer!" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5.Strategy" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      i.May want to hold on to action cards until a certain skill higher (player.XP+=card.XP+player.getSkillLevel(cardSkill)*2)" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     ii.May want to draw a different scenario/objective" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    iii.May want to resolve bug" wrappingWidth="600.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
