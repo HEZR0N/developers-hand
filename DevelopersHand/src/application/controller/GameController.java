@@ -1,15 +1,19 @@
 package application.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GameController {
@@ -28,6 +32,9 @@ public class GameController {
 
     @FXML
     private Button juniorDeck;
+    
+    @FXML
+    private Button buttonPause;
 
     @FXML
     void goMain(ActionEvent event) {
@@ -43,5 +50,20 @@ public class GameController {
         		e.printStackTrace();
         	}
     }
+    
+    @FXML
+    void pauseGame(ActionEvent event) throws IOException {
+    	URL url = new File("src/PauseMenu.fxml").toURI().toURL();
+    	Parent root = FXMLLoader.load(url);
+    	Stage stage = new Stage();
+    	Scene scene = new Scene(root);
+    	stage.setTitle("About");
+    	Image logo = new Image("developers-hand-logo.png");
+    	stage.getIcons().add(logo);
+    	stage.setScene(scene);
+    	stage.initModality(Modality.APPLICATION_MODAL);
+    	stage.show();
+    }
+
 
 }
