@@ -1,5 +1,6 @@
-/developers-hand-logo.png
-/application/
-/fxml/
-/MainMenu.fxml
 /Game.fxml
+/MainMenu.fxml
+/About.fxml
+/application/
+/Rules.fxml
+/PauseMenu.fxml
