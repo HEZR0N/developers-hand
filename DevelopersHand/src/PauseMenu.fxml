@@ -25,11 +25,6 @@
                   <Font name="Britannic Bold" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="buttonExit" layoutX="250.0" layoutY="425.0" mnemonicParsing="false" onAction="#goExit" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Exit Game" textFill="WHITE" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0">
-               <font>
-                  <Font name="Britannic Bold" size="25.0" />
-               </font>
-            </Button>
             <Button fx:id="buttonResume" layoutX="250.0" layoutY="125.0" mnemonicParsing="false" onAction="#goResume" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Resume" textFill="WHITE">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
