@@ -227,10 +227,10 @@ public class GameController {
 		actionDeck = new ArrayList<Card>();
 		upgradeDeck = new ArrayList<Card>();
 		objectiveDeck = new ArrayList<Card>();
-		objectiveDeck.add(new Card("Freshly Labeled","RP+=3",new Image(new FileInputStream("src\\developers-hand-logo.png")), "Label some images.", Color.LIGHTYELLOW));
-		actionDeck.add(new Card("Data Tagging/Labeling","RP+=1",new Image(new FileInputStream("src\\developers-hand-logo.png")), "You are given 1000 images to label for AI models. You hope your labeling skills suffice.", Color.LIGHTBLUE));
-		upgradeDeck.add(new Card("What's Data Tagging?","Product=Product+1",new Image(new FileInputStream("src\\developers-hand-logo.png")), "You spend time with an employee who knows how to label data: drawing shapes around objects in images that an AI should recognize",Color.LIGHTGREEN));
-		currentCard = new Card("Onboarding","+1RP",new Image(new FileInputStream("src\\developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.LIGHTBLUE);
+		objectiveDeck.add(new Card("Freshly Labeled","RP+=3",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "Label some images.", Color.LIGHTYELLOW));
+		actionDeck.add(new Card("Data Tagging/Labeling","RP+=1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "You are given 1000 images to label for AI models. You hope your labeling skills suffice.", Color.LIGHTBLUE));
+		upgradeDeck.add(new Card("What's Data Tagging?","Product=Product+1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "You spend time with an employee who knows how to label data: drawing shapes around objects in images that an AI should recognize",Color.LIGHTGREEN));
+		currentCard = new Card("Onboarding","+1RP",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.LIGHTBLUE);
 		displayCard();
 	}
 
