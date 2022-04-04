@@ -46,7 +46,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="buttonMenu" layoutX="11.0" layoutY="15.0" mnemonicParsing="false" onAction="#goMain" text="Menu" />
+            <Button fx:id="buttonQuitGame" layoutX="11.0" layoutY="15.0" mnemonicParsing="false" onAction="#quitGame" text="Quit Game" />
             <Label layoutX="36.0" layoutY="411.0" text="BUGS: 2">
                <font>
                   <Font size="18.0" />
@@ -71,7 +71,7 @@
             <Button layoutX="572.0" layoutY="316.0" mnemonicParsing="false" text="Collect" />
             <Button layoutX="623.0" layoutY="412.0" mnemonicParsing="false" text="View Your Hand" />
             <Button layoutX="672.0" layoutY="316.0" mnemonicParsing="false" text="Play a card" />
-            <Button fx:id="buttonPause" layoutX="65.0" layoutY="15.0" mnemonicParsing="false" onAction="#pauseGame" text="Pause" />
+            <Button fx:id="buttonPause" layoutX="95.0" layoutY="17.0" mnemonicParsing="false" onAction="#pauseGame" text="Pause" />
          </children>
       </AnchorPane>
    </bottom>
