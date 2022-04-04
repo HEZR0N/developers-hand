@@ -2,10 +2,8 @@ package application.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,9 +20,6 @@ public class PauseMenuController {
 
     @FXML
     private BorderPane borderPane;
-
-    @FXML
-    private Button buttonExit;
 
     @FXML
     private Button buttonAbout;
@@ -69,14 +64,4 @@ public class PauseMenuController {
     	stage.initModality(Modality.APPLICATION_MODAL);
     	stage.show();
     }
-
-    @FXML
-    void goExit(ActionEvent event) throws IOException {
-    	
-    	Node source = (Node) event.getSource();
-    	Stage oldStage = (Stage) source.getScene().getWindow();
-    	oldStage.close();    	
-
-    }
-
 }
