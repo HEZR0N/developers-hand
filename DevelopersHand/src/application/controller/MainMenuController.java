@@ -29,11 +29,11 @@ public class MainMenuController {
     private Button buttonRules;
 
     @FXML
-    void goPlay(ActionEvent event) {
+    void goName(ActionEvent event) {
     	try {
-    	URL playURL = new File("src/Game.fxml").toURI().toURL();
-    	borderPane = FXMLLoader.load(playURL);
-    	Scene scene = new Scene(borderPane);
+    	URL playURL = new File("src/Configure.fxml").toURI().toURL();
+    	namePane = FXMLLoader.load(playURL);
+    	Scene scene = new Scene(namePane);
     	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
     	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     	stage.setScene(scene);
