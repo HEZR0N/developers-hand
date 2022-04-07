@@ -20,6 +20,54 @@
 	-fx-padding:15.0px ;
 }
 
+#buttonPlay{
+	-fx-background-color: #D74125;
+	-fx-font-size: 30px;
+	-fx-border-width: 8px;
+	-fx-font-family: "Britannic Bold";
+	-fx-padding: 10px;
+}
+
+#buttonPlay:hover{
+	-fx-background-color: #D74125;
+	-fx-font-size: 31px;
+	-fx-font-family: "Britannic Bold";
+	-fx-text-fill: white;
+	-fx-padding: 11px;
+}
+
+#buttonAbout{
+	-fx-background-color: #D74125;
+	-fx-font-size: 30px;
+	-fx-border-width: 8px;
+	-fx-font-family: "Britannic Bold";
+	-fx-padding: 10px;
+}
+
+#buttonAbout:hover{
+	-fx-background-color: #D74125;
+	-fx-font-size: 31px;
+	-fx-font-family: "Britannic Bold";
+	-fx-text-fill: white;
+	-fx-padding: 11px;
+}
+
+#buttonRules{
+	-fx-background-color: #D74125;
+	-fx-font-size: 30px;
+	-fx-border-width: 8px;
+	-fx-font-family: "Britannic Bold";
+	-fx-padding: 10px;
+}
+
+#buttonRules:hover{
+	-fx-background-color: #D74125;
+	-fx-font-size: 31px;
+	-fx-font-family: "Britannic Bold";
+	-fx-text-fill: white;
+	-fx-padding: 11px;
+}
+
 .root{
 	
 }
