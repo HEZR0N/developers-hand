@@ -14,12 +14,14 @@
 	-fx-font-family: "Britannic Bold";
 	-fx-font-size: 50px;
 	-fx-padding: 10px;
+	-fx-font-weight: bold;
 }
 
 #gameName:hover{
 	-fx-font-family: "Britannic Bold";
 	-fx-font-size: 51px;
 	-fx-padding: 11px;
+	-fx-font-weight: bold;
 }
 
 #juniorDeck{
@@ -42,6 +44,7 @@
 	-fx-border-width: 8px;
 	-fx-font-family: "Britannic Bold";
 	-fx-padding: 10px;
+	-fx-font-weight: bold;
 }
 
 #buttonPlay:hover{
@@ -50,6 +53,11 @@
 	-fx-font-family: "Britannic Bold";
 	-fx-text-fill: white;
 	-fx-padding: 11px;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 9;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 9;
 }
 
 #buttonAbout{
@@ -58,6 +66,7 @@
 	-fx-border-width: 8px;
 	-fx-font-family: "Britannic Bold";
 	-fx-padding: 10px;
+	-fx-font-weight: bold;
 }
 
 #buttonAbout:hover{
@@ -66,6 +75,11 @@
 	-fx-font-family: "Britannic Bold";
 	-fx-text-fill: white;
 	-fx-padding: 11px;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 9;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 9;
 }
 
 #buttonRules{
@@ -73,15 +87,19 @@
 	-fx-font-size: 30px;
 	-fx-border-width: 8px;
 	-fx-font-family: "Britannic Bold";
-	-fx-padding: 10px;
+	-fx-font-weight: bold;
 }
 
 #buttonRules:hover{
 	-fx-background-color: #D74125;
-	-fx-font-size: 31px;
+	-fx-font-size: 30px;
 	-fx-font-family: "Britannic Bold";
 	-fx-text-fill: white;
-	-fx-padding: 11px;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 9;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 9;
 }
 
 #buttonPrevious{
@@ -89,83 +107,219 @@
 	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
 	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
 }
 
 #buttonPrevious:hover{
 	-fx-font-family: "Britannic Bold";
-	-fx-font-size: 10.5px;
+	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
 	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
 }
 
 #collectButton{
 	-fx-font-family: "Britannic Bold";
 	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
-	-fx-text-fill: #171B2A;	
+	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
 }
 
 #collectButton:hover{
 	-fx-font-family: "Britannic Bold";
-	-fx-font-size: 10.5px;
+	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
 	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
 }
 
 #nextButton{
 	-fx-font-family: "Britannic Bold";
 	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
-	-fx-text-fill: #171B2A;	
+	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
 }
 
 #nextButton:hover{
 	-fx-font-family: "Britannic Bold";
-	-fx-font-size: 10.5px;
+	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
 	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
 }
 
 #viewHandButton{
 	-fx-font-family: "Britannic Bold";
 	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
-	-fx-text-fill: #171B2A;	
+	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
 }
 
 #viewHandButton:hover{
 	-fx-font-family: "Britannic Bold";
-	-fx-font-size: 10.5px;
+	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
 	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
 }
 
 #viewDictionaryButton{
 	-fx-font-family: "Britannic Bold";
 	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
-	-fx-text-fill: #171B2A;	
+	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
 }
 
 #viewDictionaryButton:hover{
 	-fx-font-family: "Britannic Bold";
-	-fx-font-size: 10.5px;
+	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
 	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
 }
 
 #buttonMenu{
 	-fx-font-family: "Britannic Bold";
 	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
-	-fx-text-fill: #171B2A;	
+	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
 }
 
 #buttonMenu:hover{
 	-fx-font-family: "Britannic Bold";
-	-fx-font-size: 10.5px;
+	-fx-font-size: 10px;
 	-fx-background-color: #D74125;
 	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
+}
+
+#nameLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 20px;
+	-fx-padding: 10px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #D74125;
+}
+
+#nameLabel:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 21px;
+	-fx-padding: 11px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #D74125;
+}
+
+#objectiveLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 20px;
+	-fx-text-fill: #D74125;
+	-fx-font-weight: bold;
+}
+
+#objectiveText{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 20px;
+	-fx-text-fill: #D74125;
+	-fx-font-weight: bold;
+}
+
+#objectiveBackground{
+	-fx-background-color: #0e0f1a;
+	-fx-opacity: 0.5;
+}
+
+#informationBackground{
+	-fx-background-color: #0e0f1a;
+	-fx-opacity: 0.5;
+}
+
+#objectiveDeckButton{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
+}
+
+#objectiveDeckButton:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 11px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
+}
+
+#actionDeckButton{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
+}
+
+#actionDeckButton:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 11px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
+}
+
+#upgradeDeckButton{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;
+	-fx-font-weight: bold;
+}
+
+#upgradeDeckButton:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 11px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-border-width: 0.5;
+	-fx-background-radius: 3;
 }
 
 .root{

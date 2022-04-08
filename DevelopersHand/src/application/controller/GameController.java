@@ -218,7 +218,7 @@ public class GameController {
     }
     
 	public void initialize() throws FileNotFoundException {
-		player1 = new Player("Intern");
+		player1 = new Player("INTERN");
 		nameLabel.setText(player1.getName());
 		sprintNumber = 1;
 		sprintNumberText.setText("" + sprintNumber);

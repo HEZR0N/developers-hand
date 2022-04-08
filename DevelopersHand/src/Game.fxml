@@ -22,16 +22,22 @@
    <center>
       <AnchorPane fx:id="inGameBackground" prefHeight="500.0" prefWidth="800.0" stylesheets="@application/application.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="objectiveDeckButton" alignment="TOP_CENTER" layoutX="76.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromObjectiveDeck" prefHeight="130.0" prefWidth="80.0" text="OBJECTIVE">
+            <Pane fx:id="objectiveBackground" layoutX="-25.0" layoutY="73.0" prefHeight="167.0" prefWidth="535.0" stylesheets="@application/application.css" />
+            <Pane fx:id="informationBackground" layoutX="6.0" layoutY="311.0" prefHeight="184.0" prefWidth="499.0" stylesheets="@application/application.css" />
+            <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="116.0" layoutY="-2.0" maxHeight="65.0" maxWidth="300.0" minHeight="30.0" minWidth="300.0" prefHeight="64.0" prefWidth="300.0" stylesheets="@application/application.css" text="NAME" textAlignment="CENTER" textFill="#d74125">
+               <font>
+                  <Font name="Britannic Bold" size="12.0" />
+               </font></Label>
+            <Button fx:id="objectiveDeckButton" alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromObjectiveDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="OBJECTIVE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Button>
-            <Button fx:id="actionDeckButton" alignment="TOP_CENTER" layoutX="226.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromActionDeck" prefHeight="130.0" prefWidth="80.0" text="ACTION">
+            <Button fx:id="actionDeckButton" alignment="CENTER" contentDisplay="CENTER" layoutX="226.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromActionDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="ACTION" textAlignment="CENTER">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button fx:id="upgradeDeckButton" alignment="TOP_CENTER" layoutX="376.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromUpgradeDeck" prefHeight="130.0" prefWidth="80.0" text="UPGRADE">
+            <Button fx:id="upgradeDeckButton" alignment="CENTER" contentDisplay="CENTER" layoutX="376.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromUpgradeDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="UPGRADE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -42,7 +48,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="buttonMenu" layoutX="11.0" layoutY="15.0" mnemonicParsing="false" onAction="#goMain" stylesheets="@application/application.css" text="Menu" />
+            <Button fx:id="buttonMenu" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="15.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" onAction="#goMain" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="MENU" />
             <Label fx:id="documentationLabel" layoutX="8.0" layoutY="390.0" text="Documentation:">
                <font>
                   <Font size="18.0" />
@@ -53,7 +59,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="buttonPrevious" layoutX="524.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="PREVIOUS">
+            <Button fx:id="buttonPrevious" alignment="CENTER" contentDisplay="CENTER" layoutX="524.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="PREVIOUS">
                <font>
                   <Font name="Britannic Bold" size="12.0" />
                </font></Button>
@@ -91,7 +97,6 @@
             <Text fx:id="productNumberText" layoutX="78.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
             <Text fx:id="troubleshootingNumberText" layoutX="146.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
             <Button fx:id="developButton" layoutX="611.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" onAction="#developButtonPressed" prefHeight="30.0" prefWidth="75.0" text="DEVELOP" />
-            <Label fx:id="nameLabel" layoutX="236.0" layoutY="19.0" text="Name" />
             <Button fx:id="viewDictionaryButton" layoutX="696.0" layoutY="454.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="DICTIONARY" wrapText="true" />
             <Label fx:id="sprintLabel" layoutX="423.0" layoutY="310.0" text="Sprint: ">
                <font>
@@ -100,14 +105,14 @@
             </Label>
             <Text fx:id="sprintNumberText" layoutX="480.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
             <Button fx:id="collectButton" layoutX="611.0" layoutY="454.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" onAction="#collectButtonPressed" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="COLLECT" />
-            <Label fx:id="objectiveLabel" layoutX="3.0" layoutY="272.0" text="Objective:">
+            <Line endX="364.5" endY="78.5" layoutX="146.0" layoutY="229.0" startX="-149.0" startY="78.5" stroke="#d74125" />
+            <Line endX="-9.0" endY="534.0" layoutX="519.0" layoutY="-34.0" startX="-9.0" startY="34.0" stroke="#d74125" />
+            <Label fx:id="objectiveLabel" layoutX="28.0" layoutY="258.0" maxHeight="30.0" maxWidth="86.0" minHeight="30.0" minWidth="86.0" prefHeight="30.0" prefWidth="86.0" stylesheets="@application/application.css" text="Objective:" textFill="#d74125">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Text fx:id="objectiveText" layoutX="88.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" />
-            <Line endX="364.5" endY="78.5" layoutX="146.0" layoutY="229.0" startX="-149.0" startY="78.5" stroke="#d74125" />
-            <Line endX="-9.0" endY="534.0" layoutX="519.0" layoutY="-34.0" startX="-9.0" startY="34.0" stroke="#d74125" />
+            <Text id="objectiveText" fx:id="objectiveText" fill="#d74125" layoutX="118.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" wrappingWidth="352.35090827941895" />
          </children>
       </AnchorPane>
    </center>
