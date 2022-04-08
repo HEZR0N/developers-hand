@@ -1,4 +1,8 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#inGameBackground{
+	-fx-background-color:  #171B2A;
+}
+
 #internDeck{
 	-fx-background-color: skyblue;
 	-fx-text-fill: black;
@@ -78,6 +82,90 @@
 	-fx-font-family: "Britannic Bold";
 	-fx-text-fill: white;
 	-fx-padding: 11px;
+}
+
+#buttonPrevious{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;
+}
+
+#buttonPrevious:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10.5px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
+}
+
+#collectButton{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;	
+}
+
+#collectButton:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10.5px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
+}
+
+#nextButton{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;	
+}
+
+#nextButton:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10.5px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
+}
+
+#viewHandButton{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;	
+}
+
+#viewHandButton:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10.5px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
+}
+
+#viewDictionaryButton{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;	
+}
+
+#viewDictionaryButton:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10.5px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
+}
+
+#buttonMenu{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: #171B2A;	
+}
+
+#buttonMenu:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 10.5px;
+	-fx-background-color: #D74125;
+	-fx-text-fill: white;
 }
 
 .root{
