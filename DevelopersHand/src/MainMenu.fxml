@@ -10,7 +10,7 @@
    <center>
       <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #171B2A;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="186.0" layoutY="41.0" prefHeight="52.0" prefWidth="431.0" text="Developer's Hand" textFill="#d74125" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="183.0">
+            <Label fx:id="gameName" alignment="CENTER" layoutX="186.0" layoutY="41.0" prefHeight="52.0" prefWidth="431.0" stylesheets="@application/application.css" text="Developer's Hand" textFill="#d74125" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="183.0">
                <font>
                   <Font name="Britannic Bold" size="50.0" />
                </font>

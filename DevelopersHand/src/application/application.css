@@ -6,6 +6,18 @@
 	-fx-padding:15.0px ;
 }
 
+#gameName{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 50px;
+	-fx-padding: 10px;
+}
+
+#gameName:hover{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-size: 51px;
+	-fx-padding: 11px;
+}
+
 #juniorDeck{
 	-fx-background-color: blueviolet;
 	-fx-text-fill: white;
