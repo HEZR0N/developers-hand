@@ -19,11 +19,96 @@
 <?import javafx.scene.text.Text?>
 
 <BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
-   <center>
+   <left>
       <AnchorPane fx:id="inGameBackground" prefHeight="500.0" prefWidth="800.0" stylesheets="@application/application.css" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="objectiveBackground" layoutX="-25.0" layoutY="73.0" prefHeight="167.0" prefWidth="535.0" stylesheets="@application/application.css" />
-            <Pane fx:id="informationBackground" layoutX="6.0" layoutY="311.0" prefHeight="184.0" prefWidth="499.0" stylesheets="@application/application.css" />
+            <Pane fx:id="objectiveBackground" layoutX="-3.0" layoutY="73.0" prefHeight="167.0" prefWidth="803.0" stylesheets="@application/application.css" />
+            <Pane fx:id="orangeBackground" layoutX="43.0" layoutY="104.0" maxHeight="501.0" maxWidth="505.0" minHeight="101.0" minWidth="20.0" prefHeight="101.0" prefWidth="444.0" stylesheets="@application/application.css" />
+            <Pane fx:id="objectiveBackground" layoutX="-1.0" layoutY="321.0" prefHeight="167.0" prefWidth="801.0" stylesheets="@application/application.css" />
+            <Pane fx:id="informationBackground" layoutX="63.0" layoutY="357.0" prefHeight="89.0" prefWidth="384.0" stylesheets="@application/application.css">
+               <children>
+                  <Text fx:id="rpNumberText" fill="#616161" layoutX="45.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Britannic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#616161" layoutX="45.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" fx:id="xpNumberText">
+                     <font>
+                        <Font name="Britannic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="4.0" layoutY="20.0" stylesheets="@application/application.css" text="XP: " fx:id="xpLabel">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="codingNumberText" fill="#616161" layoutX="80.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Britannic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="codingLabel" layoutX="3.0" layoutY="39.0" stylesheets="@application/application.css" text="Coding:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="documentationNumberText" fill="#616161" layoutX="153.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Britannic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="documentationLabel" layoutX="3.0" layoutY="59.0" stylesheets="@application/application.css" text="Documentation:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="gitNumberText" fill="#616161" layoutX="244.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Britannic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="gitLabel" layoutX="200.0" layoutY="59.0" stylesheets="@application/application.css" text="Git:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="productNumberText" fill="#616161" layoutX="288.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Britannic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="productLabel" layoutX="199.0" layoutY="2.0" stylesheets="@application/application.css" text="Product:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="troubleShootingLabel" layoutX="200.0" layoutY="21.0" stylesheets="@application/application.css" text="Troubleshooting:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="troubleshootingNumberText" fill="#616161" layoutX="365.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Britannic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="sprintLabel" layoutX="201.0" layoutY="39.0" stylesheets="@application/application.css" text="Sprint: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="sprintNumberText" fill="#616161" layoutX="272.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                     <font>
+                        <Font name="Britannic Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="rpLabel" contentDisplay="CENTER" layoutX="3.0" layoutY="2.0" stylesheets="@application/application.css" text="RP: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
             <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="116.0" layoutY="-2.0" maxHeight="65.0" maxWidth="300.0" minHeight="30.0" minWidth="300.0" prefHeight="64.0" prefWidth="300.0" stylesheets="@application/application.css" text="NAME" textAlignment="CENTER" textFill="#d74125">
                <font>
                   <Font name="Britannic Bold" size="12.0" />
@@ -42,69 +127,22 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Rectangle fx:id="cardRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="391.0" layoutX="524.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="249.0" />
-            <Label fx:id="codingLabel" layoutX="8.0" layoutY="366.0" text="Coding:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
+            <Rectangle fx:id="cardRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="391.0" layoutX="532.0" layoutY="15.0" stroke="#d74125" strokeType="INSIDE" strokeWidth="3.0" width="249.0" />
             <Button fx:id="buttonMenu" alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="15.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" onAction="#goMain" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="MENU" />
-            <Label fx:id="documentationLabel" layoutX="8.0" layoutY="390.0" text="Documentation:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="gitLabel" layoutX="7.0" layoutY="415.0" text="Git:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Button fx:id="buttonPrevious" alignment="CENTER" contentDisplay="CENTER" layoutX="524.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="PREVIOUS">
+            <Button fx:id="buttonPrevious" alignment="CENTER" contentDisplay="CENTER" layoutX="532.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="PREVIOUS">
                <font>
                   <Font name="Britannic Bold" size="12.0" />
-               </font></Button>
-            <Button fx:id="viewHandButton" layoutX="524.0" layoutY="454.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="HAND" wrapText="true" />
-            <Button fx:id="nextButton" layoutX="696.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="NEXT" />
-            <Text fx:id="storyText" layoutX="538.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Story" wrappingWidth="219.13671875" />
-            <Text fx:id="descriptionText" layoutX="537.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Description" wrappingWidth="223.3125" />
-            <Text fx:id="titleText" layoutX="538.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Name" wrappingWidth="221.13671875" />
-            <ImageView fx:id="cardImage" fitHeight="221.0" fitWidth="200.0" layoutX="548.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="productLabel" layoutX="7.0" layoutY="439.0" text="Product:">
-               <font>
-                  <Font size="18.0" />
                </font>
-            </Label>
-            <Label fx:id="troubleShootingLabel" layoutX="6.0" layoutY="464.0" text="Troubleshooting:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="8.0" layoutY="340.0" text="XP: " fx:id="xpLabel">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="rpLabel" layoutX="7.0" layoutY="311.0" text="RP: ">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Text fx:id="rpNumberText" layoutX="41.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-            <Text layoutX="40.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" fx:id="xpNumberText" />
-            <Text fx:id="codingNumberText" layoutX="76.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-            <Text fx:id="documentationNumberText" layoutX="139.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-            <Text fx:id="gitNumberText" layoutX="39.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-            <Text fx:id="productNumberText" layoutX="78.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-            <Text fx:id="troubleshootingNumberText" layoutX="146.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
-            <Button fx:id="developButton" layoutX="611.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" onAction="#developButtonPressed" prefHeight="30.0" prefWidth="75.0" text="DEVELOP" />
-            <Button fx:id="viewDictionaryButton" layoutX="696.0" layoutY="454.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="DICTIONARY" wrapText="true" />
-            <Label fx:id="sprintLabel" layoutX="423.0" layoutY="310.0" text="Sprint: ">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Text fx:id="sprintNumberText" layoutX="480.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
-            <Button fx:id="collectButton" layoutX="611.0" layoutY="454.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" onAction="#collectButtonPressed" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="COLLECT" />
+            </Button>
+            <Button fx:id="viewHandButton" layoutX="532.0" layoutY="452.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="HAND" wrapText="true" />
+            <Button fx:id="nextButton" layoutX="706.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="NEXT" />
+            <Text fx:id="storyText" layoutX="547.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Story" wrappingWidth="221.63671875" />
+            <Text fx:id="descriptionText" layoutX="544.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Description" wrappingWidth="223.3125" />
+            <Text fx:id="titleText" layoutX="544.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Name" wrappingWidth="223.13671875" />
+            <ImageView fx:id="cardImage" fitHeight="220.0" fitWidth="224.0" layoutX="545.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="developButton" layoutX="618.0" layoutY="412.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" onAction="#developButtonPressed" prefHeight="30.0" prefWidth="75.0" text="DEVELOP" />
+            <Button fx:id="viewDictionaryButton" layoutX="706.0" layoutY="452.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="DICTIONARY" wrapText="true" />
+            <Button fx:id="collectButton" layoutX="618.0" layoutY="452.0" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" mnemonicParsing="false" onAction="#collectButtonPressed" prefHeight="30.0" prefWidth="75.0" stylesheets="@application/application.css" text="COLLECT" />
             <Line endX="364.5" endY="78.5" layoutX="146.0" layoutY="229.0" startX="-149.0" startY="78.5" stroke="#d74125" />
             <Line endX="-9.0" endY="534.0" layoutX="519.0" layoutY="-34.0" startX="-9.0" startY="34.0" stroke="#d74125" />
             <Label fx:id="objectiveLabel" layoutX="28.0" layoutY="258.0" maxHeight="30.0" maxWidth="86.0" minHeight="30.0" minWidth="86.0" prefHeight="30.0" prefWidth="86.0" stylesheets="@application/application.css" text="Objective:" textFill="#d74125">
@@ -115,5 +153,5 @@
             <Text id="objectiveText" fx:id="objectiveText" fill="#d74125" layoutX="118.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" wrappingWidth="352.35090827941895" />
          </children>
       </AnchorPane>
-   </center>
+   </left>
 </BorderPane>

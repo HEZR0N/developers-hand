@@ -3,6 +3,11 @@
 	-fx-background-color:  #171B2A;
 }
 
+#orangeBackground{
+	-fx-background-color: #D74125;
+	-fx-opacity: 0.1;
+}
+
 #internDeck{
 	-fx-background-color: skyblue;
 	-fx-text-fill: black;
@@ -257,7 +262,7 @@
 	-fx-opacity: 0.5;
 }
 
-#informationBackground{
+#mainBackShadow{
 	-fx-background-color: #0e0f1a;
 	-fx-opacity: 0.5;
 }
@@ -320,6 +325,62 @@
 	-fx-border-radius: 3;
 	-fx-border-width: 0.5;
 	-fx-background-radius: 3;
+}
+
+#rpLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-text-fill: #616161;
+}
+
+#codingLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-text-fill: #616161;
+}
+
+#documentationLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-text-fill: #616161;
+}
+
+#gitLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-text-fill: #616161;
+}
+
+#productLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-text-fill: #616161;
+}
+
+#troubleShootingLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-text-fill: #616161;
+}
+
+#sprintLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-text-fill: #616161;
+}
+
+#xpLabel{
+	-fx-font-family: "Britannic Bold";
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+	-fx-text-fill: #616161;
 }
 
 .root{
