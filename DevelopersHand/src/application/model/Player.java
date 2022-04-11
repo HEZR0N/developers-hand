@@ -15,6 +15,12 @@ public class Player {
 	private int XP;
 	private int RP;
 	private int bugs;
+	private int coding;
+	private int documentation;
+	private int git;
+	private int products;
+	private int troubleshooting;
+	
 
 	public Player(String name) {
 		this.setName(name);
@@ -131,4 +137,75 @@ public class Player {
 	public void addToHand(Card c) {
 		this.hand.add(c);
 	}
+
+	/**
+	 * @return the Coding
+	 */
+	public int getCoding() {
+		return coding;
+	}
+
+	/**
+	 * @param coding the Coding to set
+	 */
+	public void setCoding(int coding) {
+		this.coding = coding;
+	}
+
+	/**
+	 * @return the Documentation
+	 */
+	public int getDocumentation() {
+		return documentation;
+	}
+
+	/**
+	 * @param documentation the Documentation to set
+	 */
+	public void setDocumentation(int documentation) {
+		this.documentation = documentation;
+	}
+
+	/**
+	 * @return the Git
+	 */
+	public int getGit() {
+		return git;
+	}
+
+	/**
+	 * @param git the Git to set
+	 */
+	public void setGit(int git) {
+		this.git = git;
+	}
+
+	/**
+	 * @return the Products
+	 */
+	public int getProducts() {
+		return products;
+	}
+
+	/**
+	 * @param products the Products to set
+	 */ 
+	public void setProducts(int products) {
+		this.products = products;
+	}
+
+	/**
+	 * @return the Troubleshooting
+	 */
+	public int getTroubleshooting() {
+		return troubleshooting;
+	}
+
+	/**
+	 * @param troubleshooting the Troubleshooting to set
+	 */
+	public void setTroubleshooting(int troubleshooting) {
+		this.troubleshooting = troubleshooting;
+	}
+	
 }
