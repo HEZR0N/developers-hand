@@ -10,7 +10,7 @@ public class Player {
 
 	private String name;
 	private ArrayList<String> skills;
-	private ArrayList<Card> hand;
+	private ArrayList<Card> hand = new ArrayList<Card>();
 	private String objective;
 	private int XP;
 	private int RP;

@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
@@ -52,7 +54,7 @@ public class MainMenuController {
     	Stage stage = new Stage();
     	Scene scene = new Scene(root);
     	stage.setTitle("About");
-    	Image logo = new Image("developers-hand-logo.png");
+    	Image logo = new Image("images/developers-hand-logo.png");
     	stage.getIcons().add(logo);
     	stage.setScene(scene);
     	stage.initModality(Modality.APPLICATION_MODAL);
@@ -66,7 +68,7 @@ public class MainMenuController {
     	Stage stage = new Stage();
     	Scene scene = new Scene(root);
     	stage.setTitle("Rules");
-    	Image logo = new Image("developers-hand-logo.png");
+    	Image logo = new Image("images/developers-hand-logo.png");
     	stage.getIcons().add(logo);
     	stage.setScene(scene);
     	stage.initModality(Modality.APPLICATION_MODAL);
