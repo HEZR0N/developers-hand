@@ -30,6 +30,11 @@
                   <Font name="Britannic Bold" size="25.0" />
                </font>
             </Button>
+            <Button fx:id="buttonQuitGame" layoutX="250.0" layoutY="425.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Quit Game" textFill="WHITE">
+               <font>
+                  <Font name="Britannic Bold" size="25.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>

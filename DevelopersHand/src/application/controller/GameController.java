@@ -28,45 +28,24 @@ public class GameController {
     private Button itemDeck;
 
     @FXML
-    private Button buttonQuitGame;
-
-    @FXML
     private Button juniorDeck;
     
     @FXML
     private Button buttonPause;
    
-    @FXML
-    void quitGame(ActionEvent event) {
-    	try {
-        	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
-        	borderPane = FXMLLoader.load(playURL);
-        	Scene scene = new Scene(borderPane);
-        	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
-        	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        	stage.setScene(scene);
-        	stage.show();
-        	}catch (Exception e) {
-        		e.printStackTrace();
-        	}
-    }
     
     @FXML
     void pauseGame(ActionEvent event) throws IOException{
 
     	URL url = new File("src/PauseMenu.fxml").toURI().toURL();
-    	Parent root = FXMLLoader.load(url);
-    	Stage stage = new Stage();
-    	Scene scene = new Scene(root);
+    	borderPane = FXMLLoader.load(url);
+    	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    	Scene scene = new Scene(borderPane);
     	stage.setTitle("Pause");
     	Image logo = new Image("developers-hand-logo.png");
     	stage.getIcons().add(logo);
     	stage.setScene(scene);
-    	stage.initModality(Modality.APPLICATION_MODAL);
-    	stage.showAndWait();
-
-//    	stage.show();
-    	
+    	stage.show();    	
     }
     
 }

@@ -31,10 +31,21 @@ public class PauseMenuController {
     private Button buttonResume;
     
     @FXML
+    private Button buttonQuitGame;
+ 
+    @FXML
     void goResume(ActionEvent event) {
-    	Node source = (Node) event.getSource();
-    	Stage oldStage = (Stage) source.getScene().getWindow();
-    	oldStage.close();    
+    	try {
+    		URL playURL = new File("src/Game.fxml").toURI().toURL();
+        	borderPane = FXMLLoader.load(playURL);
+        	Scene scene = new Scene(borderPane);
+        	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
+        	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        	stage.setScene(scene);
+        	stage.show();
+        	}catch (Exception e) {
+        		e.printStackTrace();
+        	}
     }
 
     @FXML
@@ -63,5 +74,20 @@ public class PauseMenuController {
     	stage.setScene(scene);
     	stage.initModality(Modality.APPLICATION_MODAL);
     	stage.show();
+    }
+    
+    @FXML
+    void quitGame(ActionEvent event) {
+    	try {
+        	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
+        	borderPane = FXMLLoader.load(playURL);
+        	Scene scene = new Scene(borderPane);
+        	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
+        	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        	stage.setScene(scene);
+        	stage.show();
+        	}catch (Exception e) {
+        		e.printStackTrace();
+        	}
     }
 }
