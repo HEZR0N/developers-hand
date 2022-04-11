@@ -1,77 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
-   <bottom>
-      <AnchorPane prefHeight="500.0" prefWidth="800.0" BorderPane.alignment="TOP_LEFT">
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="juniorDeck" alignment="TOP_CENTER" layoutX="100.0" layoutY="90.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="80.0" text="JUNIOR">
+            <Button fx:id="objectiveDeckButton" alignment="TOP_CENTER" layoutX="76.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromObjectiveDeck" prefHeight="130.0" prefWidth="80.0" text="OBJECTIVE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Button>
-            <Button fx:id="internDeck" alignment="TOP_CENTER" layoutX="250.0" layoutY="90.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="80.0" text="INTERN">
+            <Button fx:id="actionDeckButton" alignment="TOP_CENTER" layoutX="226.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromActionDeck" prefHeight="130.0" prefWidth="80.0" text="ACTION">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button fx:id="itemDeck" alignment="TOP_CENTER" layoutX="400.0" layoutY="90.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="80.0" text="ITEM">
+            <Button fx:id="upgradeDeckButton" alignment="TOP_CENTER" layoutX="376.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromUpgradeDeck" prefHeight="130.0" prefWidth="80.0" text="UPGRADE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="275.0" layoutX="572.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="200.0" />
-            <Line endX="-9.0" endY="396.0" layoutX="541.0" layoutY="-34.0" startX="-9.0" startY="34.0" />
-            <Line endX="653.0000610351562" endY="78.5" layoutX="149.0" layoutY="284.0" startX="-149.0" startY="78.5" />
-            <Label layoutX="608.0" layoutY="29.0" text="CARD TITLE" textFill="WHITE">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="37.0" layoutY="378.0" text="SKILLS: Troubleshooting 1">
+            <Rectangle fx:id="cardRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="346.0" layoutX="536.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="220.0" />
+            <Line endX="-9.0" endY="534.0" layoutX="519.0" layoutY="-34.0" startX="-9.0" startY="34.0" />
+            <Line endX="364.5" endY="78.5" layoutX="146.0" layoutY="229.0" startX="-149.0" startY="78.5" />
+            <Label fx:id="codingLabel" layoutX="8.0" layoutY="366.0" text="Coding:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="36.0" layoutY="411.0" text="BUGS: 2">
+            <Label fx:id="documentationLabel" layoutX="8.0" layoutY="390.0" text="Documentation:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="36.0" layoutY="440.0" text="XP: 500">
+            <Label fx:id="gitLabel" layoutX="7.0" layoutY="415.0" text="Git:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="611.0" layoutY="96.0" text="&lt;image&gt;" textFill="WHITE">
+            <Button fx:id="previousButton" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" text="Previous" />
+            <Button fx:id="viewHandButton" layoutX="563.0" layoutY="442.0" mnemonicParsing="false" text="View Hand" />
+            <Button fx:id="nextButton" layoutX="726.0" layoutY="394.0" mnemonicParsing="false" text="Next" />
+            <Text fx:id="storyText" layoutX="556.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="179.13671875" />
+            <Text fx:id="descriptionText" layoutX="558.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="titleText" layoutX="566.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <ImageView fx:id="cardImage" fitHeight="150.0" fitWidth="200.0" layoutX="547.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="productLabel" layoutX="7.0" layoutY="439.0" text="Product:">
                <font>
-                  <Font size="25.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="598.0" layoutY="193.0" text="Description of task/situation" textFill="WHITE" />
-            <Label layoutX="607.0" layoutY="254.0" text="BUGS=-1; XP+=10" textFill="WHITE">
+            <Label fx:id="troubleShootingLabel" layoutX="6.0" layoutY="464.0" text="Troubleshooting:">
                <font>
-                  <Font size="15.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="572.0" layoutY="316.0" mnemonicParsing="false" text="Collect" />
-            <Button layoutX="623.0" layoutY="412.0" mnemonicParsing="false" text="View Your Hand" />
-            <Button layoutX="672.0" layoutY="316.0" mnemonicParsing="false" text="Play a card" />
+            <Label layoutX="8.0" layoutY="340.0" text="XP: " fx:id="xpLabel">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rpLabel" layoutX="7.0" layoutY="311.0" text="RP: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Text fx:id="rpNumberText" layoutX="41.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text layoutX="40.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" fx:id="xpNumberText" />
+            <Text fx:id="codingNumberText" layoutX="76.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fx:id="documentationNumberText" layoutX="139.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fx:id="gitNumberText" layoutX="39.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fx:id="productNumberText" layoutX="78.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fx:id="troubleshootingNumberText" layoutX="146.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Button fx:id="developButton" layoutX="617.0" layoutY="394.0" mnemonicParsing="false" onAction="#developButtonPressed" text="DEVELOP" />
+            <Label fx:id="nameLabel" layoutX="236.0" layoutY="19.0" text="Name" />
+            <Button fx:id="viewDictionaryButton" layoutX="658.0" layoutY="441.0" mnemonicParsing="false" text="View Dictionary" />
+            <Label fx:id="sprintLabel" layoutX="423.0" layoutY="310.0" text="Sprint: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Text fx:id="sprintNumberText" layoutX="480.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+            <Button fx:id="collectButton" layoutX="617.0" layoutY="394.0" mnemonicParsing="false" onAction="#collectButtonPressed" text="COLLECT" />
+            <Label fx:id="objectiveLabel" layoutX="3.0" layoutY="272.0" text="Objective:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             <Button fx:id="buttonPause" layoutX="13.0" layoutY="17.0" mnemonicParsing="false" onAction="#pauseGame" text="Pause" />
+            <Text fx:id="objectiveText" layoutX="88.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" />
          </children>
       </AnchorPane>
-   </bottom>
+   </center>
 </BorderPane>
