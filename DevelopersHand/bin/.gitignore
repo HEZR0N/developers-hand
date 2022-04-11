@@ -1,4 +1,7 @@
-/Game.fxml
 /MainMenu.fxml
-/application/
 /images/
+/application/
+/Game.fxml
+/PauseMenu.fxml
+/Rules.fxml
+/About.fxml

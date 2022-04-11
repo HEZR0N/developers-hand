@@ -37,7 +37,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="buttonMenu" layoutX="11.0" layoutY="15.0" mnemonicParsing="false" onAction="#goMain" text="Menu" />
             <Label fx:id="documentationLabel" layoutX="8.0" layoutY="390.0" text="Documentation:">
                <font>
                   <Font size="18.0" />
@@ -97,6 +96,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Button fx:id="buttonPause" layoutX="13.0" layoutY="17.0" mnemonicParsing="false" onAction="#pauseGame" text="Pause" />
             <Text fx:id="objectiveText" layoutX="88.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" />
          </children>
       </AnchorPane>

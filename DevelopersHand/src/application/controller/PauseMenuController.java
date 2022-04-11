@@ -10,15 +10,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class MainMenuController {
+public class PauseMenuController {
 
     @FXML
     private BorderPane borderPane;
@@ -27,24 +25,27 @@ public class MainMenuController {
     private Button buttonAbout;
 
     @FXML
-    private Button buttonPlay;
-
-    @FXML
     private Button buttonRules;
-
+    
     @FXML
-    void goPlay(ActionEvent event) {
+    private Button buttonResume;
+    
+    @FXML
+    private Button buttonQuitGame;
+ 
+    @FXML
+    void goResume(ActionEvent event) {
     	try {
-    	URL playURL = new File("src/Game.fxml").toURI().toURL();
-    	borderPane = FXMLLoader.load(playURL);
-    	Scene scene = new Scene(borderPane);
-    	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
-    	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    	stage.setScene(scene);
-    	stage.show();
-    	}catch (Exception e) {
-    		e.printStackTrace();
-    	}
+    		URL playURL = new File("src/Game.fxml").toURI().toURL();
+        	borderPane = FXMLLoader.load(playURL);
+        	Scene scene = new Scene(borderPane);
+        	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
+        	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        	stage.setScene(scene);
+        	stage.show();
+        	}catch (Exception e) {
+        		e.printStackTrace();
+        	}
     }
 
     @FXML
@@ -74,5 +75,19 @@ public class MainMenuController {
     	stage.initModality(Modality.APPLICATION_MODAL);
     	stage.show();
     }
-
+    
+    @FXML
+    void quitGame(ActionEvent event) {
+    	try {
+        	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
+        	borderPane = FXMLLoader.load(playURL);
+        	Scene scene = new Scene(borderPane);
+        	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
+        	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        	stage.setScene(scene);
+        	stage.show();
+        	}catch (Exception e) {
+        		e.printStackTrace();
+        	}
+    }
 }
