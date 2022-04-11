@@ -29,7 +29,7 @@ public class MainMenuController {
     private Button buttonRules;
 
     @FXML
-    void goName(ActionEvent event) {
+    void goPlay(ActionEvent event) {
     	try {
     	URL playURL = new File("src/Configure.fxml").toURI().toURL();
     	borderPane = FXMLLoader.load(playURL);
