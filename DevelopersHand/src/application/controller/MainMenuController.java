@@ -32,8 +32,8 @@ public class MainMenuController {
     void goName(ActionEvent event) {
     	try {
     	URL playURL = new File("src/Configure.fxml").toURI().toURL();
-    	namePane = FXMLLoader.load(playURL);
-    	Scene scene = new Scene(namePane);
+    	borderPane = FXMLLoader.load(playURL);
+    	Scene scene = new Scene(borderPane);
     	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
     	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     	stage.setScene(scene);
