@@ -48,7 +48,6 @@ public class GameController {
 	private ArrayList<Card> actionDeck; // Change to Deck class. Cards that increase RP (Reputation Points) by a lot, XP by a little
 	private ArrayList<Card> upgradeDeck; // Change to Deck class. Cards that increase XP by a lot
 	private ArrayList<Card> objectiveDeck; // Change to Deck class. Cards that increase XP by a lot
-	private Player player1;
 	private int sprintNumber;
 	private Card currentCard;
     @FXML
@@ -171,7 +170,7 @@ public class GameController {
     
     @FXML
     void developButtonPressed(ActionEvent event) {
-    	player1.addToHand(currentCard); //Should have checked if card can be developed
+    	Player.addToHand(currentCard); //Should have checked if card can be developed
 //    	developButton.setManaged(false);
     	developButton.setVisible(false);
     	System.out.println("Develop Button used");
@@ -179,7 +178,7 @@ public class GameController {
     
     @FXML
     void collectButtonPressed(ActionEvent event) {
-    	player1.addToHand(currentCard); //Should have checked if card can be developed
+    	Player.addToHand(currentCard); //Should have checked if card can be developed
 //    		collectButton.setManaged(false);
     	collectButton.setVisible(false);
     	System.out.println("Collect Button used");
@@ -225,8 +224,8 @@ public class GameController {
     }
     
 	public void initialize() throws FileNotFoundException {
-		player1 = new Player("Intern");
-		nameLabel.setText(player1.getName());
+		Player.setName("Intern");
+		nameLabel.setText(Player.getName());
 		sprintNumber = 1;
 		sprintNumberText.setText("" + sprintNumber);
 		developButton.setVisible(false);
