@@ -17,7 +17,7 @@ public class Player {
 	private static int coding;
 	private static int documentation;
 	private static int git;
-	private static int products;
+	private static int product;
 	private static int troubleshooting;
 
 	/**
@@ -63,14 +63,14 @@ public class Player {
 	}
 
 	/**
-	 * @return the rP
+	 * @return the rp
 	 */
 	public static int getrp() {
 		return rp;
 	}
 
 	/**
-	 * @param rP the rP to set
+	 * @param rp the rp to set
 	 */
 	public static void setrp(int rp) {
 		Player.rp = rp;
@@ -119,70 +119,70 @@ public class Player {
 	}
 
 	/**
-	 * @return the Coding
+	 * @return the coding
 	 */
 	public static int getCoding() {
 		return coding;
 	}
 
 	/**
-	 * @param coding the Coding to set
+	 * @param coding the coding to set
 	 */
 	public static void setCoding(int coding) {
 		Player.coding = coding;
 	}
 
 	/**
-	 * @return the Documentation
+	 * @return the documentation
 	 */
 	public static int getDocumentation() {
 		return documentation;
 	}
 
 	/**
-	 * @param documentation the Documentation to set
+	 * @param documentation the documentation to set
 	 */
 	public static void setDocumentation(int documentation) {
 		Player.documentation = documentation;
 	}
 
 	/**
-	 * @return the Git
+	 * @return the git
 	 */
 	public static int getGit() {
 		return git;
 	}
 
 	/**
-	 * @param git the Git to set
+	 * @param git the git to set
 	 */
 	public static void setGit(int git) {
 		Player.git = git;
 	}
 
 	/**
-	 * @return the Products
+	 * @return the product
 	 */
-	public static int getProducts() {
-		return products;
+	public static int getProduct() {
+		return product;
 	}
 
 	/**
-	 * @param products the Products to set
+	 * @param products the product to set
 	 */ 
-	public static void setProducts(int products) {
-		Player.products = products;
+	public static void setProduct(int product) {
+		Player.product = product;
 	}
 
 	/**
-	 * @return the Troubleshooting
+	 * @return the troubleshooting
 	 */
 	public static int getTroubleshooting() {
 		return troubleshooting;
 	}
 
 	/**
-	 * @param troubleshooting the Troubleshooting to set
+	 * @param troubleshooting the troubleshooting to set
 	 */
 	public static void setTroubleshooting(int troubleshooting) {
 		Player.troubleshooting = troubleshooting;
