@@ -8,204 +8,184 @@ import java.util.*;
  */
 public class Player {
 
-	private String name;
-	private ArrayList<String> skills;
-	private ArrayList<Card> hand = new ArrayList<Card>();
-	private String objective;
-	private int XP;
-	private int RP;
-	private int bugs;
-	private int coding;
-	private int documentation;
-	private int git;
-	private int products;
-	private int troubleshooting;
-	
-
-	public Player(String name) {
-		this.setName(name);
-	}
+	private static String name;
+	private static ArrayList<Card> hand = new ArrayList<Card>();
+	private static String objective;
+	private static int xp;
+	private static int rp;
+	private static int bugs;
+	private static int coding;
+	private static int documentation;
+	private static int git;
+	private static int products;
+	private static int troubleshooting;
 
 	/**
 	 * @return the name
 	 */
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 
 	/**
 	 * @param name the name to set
 	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * @return the skills
-	 */
-	public ArrayList<String> getSkills() {
-		return skills;
-	}
-
-	/**
-	 * @param skills the skills to set
-	 */
-	public void setSkills(ArrayList<String> skills) {
-		this.skills = new ArrayList<String>();
+	public static void setName(String name) {
+		Player.name = name;
 	}
 
 	/**
 	 * @return the objective
 	 */
-	public String getObjective() {
+	public static String getObjective() {
 		return objective;
 	}
 
 	/**
 	 * @param objective the objective to set
 	 */
-	public void setObjective(String objective) {
-		this.objective = objective;
+	public static void setObjective(String objective) {
+		Player.objective = objective;
 	}
 
 	/**
-	 * @return the xP
+	 * @return the xp
 	 */
-	public int getXP() {
-		return XP;
+	public static int getxp() {
+		return xp;
 	}
 
 	/**
-	 * @param xP the xP to set
+	 * @param xp the xp to set
 	 */
-	public void setXP(int XP) {
-		this.XP = XP;
+	public static void setxp(int xp) {
+		Player.xp = xp;
 	}
 
 	/**
 	 * @return the rP
 	 */
-	public int getRP() {
-		return RP;
+	public static int getrp() {
+		return rp;
 	}
 
 	/**
 	 * @param rP the rP to set
 	 */
-	public void setRP(int RP) {
-		this.RP = RP;
+	public static void setrp(int rp) {
+		Player.rp = rp;
 	}
 
 	/**
 	 * @return the bugs
 	 */
-	public int getBugs() {
+	public static int getBugs() {
 		return bugs;
 	}
 
 	/**
 	 * @param bugs the bugs to set
 	 */
-	public void setBugs(int bugs) {
-		this.bugs = bugs;
+	public static void setBugs(int bugs) {
+		Player.bugs = bugs;
 	}
 
 	/**
 	 * @return the hand
 	 */
-	public ArrayList<Card> getHand() {
+	public static ArrayList<Card> getHand() {
 		return hand;
 	}
 
 	/**
 	 * @param hand the hand to set
 	 */
-	public void setHand(ArrayList<Card> hand) {
-		this.hand = hand;
+	public static void setHand(ArrayList<Card> hand) {
+		Player.hand = hand;
 	}
 	
 	/**
-	 * @param c The card to remove from this.hand
+	 * @param c The card to remove from Player.hand
 	 */
-	public void removeFromHand(Card c) {
-		this.hand.remove(c);
+	public static void removeFromHand(Card c) {
+		Player.hand.remove(c);
 	}
 
 	/**
-	 * @param c The card to add to this.hand
+	 * @param c The card to add to Player.hand
 	 */
-	public void addToHand(Card c) {
-		this.hand.add(c);
+	public static void addToHand(Card c) {
+		Player.hand.add(c);
 	}
 
 	/**
 	 * @return the Coding
 	 */
-	public int getCoding() {
+	public static int getCoding() {
 		return coding;
 	}
 
 	/**
 	 * @param coding the Coding to set
 	 */
-	public void setCoding(int coding) {
-		this.coding = coding;
+	public static void setCoding(int coding) {
+		Player.coding = coding;
 	}
 
 	/**
 	 * @return the Documentation
 	 */
-	public int getDocumentation() {
+	public static int getDocumentation() {
 		return documentation;
 	}
 
 	/**
 	 * @param documentation the Documentation to set
 	 */
-	public void setDocumentation(int documentation) {
-		this.documentation = documentation;
+	public static void setDocumentation(int documentation) {
+		Player.documentation = documentation;
 	}
 
 	/**
 	 * @return the Git
 	 */
-	public int getGit() {
+	public static int getGit() {
 		return git;
 	}
 
 	/**
 	 * @param git the Git to set
 	 */
-	public void setGit(int git) {
-		this.git = git;
+	public static void setGit(int git) {
+		Player.git = git;
 	}
 
 	/**
 	 * @return the Products
 	 */
-	public int getProducts() {
+	public static int getProducts() {
 		return products;
 	}
 
 	/**
 	 * @param products the Products to set
 	 */ 
-	public void setProducts(int products) {
-		this.products = products;
+	public static void setProducts(int products) {
+		Player.products = products;
 	}
 
 	/**
 	 * @return the Troubleshooting
 	 */
-	public int getTroubleshooting() {
+	public static int getTroubleshooting() {
 		return troubleshooting;
 	}
 
 	/**
 	 * @param troubleshooting the Troubleshooting to set
 	 */
-	public void setTroubleshooting(int troubleshooting) {
-		this.troubleshooting = troubleshooting;
+	public static void setTroubleshooting(int troubleshooting) {
+		Player.troubleshooting = troubleshooting;
 	}
 	
 }
