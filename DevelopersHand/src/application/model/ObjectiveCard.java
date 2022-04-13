@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 
 /**
  * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio Valenciana
- * This class enables the creation of an ObjectiveCard which extends the card card class with the exception of three new parameters:
+ * This class enables the creation of an ObjectiveCard which extends the card card class with the exception of three new fields:
  * int goal, int progress, and String stat.
  */
 public class ObjectiveCard extends Card {
