@@ -7,8 +7,9 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 /**
- * @author Valenciana22
- * This class enables the creation of an ObjectiveCard
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio Valenciana
+ * This class enables the creation of an ObjectiveCard which extends the card card class with the exception of three new parameters:
+ * int goal, int progress, and String stat.
  */
 public class ObjectiveCard extends Card {
 	
@@ -64,7 +65,7 @@ public class ObjectiveCard extends Card {
 	 * @param stat the stat to set
 	 */
 	private void setStat(String stat) {
-		stat = stat;
+		this.stat = stat;
 	}
 
 }
