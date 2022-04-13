@@ -8,13 +8,13 @@ import javafx.scene.paint.Color;
 
 /**
  * @author Valenciana22
- *
+ * This class enables the creation of an ObjectiveCard
  */
 public class ObjectiveCard extends Card {
 	
 	private int goal;
 	private int progress;
-	private String Stat;
+	private String stat;
 	/**
 	 * @param n
 	 * @param d
@@ -23,12 +23,12 @@ public class ObjectiveCard extends Card {
 	 * @param c
 	 */
 	public ObjectiveCard(String n, String d, Image p, String s, Color c,
-			int goal, String Stat) {
+			int goal, String stat) {
 		super(n, d, p, s, c);
 		this.setDescription("RP +" + Integer.valueOf(d));
 		this.setGoal(goal);
 		this.setProgress(0); //Sets progress to 0
-		this.setStat(Stat);
+		this.setStat(stat);
 	}
 	/**
 	 * @return the goal
@@ -58,13 +58,13 @@ public class ObjectiveCard extends Card {
 	 * @return the stat
 	 */
 	private String getStat() {
-		return Stat;
+		return stat;
 	}
 	/**
 	 * @param stat the stat to set
 	 */
 	private void setStat(String stat) {
-		Stat = stat;
+		stat = stat;
 	}
 
 }
