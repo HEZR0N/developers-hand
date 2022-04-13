@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 
 /**
  *  @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio Valenciana
- * This class enables the creation of an UpgradeCard which extends the card card class
+ * This class enables the creation of an UpgradeCard which extends the card class
  *
  */
 public class UpgradeCard extends Card {
