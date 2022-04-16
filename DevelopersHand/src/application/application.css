@@ -70,13 +70,13 @@
 	-fx-border-radius: 12px;
 }
 
-#gameButtonSmall {
+#gameButtonSmall, #previousButton, #viewHandButton, #nextButton, #viewDictionaryButton, #collectButton, #buttonPause {
 	-fx-background-color: #2B2D2C ;
 	-fx-text-fill: #858A87;
 	-fx-font-family: "Brittanic Bold";
 }
 
-#gameButtonSmall:hover {
+#gameButtonSmall:hover, #previousButton:hover, #viewHandButton:hover, #nextButton:hover, #viewDictionaryButton:hover, #collectButton:hover, #buttonPause:hover {
 	-fx-background-color: #2B2D2C ;
 	-fx-text-fill: #00EC10;
 	-fx-font-family: "Brittanic Bold";
