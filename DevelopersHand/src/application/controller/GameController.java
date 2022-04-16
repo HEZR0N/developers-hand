@@ -244,6 +244,7 @@ public class GameController {
     	Stage stage = (Stage) borderPane.getScene().getWindow();
     	Scene scene = new Scene(root);
     	Image logo = new Image("images/developers-hand-logo.png");
+    	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
     	stage.getIcons().add(logo);
     	stage.setTitle("Game Result");
     	stage.setScene(scene);
