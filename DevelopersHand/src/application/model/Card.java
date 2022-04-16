@@ -105,25 +105,30 @@ public class Card {
 	}
 	
 	/**
-	 * @param cardDesc is the description that we want to return
 	 * @return the String description of a card
 	 */
-	public String getReward(String cardDesc) {
+	public String getReward() {
 		String rewardFinal = "";
 		
-		String rewardArray[] = cardDesc.split(",");
+		String rewardArray[] = this.getDescription().split("&");
                 
 		for(String reward: rewardArray) {
-                    String space[] = reward.split(" ");
-                    if(space[0].equalsIgnoreCase("RP")){
-                        if(space[1].startsWith("-")){
-                            rewardFinal += space[0] + space[1] + ", ";
-                        }
-                    } else {
-                        rewardFinal += space[0] + "+" + space[1] + ", ";
-                    }
+            String space[] = reward.split(" ");
+            if(space[0].equalsIgnoreCase("RP")){
+                if(space[1].startsWith("-")){
+                    rewardFinal += space[0] + space[1] + ", ";
+                } else {
+                	rewardFinal += space[0] + "+" + space[1] + ", ";
+                }
+            } else if(!(space[0].equalsIgnoreCase("RP"))) {
+                if(space[1].startsWith("-")){
+                    rewardFinal += space[0] + "+" + space[1].substring(1, space[1].length()) + ", ";
+                } else {
+                    rewardFinal += space[0] + "+" + space[1] + ", ";
+                }
+            }
 		}
 		
-		return rewardFinal.substring(0, rewardFinal.length()-1);
+		return rewardFinal.substring(0, rewardFinal.length()-2);
 	}
 }
