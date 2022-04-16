@@ -23,34 +23,6 @@ public class Player {
 	
 	
 	/**
-	 * @return the Xp
-	 */
-	public static int getXp() {
-		return xp;
-	}
-
-	/**
-	 * @param xp the Xp to set
-	 */
-	public static void setXp(int xp) {
-		Player.xp = xp;
-	}
-
-	/**
-	 * @return the Rp
-	 */
-	public static int getRp() {
-		return rp;
-	}
-
-	/**
-	 * @param rp the Rp to set
-	 */
-	public static void setRp(int rp) {
-		Player.rp = rp;
-	}
-
-	/**
 	 * @return the sprintNumber
 	 */
 	public static int getSprintNumber() {
