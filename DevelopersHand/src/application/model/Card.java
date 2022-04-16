@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 /** 
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio Valenciana
  * This class is a basic definition of a Card object. It contains 
  * a definition, constructor, getters, and setters.
  */
@@ -108,40 +109,21 @@ public class Card {
 	 * @return the String description of a card
 	 */
 	public String getReward(String cardDesc) {
+		String rewardFinal = "";
 		
-		String reward = " ";
-		ArrayList<String> tokens = new ArrayList<String>();
-		
-		Scanner tokenize = new Scanner(cardDesc);
-		while (tokenize.hasNext()) {
-		    tokens.add(tokenize.next());
+		String rewardArray[] = cardDesc.split(",");
+                
+		for(String reward: rewardArray) {
+                    String space[] = reward.split(" ");
+                    if(space[0].equalsIgnoreCase("RP")){
+                        if(space[1].startsWith("-")){
+                            rewardFinal += space[0] + space[1] + ", ";
+                        }
+                    } else {
+                        rewardFinal += space[0] + "+" + space[1] + ", ";
+                    }
 		}
-
-		int count = 0;
-	      for (String token : tokens){
-	         count++;
-	         
-	         if(count%2 == 1){ //adds first token to reward (i.e., Git)
-	             reward += token;
-	         }
-	         
-	         /** 
-	          * if count is even, it will get the first char in the token, convert it to a string,
-	          * then check to see if it is positive or negative, add the correct sign, and then
-	          * adds it to reward
-	          * */
-	         if ( count%2 == 0 ){ 
-	        	 char Csign = token.charAt(0);
-	        	 String Ssign = String.valueOf(Csign);
-	        	 
-	        	 if(Ssign.equals("-")) {
-	        		 reward += token + " ";
-	        	 }else {
-	        		 reward += "+" + token + " "; //Unsure if whether or not to add the space at the end
-	        	 }
-	         }
-	      }
 		
-		return reward; //returns the String reward
+		return rewardFinal.substring(0, rewardFinal.length()-1);
 	}
 }
