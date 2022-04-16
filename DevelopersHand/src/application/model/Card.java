@@ -135,7 +135,7 @@ public class Card {
 	        	 String Ssign = String.valueOf(Csign);
 	        	 
 	        	 if(Ssign.equals("-")) {
-	        		 reward += token;
+	        		 reward += token + " ";
 	        	 }else {
 	        		 reward += "+" + token + " "; //Unsure if whether or not to add the space at the end
 	        	 }
