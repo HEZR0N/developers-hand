@@ -1,6 +1,10 @@
 package application.model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
+
+
 
 /** 
  * This class is a basic definition of a Player object. It contains 
@@ -187,5 +191,45 @@ public class Player {
 	public static void setTroubleshooting(int troubleshooting) {
 		Player.troubleshooting = troubleshooting;
 	}
+	public static ArrayList<String>loadPlayers(String fileName) {
+		File file = new File(fileName);
+        ArrayList<String> players = new ArrayList<String>();
+        try {
+
+            // opening scanner to read through the file
+            Scanner scan = new Scanner(file);
+            while (scan.hasNextLine()) {
+                String line = scan.nextLine();
+                String[] tokens = line.split(",");
+                // reading through the file to gather the information
+                if (tokens != null && tokens.length != 0) {
+
+                    String playerName = tokens[0];
+                    players.add(playerName);
+                    }
+
+                 
+                }
+          
+
+            // closing scanner
+            scan.close();
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return players;
+    }
+	public static String Validate(ArrayList<String> P, String n) {
+		String S = null;
+		for(String i: P) {
+			if(i.equals(n)) {
+				S = i;
+		
+			}
+		}
+		return S;
+	}
+	}
 	
-}
