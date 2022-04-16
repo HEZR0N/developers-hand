@@ -137,11 +137,11 @@ public class Card {
 	        	 if(Ssign.equals("-")) {
 	        		 reward += token;
 	        	 }else {
-	        		 reward += "+" + token + " ";
+	        		 reward += "+" + token + " "; //Unsure if whether or not to add the space at the end
 	        	 }
 	         }
 	      }
 		
-		return reward;
+		return reward; //returns the String reward
 	}
 }
