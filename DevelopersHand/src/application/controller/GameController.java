@@ -253,7 +253,7 @@ public class GameController {
 	public void initialize() throws FileNotFoundException {
 		Player.setName("Intern");
 		nameLabel.setText(Player.getName());
-		sprintNumber = 1;
+		Player.setSprintNumber(1);
 		sprintNumberText.setText("" + sprintNumber);
 		developButton.setVisible(false);
 		// Call the loadCards method instead here
