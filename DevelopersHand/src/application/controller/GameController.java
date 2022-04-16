@@ -223,7 +223,8 @@ public class GameController {
     }
     
     void displayPlayerResults() throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("src/WinOrLose.fxml"));
+    	URL fxmlLocation = new File("src/WinOrLose.fxml").toURI().toURL();
+    	FXMLLoader loader = new FXMLLoader(fxmlLocation);
     	Parent root = (Parent) loader.load();
     	
     	WinOrLoseController winOrLose = loader.getController();
