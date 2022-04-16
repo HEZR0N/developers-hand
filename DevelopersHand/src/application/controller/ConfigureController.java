@@ -61,7 +61,10 @@ public class ConfigureController {
    		 nullName.setText("Please Enter Name");
    		 
    	 }
-   
+      	 //creates player info file and adds player 
+   	FileWriter myWriter = new FileWriter("playerInfo.txt" , true);
+	   	myWriter.write(playerName.getText() + "\n");
+	   	myWriter.close();
    	
    	}catch (Exception e) {
    		e.printStackTrace();
