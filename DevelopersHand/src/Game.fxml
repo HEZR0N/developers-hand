@@ -54,9 +54,9 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="gameButtonSmall" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" stylesheets="@application/application.css" text="Previous" />
-            <Button fx:id="gameButtonSmall" layoutX="563.0" layoutY="442.0" mnemonicParsing="false" stylesheets="@application/application.css" text="View Hand" />
-            <Button fx:id="gameButtonSmall" layoutX="726.0" layoutY="394.0" mnemonicParsing="false" stylesheets="@application/application.css" text="Next" />
+            <Button fx:id="previousButton" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" stylesheets="@application/application.css" text="Previous" />
+            <Button fx:id="viewHandButton" layoutX="563.0" layoutY="442.0" mnemonicParsing="false" stylesheets="@application/application.css" text="View Hand" />
+            <Button fx:id="nextButton" layoutX="726.0" layoutY="394.0" mnemonicParsing="false" stylesheets="@application/application.css" text="Next" />
             <Text fx:id="storyText" layoutX="556.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="179.13671875" />
             <Text fx:id="descriptionText" layoutX="558.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Text fx:id="titleText" layoutX="566.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
@@ -90,20 +90,20 @@
             <Text fx:id="troubleshootingNumberText" layoutX="458.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
             <Button fx:id="developButton" layoutX="617.0" layoutY="394.0" mnemonicParsing="false" onAction="#developButtonPressed" text="DEVELOP" />
             <Label fx:id="nameLabel" alignment="CENTER" layoutX="236.0" layoutY="19.0" text="Name" />
-            <Button fx:id="gameButtonSmall" layoutX="658.0" layoutY="441.0" mnemonicParsing="false" stylesheets="@application/application.css" text="View Dictionary" />
+            <Button fx:id="viewDictionaryButton" layoutX="658.0" layoutY="441.0" mnemonicParsing="false" stylesheets="@application/application.css" text="View Dictionary" />
             <Label fx:id="sprintLabel" layoutX="317.0" layoutY="313.0" stylesheets="@application/application.css" text="Sprint: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <Text fx:id="sprintNumberText" layoutX="376.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
-            <Button fx:id="gameButtonSmall" layoutX="617.0" layoutY="394.0" mnemonicParsing="false" onAction="#collectButtonPressed" stylesheets="@application/application.css" text="COLLECT" />
+            <Button fx:id="collectButton" layoutX="617.0" layoutY="394.0" mnemonicParsing="false" onAction="#collectButtonPressed" stylesheets="@application/application.css" text="COLLECT" />
             <Label fx:id="objectiveLabel" layoutX="3.0" layoutY="272.0" stylesheets="@application/application.css" text="Objective:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="gameButtonSmall" layoutX="13.0" layoutY="17.0" mnemonicParsing="false" onAction="#pauseGame" stylesheets="@application/application.css" text="Pause" />
+            <Button fx:id="buttonPause" layoutX="13.0" layoutY="17.0" mnemonicParsing="false" onAction="#pauseGame" stylesheets="@application/application.css" text="Pause" />
             <Text fx:id="objectiveText" layoutX="88.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" />
          </children>
       </AnchorPane>
