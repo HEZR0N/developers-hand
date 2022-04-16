@@ -48,7 +48,6 @@ public class GameController {
 	private ArrayList<Card> actionDeck; // Change to Deck class. Cards that increase RP (Reputation Points) by a lot, XP by a little
 	private ArrayList<Card> upgradeDeck; // Change to Deck class. Cards that increase XP by a lot
 	private ArrayList<Card> objectiveDeck; // Change to Deck class. Cards that increase XP by a lot
-	private int sprintNumber;
 	private Card currentCard;
 	
     @FXML
@@ -254,7 +253,7 @@ public class GameController {
 		Player.setName("Intern");
 		nameLabel.setText(Player.getName());
 		Player.setSprintNumber(1);
-		sprintNumberText.setText("" + sprintNumber);
+		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
 		// Call the loadCards method instead here
 		actionDeck = new ArrayList<Card>();
