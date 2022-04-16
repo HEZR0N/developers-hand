@@ -3,44 +3,39 @@
  */
 package application.model;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+
 /**
- * @author Valenciana22
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio Valenciana
  *
  */
 public class ObjectiveDeck implements Deck {
+	
+	private static ArrayList<Card> deckOfCards = new ArrayList<Card>();
 
-	/**
-	 * 
-	 */
 	public ObjectiveDeck() {
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public ArrayList<Card> getDeckofCards() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Card> getdeckOfCards() {
+		return ObjectiveDeck.deckOfCards;
 	}
 
 	@Override
-	public void setDeckofCards(ArrayList<Card> deckofCards) {
-		// TODO Auto-generated method stub
-
+	public void setdeckOfCards(ArrayList<Card> deckofCards) {
+		ObjectiveDeck.deckOfCards = deckofCards;
 	}
-
+	
 	@Override
-	public void addCard(Card card) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void loadDeck(String fileName) throws FileNotFoundException {
-		// TODO Auto-generated method stub
-
+	public Card createCard(String cardInfo[]) throws FileNotFoundException {
+		return new Card(cardInfo[0], cardInfo[1], new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], Color.GOLD);
 	}
 
 }

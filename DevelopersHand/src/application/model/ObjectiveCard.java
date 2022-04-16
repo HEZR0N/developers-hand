@@ -26,7 +26,7 @@ public class ObjectiveCard extends Card {
 	public ObjectiveCard(String n, String d, Image p, String s, Color c,
 			int goal, String stat) {
 		super(n, d, p, s, c);
-		this.setDescription("RP +" + Integer.valueOf(d));
+		this.setDescription("RP " + Integer.valueOf(d));
 		this.setGoal(goal);
 		this.setProgress(0); //Sets progress to 0
 		this.setStat(stat);
