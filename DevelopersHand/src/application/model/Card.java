@@ -1,4 +1,7 @@
 package application.model;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
@@ -98,5 +101,47 @@ public class Card {
 	 */
 	public void setColor(Color c) {
 		this.color = c;
+	}
+	
+	/**
+	 * @param cardDesc is the description that we want to return
+	 * @return the String description of a card
+	 */
+	public String getReward(String cardDesc) {
+		
+		String reward = " ";
+		ArrayList<String> tokens = new ArrayList<String>();
+		
+		Scanner tokenize = new Scanner(cardDesc);
+		while (tokenize.hasNext()) {
+		    tokens.add(tokenize.next());
+		}
+
+		int count = 0;
+	      for (String token : tokens){
+	         count++;
+	         
+	         if(count%2 == 1){ //adds first token to reward (i.e., Git)
+	             reward += token;
+	         }
+	         
+	         /** 
+	          * if count is even, it will get the first char in the token, convert it to a string,
+	          * then check to see if it is positive or negative, add the correct sign, and then
+	          * adds it to reward
+	          * */
+	         if ( count%2 == 0 ){ 
+	        	 char Csign = token.charAt(0);
+	        	 String Ssign = String.valueOf(Csign);
+	        	 
+	        	 if(Ssign.equals("-")) {
+	        		 reward += token;
+	        	 }else {
+	        		 reward += "+" + token + " ";
+	        	 }
+	         }
+	      }
+		
+		return reward;
 	}
 }
