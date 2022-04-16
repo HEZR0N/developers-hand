@@ -2,7 +2,11 @@ package application.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.net.URL;
+import java.util.ArrayList;
+
+import application.model.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,29 +31,38 @@ public class ConfigureController {
 
     @FXML
     private Button buttonRules;
-    
+
     @FXML
     private Button buttonStart;
-    
+
     @FXML 
     private BorderPane namePane;
 
     @FXML
     private Button buttonBack;
-   
+
     @FXML
     private TextField playerName;
-  
+
    public static String name;
+   
+   public static Player activePlayer;
    
    @FXML
    private Label nullName;
- 
+
    @FXML
    void goPlay(ActionEvent event) {
    	try {
-   		name = playerName.getText();
+   	ArrayList<String>Players = Player.loadPlayers("playerInfo.txt");
+   	name = playerName.getText();
    	 if(name.length() != 0) {
+   	 	String activePlayerName = Player.Validate(Players, playerName.getText());
+   	    if(activePlayerName == null) {
+   	     FileWriter myWriter = new FileWriter("playerInfo.txt" , true);
+   	    	myWriter.write(playerName.getText() + "\n");
+   	    		myWriter.close();
+   	         }
    		URL playURL = new File("src/Game.fxml").toURI().toURL();
    	   	borderPane = FXMLLoader.load(playURL);
    	   	Scene scene = new Scene(borderPane);
@@ -59,13 +72,9 @@ public class ConfigureController {
    	   	stage.show();
    	 }else {
    		 nullName.setText("Please Enter Name");
-   		 
+
    	 }
       	 //creates player info file and adds player 
-   	FileWriter myWriter = new FileWriter("playerInfo.txt" , true);
-	   	myWriter.write(playerName.getText() + "\n");
-	   	myWriter.close();
-   	
    	}catch (Exception e) {
    		e.printStackTrace();
    	}
@@ -84,6 +93,6 @@ public class ConfigureController {
         		e.printStackTrace();
         	}
     }
-    
- 
+
+
 }
