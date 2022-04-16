@@ -50,6 +50,7 @@
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
 	-fx-font-size: 40px;
+	-fx-font-weight: bold; 
 }
 
 #button {
@@ -74,6 +75,7 @@
 	-fx-background-color: #2B2D2C ;
 	-fx-text-fill: #858A87;
 	-fx-font-family: "Brittanic Bold";
+	-fx-font-weight: bold; 
 }
 
 #gameButtonSmall:hover, #previousButton:hover, #viewHandButton:hover, #nextButton:hover, #viewDictionaryButton:hover, #collectButton:hover, #buttonPause:hover {
@@ -82,51 +84,58 @@
 	-fx-font-family: "Brittanic Bold";
 	-fx-border-color: #00EC10;
 	-fx-border-radius: 2px;
+	-fx-font-weight: bold; 
 }
 
 #upgradeDeckButton {
 	-fx-background-color: #B1EFB6;
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
+	-fx-font-weight: bold; 
 }
 
 #upgradeDeckButton:hover {
-	-fx-background-color: #B1EFB6;
+	-fx-background-color: #6be175;
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
 	-fx-border-color: #2B2D2C;
 	-fx-border-width: 2px;
 	-fx-border-radius: 3px;
+	-fx-font-weight: bold; 
 }
 
 #actionDeckButton {
 	-fx-background-color: #BFDCF0;
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
+	-fx-font-weight: bold; 
 }
 
 #actionDeckButton:hover {
-	-fx-background-color: #BFDCF0;
+	-fx-background-color: #6eb1dd;
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
 	-fx-border-color: #2B2D2C;
 	-fx-border-width: 2px;
 	-fx-border-radius: 3px;
+	-fx-font-weight: bold; 
 }
 
 #objectiveDeckButton {
 	-fx-background-color: #F0ECA6;
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
+	-fx-font-weight: bold; 
 }
 
 #objectiveDeckButton:hover {
-	-fx-background-color: #F0ECA6;
+	-fx-background-color: #e1da51;
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
 	-fx-border-color: #2B2D2C;
 	-fx-border-width: 2px;
 	-fx-border-radius: 3px;
+	-fx-font-weight: bold; 
 }
 
 .root{
