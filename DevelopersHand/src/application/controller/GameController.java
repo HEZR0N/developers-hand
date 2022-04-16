@@ -50,6 +50,7 @@ public class GameController {
 	private ArrayList<Card> objectiveDeck; // Change to Deck class. Cards that increase XP by a lot
 	private int sprintNumber;
 	private Card currentCard;
+	
     @FXML
     private BorderPane borderPane;
     
@@ -146,7 +147,6 @@ public class GameController {
     @FXML
     private Text sprintNumberText;
     
-
     @FXML
     private Button collectButton;
 
@@ -221,6 +221,33 @@ public class GameController {
     	storyText.setText(currentCard.getStory());
     	descriptionText.setText(currentCard.getDescription());
     	cardImage.setImage(currentCard.getPicture());
+    }
+    
+    void displayPlayerResults() throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("src/WinOrLose.fxml"));
+    	Parent root = (Parent) loader.load();
+    	
+    	WinOrLoseController winOrLose = loader.getController();
+    	
+    	if((Player.getrp() >= 50 && Player.getxp() >= 50) && Player.getSprintNumber() <= 10) {
+    		winOrLose.setPageLabel("Congratulations\nYou gained new skilled\nand\nshowcased them to the company");
+    	}else if((Player.getrp() < 50 || Player.getxp() < 50) && Player.getSprintNumber() > 10) {
+    		if(Player.getrp() < 50 && Player.getxp() >= 50) {
+    			winOrLose.setPageLabel("You Lost\nYou might have the skills\nbut your boss thinks you slacked off");
+    		}else if(Player.getrp() >= 50 && Player.getxp() < 50) {
+    			winOrLose.setPageLabel("You Lost\nNo one can deny you work hard\nbut your boss thinks you lack some skills");
+    		}else {
+    			winOrLose.setPageLabel("You Lost\nYour boss wasn't impressed with your progress");
+    		}
+    	}
+    	
+    	Stage stage = (Stage) borderPane.getScene().getWindow();
+    	Scene scene = new Scene(root);
+    	Image logo = new Image("images/developers-hand-logo.png");
+    	stage.getIcons().add(logo);
+    	stage.setTitle("Game Result");
+    	stage.setScene(scene);
+    	stage.show();
     }
     
 	public void initialize() throws FileNotFoundException {
