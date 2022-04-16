@@ -1,8 +1,12 @@
 package application.model;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 /** 
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio Valenciana
  * This class is a basic definition of a Card object. It contains 
  * a definition, constructor, getters, and setters.
  */
@@ -98,5 +102,34 @@ public class Card {
 	 */
 	public void setColor(Color c) {
 		this.color = c;
+	}
+	
+	/**
+	 * @return the reward message
+	 * This method parses a card's description into a more suitable reward format
+	 */
+	public String getReward() {
+		String rewardFinal = "";
+		
+		String rewardArray[] = this.getDescription().split("&");
+                
+		for(String reward: rewardArray) {
+            String space[] = reward.split(" ");
+            if(space[0].equalsIgnoreCase("RP")){
+                if(space[1].startsWith("-")){
+                    rewardFinal += space[0] + space[1] + ", ";
+                } else {
+                	rewardFinal += space[0] + "+" + space[1] + ", ";
+                }
+            } else if(!(space[0].equalsIgnoreCase("RP"))) {
+                if(space[1].startsWith("-")){
+                    rewardFinal += space[0] + "+" + space[1].substring(1, space[1].length()) + ", ";
+                } else {
+                    rewardFinal += space[0] + "+" + space[1] + ", ";
+                }
+            }
+		}
+		
+		return rewardFinal.substring(0, rewardFinal.length()-2);
 	}
 }
