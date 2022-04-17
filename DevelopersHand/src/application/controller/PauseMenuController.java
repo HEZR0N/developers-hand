@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+import application.model.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -78,6 +79,7 @@ public class PauseMenuController {
     
     @FXML
     void quitGame(ActionEvent event) {
+    	Player.clearData();
     	try {
         	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
         	borderPane = FXMLLoader.load(playURL);

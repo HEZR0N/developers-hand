@@ -26,6 +26,21 @@ public class Player {
 	/**
 	 * @return the name
 	 */
+	public static void clearData() {
+		Player.xp = 0;
+		Player.rp = 0;
+		Player.bugs = 0;
+		Player.coding = 0;
+		Player.documentation = 0;
+		Player.git = 0;
+		Player.product = 0;
+		Player.troubleshooting = 0;
+		Player.hand.clear();;
+	}
+	
+	/**
+	 * @return the name
+	 */
 	public static String getName() {
 		return name;
 	}
