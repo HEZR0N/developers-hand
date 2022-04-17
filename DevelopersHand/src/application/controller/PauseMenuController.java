@@ -35,6 +35,7 @@ public class PauseMenuController {
  
     @FXML
     void goResume(ActionEvent event) {
+    	// When clicked loads game scene back
     	try {
     		URL playURL = new File("src/Game.fxml").toURI().toURL();
         	borderPane = FXMLLoader.load(playURL);
@@ -50,6 +51,7 @@ public class PauseMenuController {
 
     @FXML
     void goAbout(ActionEvent event) throws IOException {
+    	// Loads about scene on click
     	URL url = new File("src/About.fxml").toURI().toURL();
     	Parent root = FXMLLoader.load(url);
     	Stage stage = new Stage();
@@ -64,6 +66,7 @@ public class PauseMenuController {
 
     @FXML
     void goRules(ActionEvent event) throws IOException {
+    	// Loads rules scene on click
     	URL url = new File("src/Rules.fxml").toURI().toURL();
     	Parent root = FXMLLoader.load(url);
     	Stage stage = new Stage();
@@ -78,6 +81,7 @@ public class PauseMenuController {
     
     @FXML
     void quitGame(ActionEvent event) {
+    	// Quits game and loads main menu scene on click
     	try {
         	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
         	borderPane = FXMLLoader.load(playURL);
