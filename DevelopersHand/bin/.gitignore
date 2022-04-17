@@ -1,7 +1,9 @@
-/MainMenu.fxml
-/images/
-/application/
+/About.fxml
 /Game.fxml
+/MainMenu.fxml
 /PauseMenu.fxml
 /Rules.fxml
-/About.fxml
+/application/
+/data/
+/images/
+/WinOrLose.fxml
