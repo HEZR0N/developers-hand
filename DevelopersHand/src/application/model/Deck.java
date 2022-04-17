@@ -16,14 +16,20 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 /**
- * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio Valenciana
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
+ * 
+ *         The Deck interface has one static variable, ArrayList<Card>
+ *         deckOfCards. There are 7 methods: readLines, getDeckOfCards,
+ *         setDeckOfCards, addCard, removeCard, createCard, and loadDeck.
  *
  */
 public interface Deck {
 
 	public static final ArrayList<Card> deckOfCards = new ArrayList<Card>();
-	
 
+	/**
+	 * @return an anArrayList<String> holding all the lines of a csv file
+	 */
 	default public ArrayList<String> readLines(String fileName) throws IOException {
 		FileReader readFile = new FileReader("src/data/" + fileName);
 		BufferedReader readBuffer = new BufferedReader(readFile);
@@ -36,48 +42,53 @@ public interface Deck {
 		readBuffer.close();
 		return cardLines;
 	}
-	/**
-	 * @return the deckofCards
-	 */
-	public ArrayList<Card> getdeckOfCards();
 
 	/**
-	 * @param deckofCards the deckofCards to set
+	 * @return the ArrayList<Card> deckOfCards
 	 */
-	public void setdeckOfCards(ArrayList<Card> deckofCards);
-	
+	public ArrayList<Card> getDeckOfCards();
+
+	/**
+	 * @param deckofCards the ArrayList<Card> to set
+	 */
+	public void setDeckOfCards(ArrayList<Card> deckofCards);
+
 	/**
 	 * @param card the card to be added to deckOfCards
 	 */
 	default public void addCard(Card card) {
-		getdeckOfCards().add(card);
+		getDeckOfCards().add(card);
 	}
-	
+
 	/**
-	 * Removes a Card object from deckofCards
+	 * @return a Card object from deckofCards
 	 */
 	default public Card removeCard() {
-		return getdeckOfCards().remove(0);
+		return getDeckOfCards().remove(0);
 	}
+
 	/**
-	 * @param cardInfo an array of String attributes used to initialize a Card object
+	 * @param cardInfo an array of String attributes used to initialize a Card
+	 *                 object
 	 */
 	default public Card createCard(String cardInfo[]) throws FileNotFoundException {
-		return new Card(cardInfo[0], cardInfo[1], new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], Color.SILVER);
+		return new Card(cardInfo[0], cardInfo[1], new Image(new FileInputStream("src/images/developers-hand-logo.png")),
+				cardInfo[2], Color.SILVER);
 	}
+
 	/**
-	 * @param filename
-	 * This method loads in card data from a csv file and adds the cards into a deck
-	 * @throws IOException 
-	 * */
-	default public void loadDeck(String fileName) throws IOException{
+	 * @param fileName the name of a csv file This method loads in card data from a
+	 *                 csv file and adds the cards into a deck
+	 * @throws IOException
+	 */
+	default public void loadDeck(String fileName) throws IOException {
 		ArrayList<String> cardLines = readLines(fileName);
 		String cardInfo[];
-		for(String line : cardLines) {
+		for (String line : cardLines) {
 			cardInfo = line.split(",");
 			addCard(createCard(cardInfo));
 		}
-		
+
 	}
 
 }

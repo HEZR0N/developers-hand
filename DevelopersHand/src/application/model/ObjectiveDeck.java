@@ -12,30 +12,42 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 /**
- * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio Valenciana
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
+ *         Valenciana
+ * 
+ *         The ObjectiveDeck class has one field: ArrayList<Card> deckOfCards.
+ *         This class implements all methods from the Deck interface, though
+ *         only getDeckOfCards, setDeckOfCards, and createCard are overwritten.
  *
  */
 public class ObjectiveDeck implements Deck {
-	
+
 	private static ArrayList<Card> deckOfCards = new ArrayList<Card>();
 
-	public ObjectiveDeck() {
-		// TODO Auto-generated constructor stub
-	}
-
+	/**
+	 * @return the deckOfCards
+	 */
 	@Override
-	public ArrayList<Card> getdeckOfCards() {
+	public ArrayList<Card> getDeckOfCards() {
 		return ObjectiveDeck.deckOfCards;
 	}
 
+	/**
+	 * @param deckofCards the ArrayList<Card> to set
+	 */
 	@Override
-	public void setdeckOfCards(ArrayList<Card> deckofCards) {
+	public void setDeckOfCards(ArrayList<Card> deckofCards) {
 		ObjectiveDeck.deckOfCards = deckofCards;
 	}
-	
+
+	/**
+	 * @param cardInfo an array of String attributes used to initialize a Card
+	 *                 object
+	 */
 	@Override
 	public Card createCard(String cardInfo[]) throws FileNotFoundException {
-		return new Card(cardInfo[0], cardInfo[1], new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], Color.GOLD);
+		return new Card(cardInfo[0], cardInfo[1], new Image(new FileInputStream("src/images/developers-hand-logo.png")),
+				cardInfo[2], Color.GOLD);
 	}
 
 }
