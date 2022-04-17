@@ -30,7 +30,7 @@ public interface Deck {
 	public static final ArrayList<Card> deckOfCards = new ArrayList<Card>();
 
 	/**
-	 * @return an anArrayList<String> holding all the lines of a csv file
+	 * @return an ArrayList<String> holding all the lines of a csv file
 	 */
 	default public ArrayList<String> readLines(String fileName) throws IOException {
 		FileReader readFile = new FileReader("src/data/" + fileName);
