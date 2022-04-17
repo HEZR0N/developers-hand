@@ -261,7 +261,6 @@ public class GameController {
     
 
 	public void initialize() throws IOException {
-		Player.setName("Intern");
 		nameLabel.setText(Player.getName());
 		Player.setSprintNumber(1);
 		sprintNumberText.setText("" + Player.getSprintNumber());

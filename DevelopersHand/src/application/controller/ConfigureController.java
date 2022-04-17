@@ -22,19 +22,7 @@ public class ConfigureController {
     private BorderPane borderPane;
 
     @FXML
-    private Button buttonAbout;
-
-    @FXML
-    private Button buttonPlay;
-
-    @FXML
-    private Button buttonRules;
-
-    @FXML
     private Button buttonStart;
-
-    @FXML 
-    private BorderPane namePane;
 
     @FXML
     private Button buttonBack;
@@ -42,18 +30,14 @@ public class ConfigureController {
     @FXML
     private TextField playerName;
 
-   public static String name;
-
-   public static Player activePlayer;
-
    @FXML
    private Label nullName;
 
    @FXML
    void goGame(ActionEvent event) {
    	try {
-   	name = playerName.getText();
-   	 if(name.length() != 0) {
+   		Player.setName(playerName.getText().trim());
+   	 if(Player.getName().length() != 0) {
    		URL playURL = new File("src/Game.fxml").toURI().toURL();
     	borderPane = FXMLLoader.load(playURL);
     	Scene scene = new Scene(borderPane);
@@ -61,7 +45,6 @@ public class ConfigureController {
     	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     	stage.setScene(scene);
     	stage.show();
-   	 Player.setName(name);
    	 }else {
    		 nullName.setText("Please Enter Name");
 
