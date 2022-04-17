@@ -3,44 +3,53 @@
  */
 package application.model;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+
 /**
- * @author Valenciana22
+ * The ObjectiveDeck class has one field: ArrayList<Card> deckOfCards. This
+ * class implements all methods from the Deck interface, though only
+ * getDeckOfCards, setDeckOfCards, and createCard are overwritten.
+ * 
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
+ *         Valenciana
  *
  */
 public class ObjectiveDeck implements Deck {
 
+	private static ArrayList<Card> deckOfCards = new ArrayList<Card>();
+
 	/**
-	 * 
+	 * @return the deckOfCards
 	 */
-	public ObjectiveDeck() {
-		// TODO Auto-generated constructor stub
+	@Override
+	public ArrayList<Card> getDeckOfCards() {
+		return ObjectiveDeck.deckOfCards;
 	}
 
+	/**
+	 * @param deckofCards the ArrayList<Card> to set
+	 */
 	@Override
-	public ArrayList<Card> getDeckofCards() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setDeckOfCards(ArrayList<Card> deckofCards) {
+		ObjectiveDeck.deckOfCards = deckofCards;
 	}
 
+	/**
+	 * @param cardInfo an array of String attributes used to initialize a Card
+	 *                 object
+	 * @return a new ObjectiveCard object
+	 */
 	@Override
-	public void setDeckofCards(ArrayList<Card> deckofCards) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void addCard(Card card) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void loadDeck(String fileName) throws FileNotFoundException {
-		// TODO Auto-generated method stub
-
+	public Card createCard(String cardInfo[]) throws FileNotFoundException {
+		return new ObjectiveCard(cardInfo[0], cardInfo[1],
+				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], Color.GOLD,
+				Integer.valueOf(cardInfo[3]), cardInfo[4]);
 	}
 
 }
