@@ -26,6 +26,7 @@ public class WinOrLoseController {
 
     @FXML
     void goMainMenu(ActionEvent event) {
+    	// Loads main menu on click
     	try {
         	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
         	borderPane = FXMLLoader.load(playURL);
@@ -40,6 +41,7 @@ public class WinOrLoseController {
     }
     
     public void setPageLabel(String label) {
+    	// Sets label on loading 
     	textArea.getStyleClass().add("centered-text-area");
     	textArea.setText(label);   	   	
 
