@@ -1,10 +1,8 @@
 package application.controller;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
+
 import java.net.URL;
-import java.util.ArrayList;
 
 import application.model.Player;
 import javafx.event.ActionEvent;
@@ -45,31 +43,25 @@ public class ConfigureController {
     private TextField playerName;
 
    public static String name;
-   
+
    public static Player activePlayer;
-   
+
    @FXML
    private Label nullName;
 
    @FXML
-   void goPlay(ActionEvent event) {
+   void goGame(ActionEvent event) {
    	try {
-   	ArrayList<String>Players = Player.loadPlayers("playerInfo.txt");
    	name = playerName.getText();
    	 if(name.length() != 0) {
-   	 	String activePlayerName = Player.Validate(Players, playerName.getText());
-   	    if(activePlayerName == null) {
-   	     FileWriter myWriter = new FileWriter("playerInfo.txt" , true);
-   	    	myWriter.write(playerName.getText() + "\n");
-   	    		myWriter.close();
-   	         }
    		URL playURL = new File("src/Game.fxml").toURI().toURL();
-   	   	borderPane = FXMLLoader.load(playURL);
-   	   	Scene scene = new Scene(borderPane);
-   	   	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
-   	   	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-   	   	stage.setScene(scene);
-   	   	stage.show();
+    	borderPane = FXMLLoader.load(playURL);
+    	Scene scene = new Scene(borderPane);
+    	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
+    	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    	stage.setScene(scene);
+    	stage.show();
+   	 Player.setName(name);
    	 }else {
    		 nullName.setText("Please Enter Name");
 
