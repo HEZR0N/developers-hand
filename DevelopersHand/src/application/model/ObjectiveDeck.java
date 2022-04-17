@@ -12,12 +12,12 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 /**
+ * The ObjectiveDeck class has one field: ArrayList<Card> deckOfCards. This
+ * class implements all methods from the Deck interface, though only
+ * getDeckOfCards, setDeckOfCards, and createCard are overwritten.
+ * 
  * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
  *         Valenciana
- * 
- *         The ObjectiveDeck class has one field: ArrayList<Card> deckOfCards.
- *         This class implements all methods from the Deck interface, though
- *         only getDeckOfCards, setDeckOfCards, and createCard are overwritten.
  *
  */
 public class ObjectiveDeck implements Deck {
@@ -43,11 +43,13 @@ public class ObjectiveDeck implements Deck {
 	/**
 	 * @param cardInfo an array of String attributes used to initialize a Card
 	 *                 object
+	 * @return a new ObjectiveCard object
 	 */
 	@Override
 	public Card createCard(String cardInfo[]) throws FileNotFoundException {
-		return new Card(cardInfo[0], cardInfo[1], new Image(new FileInputStream("src/images/developers-hand-logo.png")),
-				cardInfo[2], Color.GOLD);
+		return new ObjectiveCard(cardInfo[0], cardInfo[1],
+				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], Color.GOLD,
+				Integer.valueOf(cardInfo[3]), cardInfo[4]);
 	}
 
 }

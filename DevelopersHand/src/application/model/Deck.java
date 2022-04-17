@@ -16,11 +16,13 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 /**
- * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
  * 
- *         The Deck interface has one static variable, ArrayList<Card>
- *         deckOfCards. There are 7 methods: readLines, getDeckOfCards,
- *         setDeckOfCards, addCard, removeCard, createCard, and loadDeck.
+ * The Deck interface has one static variable, ArrayList<Card> deckOfCards.
+ * There are 7 methods: readLines, getDeckOfCards, setDeckOfCards, addCard,
+ * removeCard, createCard, and loadDeck.
+ * 
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
+ *         Valenciana
  *
  */
 public interface Deck {
