@@ -22,6 +22,7 @@ public class Player {
 	private static int git;
 	private static int product;
 	private static int troubleshooting;
+	private static boolean onboarded;
 
 	/**
 	 * @return the name
@@ -205,5 +206,21 @@ public class Player {
 	public static void setTroubleshooting(int troubleshooting) {
 		Player.troubleshooting = troubleshooting;
 	}
+
+	/**
+	 * @return the onboarded
+	 */
+	public static boolean isOnboarded() {
+		return onboarded;
+	}
+
+	/**
+	 * @param onboarded the onboarded to set
+	 */
+	public static void setOnboarded(boolean onboarded) {
+		Player.onboarded = onboarded;
+	}
+	
+	
 
 }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import application.model.ActionDeck;
 import application.model.Card;
+import application.model.Deck;
 import application.model.ObjectiveDeck;
 import application.model.Player;
 import application.model.UpgradeDeck;
@@ -53,6 +54,7 @@ public class GameController {
 	private ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
 	private int sprintNumber;
 	private Card currentCard;
+	private Deck currentDeck;
     @FXML
     private BorderPane borderPane;
     
@@ -181,8 +183,9 @@ public class GameController {
     
     @FXML
     void collectButtonPressed(ActionEvent event) {
+    	currentCard = currentDeck.removeCard();
+    	displayCard();
     	Player.addToHand(currentCard); //Should have checked if card can be developed
-//    		collectButton.setManaged(false);
     	collectButton.setVisible(false);
     	System.out.println("Collect Button used");
     }
@@ -191,8 +194,9 @@ public class GameController {
     void drawFromActionDeck(ActionEvent event) {
     	// first do some checks to see if the player can remove the card
     	// draw card a random-ish from actionDeck: currentCard = actionDeck.remove();
-    	currentCard = actionDeck.removeCard();
-    	displayCard();
+//    	currentCard = actionDeck.removeCard();
+//    	displayCard();
+    	currentDeck = actionDeck;
     	collectButton.setVisible(true);
     }
 
@@ -200,8 +204,9 @@ public class GameController {
     void drawFromObjectiveDeck(ActionEvent event) {
     	// first do some checks to see if the player can remove the card
     	// draw card a random-ish from objectiveDeck: currentCard = objectiveDeck.remove()
-    	currentCard = objectiveDeck.removeCard();
-    	displayCard();
+//    	currentCard = objectiveDeck.removeCard();
+//    	displayCard();
+    	currentDeck = objectiveDeck;
     	collectButton.setVisible(true);
     }
 
@@ -209,8 +214,9 @@ public class GameController {
     void drawFromUpgradeDeck(ActionEvent event) {
     	// first do some checks to see if the player can remove the card
     	// draw card a random-ish from upgradeDeck: currentCard = upgradeDeck.remove();
-    	currentCard = upgradeDeck.removeCard();
-    	displayCard();
+//    	currentCard = upgradeDeck.removeCard();
+//    	displayCard();
+    	currentDeck = upgradeDeck;
     	collectButton.setVisible(true);
     	
     }
@@ -223,6 +229,11 @@ public class GameController {
     	cardImage.setImage(currentCard.getPicture());
     }
     
+    void displayBackOfCard() {
+    	cardRectangle.setFill(currentCard.getColor());
+    	cardImage.setImage(currentCard.getPicture());
+    }
+    
 	public void initialize() throws IOException {
 		Player.setName("Intern");
 		nameLabel.setText(Player.getName());
@@ -230,13 +241,15 @@ public class GameController {
 		sprintNumberText.setText("" + sprintNumber);
 		developButton.setVisible(false);
 		currentCard = new Card("Onboarding","+1RP",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
-		displayCard();
+		displayBackOfCard();
 		objectiveDeck = new ObjectiveDeck();
 		actionDeck = new ActionDeck();
 		upgradeDeck = new UpgradeDeck();
 		objectiveDeck.loadDeck("objectiveDeck.csv");
 		upgradeDeck.loadDeck("upgradeDeck.csv");
 		actionDeck.loadDeck("actionDeck.csv");
+		currentDeck = actionDeck;
+		actionDeck.getDeckOfCards().add(0, currentCard);
 	}
 
 }
