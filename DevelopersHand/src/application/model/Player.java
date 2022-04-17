@@ -22,6 +22,22 @@ public class Player {
 	private static int git;
 	private static int product;
 	private static int troubleshooting;
+	private static int sprintNumber;
+	
+	
+	/**
+	 * @return the sprintNumber
+	 */
+	public static int getSprintNumber() {
+		return sprintNumber;
+	}
+
+	/**
+	 * @param sprintNumber the name to set
+	 */
+	public static void setSprintNumber(int sprintNumber) {
+		Player.sprintNumber = sprintNumber;
+	}
 
 	/**
 	 * @return the name
