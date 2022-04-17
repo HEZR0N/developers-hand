@@ -46,12 +46,11 @@ import javafx.stage.Stage;
 - Product: Even a newly hired senior developer will have to take time to get familiar the product (it's purpose, algorithms, architecture, etc) before they can figure out how to make it bette 
  */
 
-public class GameController {
-	
+public class GameController {	
 
-	private ArrayList<Card> actionDeck; // Change to Deck class. Cards that increase RP (Reputation Points) by a lot, XP by a little
-	private ArrayList<Card> upgradeDeck; // Change to Deck class. Cards that increase XP by a lot
-	private ArrayList<Card> objectiveDeck; // Change to Deck class. Cards that increase XP by a lot
+	private ActionDeck actionDeck; //Cards that increase RP (Reputation Points) by a lot, XP by a little
+	private UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
+	private ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
 	private Card currentCard;
 	
     @FXML
@@ -239,7 +238,7 @@ public class GameController {
     	WinOrLoseController winOrLose = loader.getController();
     	
     	if((Player.getrp() >= 50 && Player.getxp() >= 50)) {
-    		winOrLose.setPageLabel("Congratulations\nYou gained new skilled\nand\nshowcased them to the company");
+    		winOrLose.setPageLabel("Congratulations\nYou gained new skills\nand\nshowcased them to the company");
     	}else if((Player.getrp() < 50 || Player.getxp() < 50)) {
     		if(Player.getrp() < 50 && Player.getxp() >= 50) {
     			winOrLose.setPageLabel("You Lost\nYou might have the skills\nbut your boss thinks you slacked off");
@@ -261,13 +260,13 @@ public class GameController {
     }
     
 
-	public void initialize() throws FileNotFoundException {
+	public void initialize() throws IOException {
 		Player.setName("Intern");
 		nameLabel.setText(Player.getName());
 		Player.setSprintNumber(1);
 		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
-		currentCard = new Card("Onboarding","+1RP",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
+		currentCard = new Card("Onboarding","RP 1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
 		displayCard();
 		objectiveDeck = new ObjectiveDeck();
 		actionDeck = new ActionDeck();
