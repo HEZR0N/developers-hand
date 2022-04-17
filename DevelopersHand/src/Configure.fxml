@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ConfigureController">
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #171B2A;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="buttonStart" layoutX="207.0" layoutY="182.0" mnemonicParsing="false" onAction="#goGame" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Ready to Develop!" textFill="WHITE">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonBack" layoutX="265.0" layoutY="243.0" mnemonicParsing="false" onAction="#goMain" style="-fx-background-radius: 12px; -fx-background-color: #d74125;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="158.0" layoutY="66.0" text="What is your name?" textFill="#d74125">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="playerName" layoutX="226.0" layoutY="133.0" promptText="Type Name Here" />
+            <Label fx:id="nullName" layoutX="158.0" layoutY="298.0" textFill="#d74125">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
