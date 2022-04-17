@@ -176,11 +176,16 @@ public class GameController {
     }
     
     @FXML
-    void collectButtonPressed(ActionEvent event) {
+    void collectButtonPressed(ActionEvent event) throws IOException {
     	Player.addToHand(currentCard); //Should have checked if card can be developed
 //    		collectButton.setManaged(false);
     	collectButton.setVisible(false);
     	System.out.println("Collect Button used");
+    	
+    	// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose scene
+    	if(Player.getSprintNumber() > 10 || (Player.getrp() >= 50 && Player.getxp() >= 50)) {
+    		displayPlayerResults();
+    	}
     }
 
     @FXML
@@ -222,16 +227,19 @@ public class GameController {
     	cardImage.setImage(currentCard.getPicture());
     }
     
+
     void displayPlayerResults() throws IOException {
+    	// Loads WinOrLose scene where it shows the end result of the game depending on players' xp and rp
+    	// Call method for this method is collectButtonPressed() 
     	URL fxmlLocation = new File("src/WinOrLose.fxml").toURI().toURL();
     	FXMLLoader loader = new FXMLLoader(fxmlLocation);
     	Parent root = (Parent) loader.load();
     	
     	WinOrLoseController winOrLose = loader.getController();
     	
-    	if((Player.getrp() >= 50 && Player.getxp() >= 50) && Player.getSprintNumber() <= 10) {
+    	if((Player.getrp() >= 50 && Player.getxp() >= 50)) {
     		winOrLose.setPageLabel("Congratulations\nYou gained new skilled\nand\nshowcased them to the company");
-    	}else if((Player.getrp() < 50 || Player.getxp() < 50) && Player.getSprintNumber() > 10) {
+    	}else if((Player.getrp() < 50 || Player.getxp() < 50)) {
     		if(Player.getrp() < 50 && Player.getxp() >= 50) {
     			winOrLose.setPageLabel("You Lost\nYou might have the skills\nbut your boss thinks you slacked off");
     		}else if(Player.getrp() >= 50 && Player.getxp() < 50) {
