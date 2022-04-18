@@ -47,14 +47,14 @@ import javafx.stage.Stage;
 - Product: Even a newly hired senior developer will have to take time to get familiar the product (it's purpose, algorithms, architecture, etc) before they can figure out how to make it bette 
  */
 
-public class GameController {
-	
+public class GameController {	
+
 	private ActionDeck actionDeck; //Cards that increase RP (Reputation Points) by a lot, XP by a little
 	private UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
 	private ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
-	private int sprintNumber;
 	private Card currentCard;
 	private Deck currentDeck;
+	
     @FXML
     private BorderPane borderPane;
     
@@ -151,14 +151,12 @@ public class GameController {
     @FXML
     private Text sprintNumberText;
     
-
     @FXML
     private Button collectButton;
 
     @FXML
     private Button buttonPause;
    
-    
     @FXML
     void pauseGame(ActionEvent event) throws IOException{
 
@@ -182,12 +180,17 @@ public class GameController {
     }
     
     @FXML
-    void collectButtonPressed(ActionEvent event) {
+    void collectButtonPressed(ActionEvent event) throws IOException {
     	currentCard = currentDeck.removeCard();
     	displayCard();
     	Player.addToHand(currentCard); //Should have checked if card can be developed
     	collectButton.setVisible(false);
     	System.out.println("Collect Button used");
+    	
+    	// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose scene
+    	if(Player.getSprintNumber() > 10 || (Player.getrp() >= 50 && Player.getxp() >= 50)) {
+    		displayPlayerResults();
+    	}
     }
 
     @FXML
@@ -233,14 +236,44 @@ public class GameController {
     	cardRectangle.setFill(currentCard.getColor());
     	cardImage.setImage(currentCard.getPicture());
     }
-    
+
+    void displayPlayerResults() throws IOException {
+    	// Loads WinOrLose scene where it shows the end result of the game depending on players' xp and rp
+    	// Call method for this method is collectButtonPressed() 
+    	URL fxmlLocation = new File("src/WinOrLose.fxml").toURI().toURL();
+    	FXMLLoader loader = new FXMLLoader(fxmlLocation);
+    	Parent root = (Parent) loader.load();
+    	
+    	WinOrLoseController winOrLose = loader.getController();
+    	
+    	if((Player.getrp() >= 50 && Player.getxp() >= 50)) {
+    		winOrLose.setPageLabel("Congratulations\nYou gained new skills\nand\nshowcased them to the company");
+    	}else if((Player.getrp() < 50 || Player.getxp() < 50)) {
+    		if(Player.getrp() < 50 && Player.getxp() >= 50) {
+    			winOrLose.setPageLabel("You Lost\nYou might have the skills\nbut your boss thinks you slacked off");
+    		}else if(Player.getrp() >= 50 && Player.getxp() < 50) {
+    			winOrLose.setPageLabel("You Lost\nNo one can deny you work hard\nbut your boss thinks you lack some skills");
+    		}else {
+    			winOrLose.setPageLabel("You Lost\nYour boss wasn't impressed with your progress");
+    		}
+    	}
+    	
+    	Stage stage = (Stage) borderPane.getScene().getWindow();
+    	Scene scene = new Scene(root);
+    	Image logo = new Image("images/developers-hand-logo.png");
+    	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
+    	stage.getIcons().add(logo);
+    	stage.setTitle("Game Result");
+    	stage.setScene(scene);
+    	stage.show();
+    }
+
 	public void initialize() throws IOException {
-		Player.setName("Intern");
 		nameLabel.setText(Player.getName());
-		sprintNumber = 1;
-		sprintNumberText.setText("" + sprintNumber);
+		Player.setSprintNumber(1);
+		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
-		currentCard = new Card("Onboarding","+1RP",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
+		currentCard = new Card("Onboarding","RP 1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
 		displayBackOfCard();
 		objectiveDeck = new ObjectiveDeck();
 		actionDeck = new ActionDeck();
