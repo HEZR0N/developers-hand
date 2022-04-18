@@ -136,6 +136,9 @@
 	-fx-border-width: 2px;
 	-fx-border-radius: 3px;
 	-fx-font-weight: bold; 
+
+.centered-text-area .text {
+  -fx-text-alignment: center;
 }
 
 .root{

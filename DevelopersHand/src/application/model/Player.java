@@ -2,9 +2,12 @@ package application.model;
 
 import java.util.*;
 
-/** 
- * This class is a basic definition of a Player object. It contains 
- * a definition, constructor, getters, and setters.
+/**
+ * This class is a basic definition of a Player object. It contains a
+ * definition, constructor, getters, and setters.
+ * 
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
+ *         Valenciana
  */
 public class Player {
 
@@ -19,6 +22,22 @@ public class Player {
 	private static int git;
 	private static int product;
 	private static int troubleshooting;
+	private static int sprintNumber;
+	
+	
+	/**
+	 * @return the sprintNumber
+	 */
+	public static int getSprintNumber() {
+		return sprintNumber;
+	}
+
+	/**
+	 * @param sprintNumber the name to set
+	 */
+	public static void setSprintNumber(int sprintNumber) {
+		Player.sprintNumber = sprintNumber;
+	}
 
 	/**
 	 * @return the name
@@ -103,7 +122,7 @@ public class Player {
 	public static void setHand(ArrayList<Card> hand) {
 		Player.hand = hand;
 	}
-	
+
 	/**
 	 * @param c The card to remove from Player.hand
 	 */
@@ -169,7 +188,7 @@ public class Player {
 
 	/**
 	 * @param products the product to set
-	 */ 
+	 */
 	public static void setProduct(int product) {
 		Player.product = product;
 	}
@@ -187,5 +206,5 @@ public class Player {
 	public static void setTroubleshooting(int troubleshooting) {
 		Player.troubleshooting = troubleshooting;
 	}
-	
+
 }

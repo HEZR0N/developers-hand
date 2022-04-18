@@ -7,8 +7,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import application.model.ActionDeck;
 import application.model.Card;
+import application.model.ObjectiveDeck;
 import application.model.Player;
+import application.model.UpgradeDeck;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,13 +46,13 @@ import javafx.stage.Stage;
 - Product: Even a newly hired senior developer will have to take time to get familiar the product (it's purpose, algorithms, architecture, etc) before they can figure out how to make it bette 
  */
 
-public class GameController {
-	
-	private ArrayList<Card> actionDeck; // Change to Deck class. Cards that increase RP (Reputation Points) by a lot, XP by a little
-	private ArrayList<Card> upgradeDeck; // Change to Deck class. Cards that increase XP by a lot
-	private ArrayList<Card> objectiveDeck; // Change to Deck class. Cards that increase XP by a lot
-	private int sprintNumber;
+public class GameController {	
+
+	private ActionDeck actionDeck; //Cards that increase RP (Reputation Points) by a lot, XP by a little
+	private UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
+	private ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
 	private Card currentCard;
+	
     @FXML
     private BorderPane borderPane;
     
@@ -146,7 +149,6 @@ public class GameController {
     @FXML
     private Text sprintNumberText;
     
-
     @FXML
     private Button collectButton;
 
@@ -177,19 +179,23 @@ public class GameController {
     }
     
     @FXML
-    void collectButtonPressed(ActionEvent event) {
+    void collectButtonPressed(ActionEvent event) throws IOException {
     	Player.addToHand(currentCard); //Should have checked if card can be developed
 //    		collectButton.setManaged(false);
     	collectButton.setVisible(false);
     	System.out.println("Collect Button used");
+    	
+    	// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose scene
+    	if(Player.getSprintNumber() > 10 || (Player.getrp() >= 50 && Player.getxp() >= 50)) {
+    		displayPlayerResults();
+    	}
     }
 
     @FXML
     void drawFromActionDeck(ActionEvent event) {
     	// first do some checks to see if the player can remove the card
     	// draw card a random-ish from actionDeck: currentCard = actionDeck.remove();
-    	int randomIndex = 0;
-    	currentCard = actionDeck.remove(randomIndex);
+    	currentCard = actionDeck.removeCard();
     	displayCard();
     	collectButton.setVisible(true);
     }
@@ -198,8 +204,7 @@ public class GameController {
     void drawFromObjectiveDeck(ActionEvent event) {
     	// first do some checks to see if the player can remove the card
     	// draw card a random-ish from objectiveDeck: currentCard = objectiveDeck.remove()
-    	int randomIndex = 0;
-    	currentCard = objectiveDeck.remove(randomIndex);
+    	currentCard = objectiveDeck.removeCard();
     	displayCard();
     	collectButton.setVisible(true);
     }
@@ -208,8 +213,7 @@ public class GameController {
     void drawFromUpgradeDeck(ActionEvent event) {
     	// first do some checks to see if the player can remove the card
     	// draw card a random-ish from upgradeDeck: currentCard = upgradeDeck.remove();
-    	int randomIndex = 0;
-    	currentCard = upgradeDeck.remove(randomIndex);
+    	currentCard = upgradeDeck.removeCard();
     	displayCard();
     	collectButton.setVisible(true);
     	
@@ -223,21 +227,52 @@ public class GameController {
     	cardImage.setImage(currentCard.getPicture());
     }
     
-	public void initialize() throws FileNotFoundException {
-		Player.setName("Intern");
+
+    void displayPlayerResults() throws IOException {
+    	// Loads WinOrLose scene where it shows the end result of the game depending on players' xp and rp
+    	// Call method for this method is collectButtonPressed() 
+    	URL fxmlLocation = new File("src/WinOrLose.fxml").toURI().toURL();
+    	FXMLLoader loader = new FXMLLoader(fxmlLocation);
+    	Parent root = (Parent) loader.load();
+    	
+    	WinOrLoseController winOrLose = loader.getController();
+    	
+    	if((Player.getrp() >= 50 && Player.getxp() >= 50)) {
+    		winOrLose.setPageLabel("Congratulations\nYou gained new skills\nand\nshowcased them to the company");
+    	}else if((Player.getrp() < 50 || Player.getxp() < 50)) {
+    		if(Player.getrp() < 50 && Player.getxp() >= 50) {
+    			winOrLose.setPageLabel("You Lost\nYou might have the skills\nbut your boss thinks you slacked off");
+    		}else if(Player.getrp() >= 50 && Player.getxp() < 50) {
+    			winOrLose.setPageLabel("You Lost\nNo one can deny you work hard\nbut your boss thinks you lack some skills");
+    		}else {
+    			winOrLose.setPageLabel("You Lost\nYour boss wasn't impressed with your progress");
+    		}
+    	}
+    	
+    	Stage stage = (Stage) borderPane.getScene().getWindow();
+    	Scene scene = new Scene(root);
+    	Image logo = new Image("images/developers-hand-logo.png");
+    	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
+    	stage.getIcons().add(logo);
+    	stage.setTitle("Game Result");
+    	stage.setScene(scene);
+    	stage.show();
+    }
+    
+
+	public void initialize() throws IOException {
 		nameLabel.setText(Player.getName());
-		sprintNumber = 1;
-		sprintNumberText.setText("" + sprintNumber);
+		Player.setSprintNumber(1);
+		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
-		// Call the loadCards method instead here
-		actionDeck = new ArrayList<Card>();
-		upgradeDeck = new ArrayList<Card>();
-		objectiveDeck = new ArrayList<Card>();
-		objectiveDeck.add(new Card("Freshly Labeled","RP+=3",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "Label some images.", Color.LIGHTYELLOW));
-		actionDeck.add(new Card("Data Tagging/Labeling","RP+=1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "You are given 1000 images to label for AI models. You hope your labeling skills suffice.", Color.LIGHTBLUE));
-		upgradeDeck.add(new Card("What's Data Tagging?","Product=Product+1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "You spend time with an employee who knows how to label data: drawing shapes around objects in images that an AI should recognize",Color.LIGHTGREEN));
-		currentCard = new Card("Onboarding","+1RP",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.LIGHTBLUE);
+		currentCard = new Card("Onboarding","RP 1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
 		displayCard();
+		objectiveDeck = new ObjectiveDeck();
+		actionDeck = new ActionDeck();
+		upgradeDeck = new UpgradeDeck();
+		objectiveDeck.loadDeck("objectiveDeck.csv");
+		upgradeDeck.loadDeck("upgradeDeck.csv");
+		actionDeck.loadDeck("actionDeck.csv");
 	}
 
 }

@@ -35,7 +35,7 @@ public class MainMenuController {
     @FXML
     void goPlay(ActionEvent event) {
     	try {
-    	URL playURL = new File("src/Game.fxml").toURI().toURL();
+    	URL playURL = new File("src/Configure.fxml").toURI().toURL();
     	borderPane = FXMLLoader.load(playURL);
     	Scene scene = new Scene(borderPane);
     	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
