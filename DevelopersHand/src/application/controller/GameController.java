@@ -171,10 +171,45 @@ public class GameController {
     	stage.show();    	
     }
     
+
+    @FXML
+    void nextButtonPressed(ActionEvent event) {
+    	currentCard = Player.getHand().get(Player.getHand().indexOf(currentCard)+1);
+    	setCorrectVisibilityForNavigationButtons();
+    	displayCard();
+    }
+    
+    void setCorrectVisibilityForNavigationButtons(){
+    	int currentCardIndex = Player.getHand().indexOf(currentCard);
+    	viewHandButton.setVisible(false);
+    	nextButton.setVisible(false);
+    	previousButton.setVisible(false);
+    	if(Player.getHand().size() > 1) {
+	    	if(currentCardIndex > 0) {
+	    		previousButton.setVisible(true);
+	    	}
+	    	if(currentCardIndex < Player.getHand().size()-1) {
+	    		nextButton.setVisible(true);
+	    	}
+    	}
+    }
+    
+    @FXML
+    void previousButtonPressed(ActionEvent event) {
+    	currentCard = Player.getHand().get(Player.getHand().indexOf(currentCard)-1);
+    	setCorrectVisibilityForNavigationButtons();
+    	displayCard();
+    }
+
+    @FXML
+    void viewHandButtonPressed(ActionEvent event) {
+    	setCorrectVisibilityForNavigationButtons();
+    	displayCard();
+    }
+    
     @FXML
     void developButtonPressed(ActionEvent event) {
-    	Player.addToHand(currentCard); //Should have checked if card can be developed
-//    	developButton.setManaged(false);
+    	Player.addToHand(currentCard); //Should have checked if card can be developed;
     	developButton.setVisible(false);
     	System.out.println("Develop Button used");
     }
@@ -184,7 +219,7 @@ public class GameController {
     	currentCard = currentDeck.removeCard();
     	displayCard();
     	Player.addToHand(currentCard); //Should have checked if card can be developed
-    	collectButton.setVisible(false);
+    	setCorrectVisibilityForNavigationButtons();
     	System.out.println("Collect Button used");
     	
     	// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose scene
@@ -200,7 +235,7 @@ public class GameController {
 //    	currentCard = actionDeck.removeCard();
 //    	displayCard();
     	currentDeck = actionDeck;
-    	collectButton.setVisible(true);
+    	displayBackOfCard();
     }
 
     @FXML
@@ -210,7 +245,7 @@ public class GameController {
 //    	currentCard = objectiveDeck.removeCard();
 //    	displayCard();
     	currentDeck = objectiveDeck;
-    	collectButton.setVisible(true);
+    	displayBackOfCard();
     }
 
     @FXML
@@ -220,8 +255,7 @@ public class GameController {
 //    	currentCard = upgradeDeck.removeCard();
 //    	displayCard();
     	currentDeck = upgradeDeck;
-    	collectButton.setVisible(true);
-    	
+    	displayBackOfCard();
     }
 
     void displayCard() {
@@ -230,11 +264,19 @@ public class GameController {
     	storyText.setText(currentCard.getStory());
     	descriptionText.setText(currentCard.getDescription());
     	cardImage.setImage(currentCard.getPicture());
+    	collectButton.setVisible(false);
     }
     
     void displayBackOfCard() {
-    	cardRectangle.setFill(currentCard.getColor());
+    	cardRectangle.setFill(currentDeck.getDeckcolor());
+    	titleText.setText("");
+    	storyText.setText("");
+    	descriptionText.setText("");
     	cardImage.setImage(currentCard.getPicture());
+    	previousButton.setVisible(false);
+    	nextButton.setVisible(false);
+    	viewHandButton.setVisible(true);
+    	collectButton.setVisible(true);
     }
 
     void displayPlayerResults() throws IOException {
@@ -274,7 +316,6 @@ public class GameController {
 		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
 		currentCard = new Card("Onboarding","RP 1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
-		displayBackOfCard();
 		objectiveDeck = new ObjectiveDeck();
 		actionDeck = new ActionDeck();
 		upgradeDeck = new UpgradeDeck();
@@ -282,7 +323,9 @@ public class GameController {
 		upgradeDeck.loadDeck("upgradeDeck.csv");
 		actionDeck.loadDeck("actionDeck.csv");
 		currentDeck = actionDeck;
-		actionDeck.getDeckOfCards().add(0, currentCard);
+		displayBackOfCard();
+		actionDeck.addCard(currentCard);
+		setCorrectVisibilityForNavigationButtons();
 	}
 
 }

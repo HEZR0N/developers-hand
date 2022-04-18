@@ -28,6 +28,7 @@ import javafx.scene.paint.Color;
 public interface Deck {
 
 	public static final ArrayList<Card> deckOfCards = new ArrayList<Card>();
+	public static final Color deckColor = Color.SILVER;
 
 	/**
 	 * @return an ArrayList<String> holding all the lines of a csv file
@@ -66,7 +67,7 @@ public interface Deck {
 	 * @return a Card object from deckofCards
 	 */
 	default public Card removeCard() {
-		return getDeckOfCards().remove(0);
+		return getDeckOfCards().remove(getDeckOfCards().size()-1);
 	}
 
 	/**
@@ -75,7 +76,7 @@ public interface Deck {
 	 */
 	default public Card createCard(String cardInfo[]) throws FileNotFoundException {
 		return new Card(cardInfo[0], cardInfo[1], new Image(new FileInputStream("src/images/developers-hand-logo.png")),
-				cardInfo[2], Color.SILVER);
+				cardInfo[2], deckColor);
 	}
 
 	/**
@@ -90,7 +91,11 @@ public interface Deck {
 			cardInfo = line.split(",");
 			addCard(createCard(cardInfo));
 		}
-
 	}
+	
+	/**
+	 * @return the deckColor
+	 */
+	public Color getDeckcolor();
 
 }

@@ -23,6 +23,7 @@ import javafx.scene.paint.Color;
 public class UpgradeDeck implements Deck {
 
 	private static ArrayList<Card> deckOfCards = new ArrayList<Card>();
+	private static final Color deckColor = Color.LIMEGREEN;
 
 	/**
 	 * @return the deckOfCards
@@ -48,7 +49,15 @@ public class UpgradeDeck implements Deck {
 	@Override
 	public Card createCard(String cardInfo[]) throws FileNotFoundException {
 		return new UpgradeCard(cardInfo[0], cardInfo[1],
-				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], Color.LIMEGREEN);
+				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], deckColor);
+	}
+	
+	/**
+	 * @return the deckColor
+	 */
+	@Override
+	public Color getDeckcolor() {
+		return UpgradeDeck.deckColor;
 	}
 
 }

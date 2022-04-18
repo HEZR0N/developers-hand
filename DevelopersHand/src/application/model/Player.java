@@ -51,7 +51,7 @@ public class Player {
 		Player.git = 0;
 		Player.product = 0;
 		Player.troubleshooting = 0;
-		Player.hand.clear();;
+		Player.hand.clear();
 	}
 	
 	/**

@@ -47,9 +47,9 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="previousButton" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" text="Previous" />
-            <Button fx:id="viewHandButton" layoutX="563.0" layoutY="442.0" mnemonicParsing="false" text="View Hand" />
-            <Button fx:id="nextButton" layoutX="726.0" layoutY="394.0" mnemonicParsing="false" text="Next" />
+            <Button fx:id="previousButton" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" onAction="#previousButtonPressed" text="Previous" />
+            <Button fx:id="viewHandButton" layoutX="563.0" layoutY="442.0" mnemonicParsing="false" onAction="#viewHandButtonPressed" text="View Hand" />
+            <Button fx:id="nextButton" layoutX="726.0" layoutY="394.0" mnemonicParsing="false" onAction="#nextButtonPressed" text="Next" />
             <Text fx:id="storyText" layoutX="556.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="179.13671875" />
             <Text fx:id="descriptionText" layoutX="558.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text fx:id="titleText" layoutX="566.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" />
