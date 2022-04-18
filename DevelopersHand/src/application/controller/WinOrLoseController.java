@@ -34,6 +34,7 @@ public class WinOrLoseController {
         	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
         	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         	stage.setScene(scene);
+        	stage.setTitle("Developer's Hand");
         	stage.show();
         	}catch (Exception e) {
         		e.printStackTrace();

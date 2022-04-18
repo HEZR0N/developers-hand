@@ -47,13 +47,14 @@ import javafx.stage.Stage;
 - Product: Even a newly hired senior developer will have to take time to get familiar the product (it's purpose, algorithms, architecture, etc) before they can figure out how to make it bette 
  */
 
-public class GameController {	
+public class GameController {
 
 	private ActionDeck actionDeck; //Cards that increase RP (Reputation Points) by a lot, XP by a little
 	private UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
 	private ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
-	private Card currentCard;
-	private Deck currentDeck;
+	private static Card currentCard;
+	private static Deck currentDeck;
+	private static boolean viewingHand;
 	
     @FXML
     private BorderPane borderPane;
@@ -138,9 +139,6 @@ public class GameController {
 
     @FXML
     private Button developButton;
-
-    @FXML
-    private Button buttonMenu;
     
     @FXML
     private ImageView cardImage;
@@ -159,69 +157,52 @@ public class GameController {
    
     @FXML
     void pauseGame(ActionEvent event) throws IOException{
-
     	URL url = new File("src/PauseMenu.fxml").toURI().toURL();
     	borderPane = FXMLLoader.load(url);
     	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     	Scene scene = new Scene(borderPane);
-    	stage.setTitle("Pause");
+    	stage.setTitle("Developer's Hand - Pause");
     	Image logo = new Image("images/developers-hand-logo.png");
     	stage.getIcons().add(logo);
     	stage.setScene(scene);
     	stage.show();    	
     }
     
-
     @FXML
     void nextButtonPressed(ActionEvent event) {
     	currentCard = Player.getHand().get(Player.getHand().indexOf(currentCard)+1);
-    	setCorrectVisibilityForNavigationButtons();
-    	displayCard();
-    }
-    
-    void setCorrectVisibilityForNavigationButtons(){
-    	int currentCardIndex = Player.getHand().indexOf(currentCard);
-    	viewHandButton.setVisible(false);
-    	nextButton.setVisible(false);
-    	previousButton.setVisible(false);
-    	if(Player.getHand().size() > 1) {
-	    	if(currentCardIndex > 0) {
-	    		previousButton.setVisible(true);
-	    	}
-	    	if(currentCardIndex < Player.getHand().size()-1) {
-	    		nextButton.setVisible(true);
-	    	}
-    	}
+    	setVisibilityForViewingHand();
     }
     
     @FXML
     void previousButtonPressed(ActionEvent event) {
     	currentCard = Player.getHand().get(Player.getHand().indexOf(currentCard)-1);
-    	setCorrectVisibilityForNavigationButtons();
-    	displayCard();
+    	setVisibilityForViewingHand();
     }
 
     @FXML
     void viewHandButtonPressed(ActionEvent event) {
-    	setCorrectVisibilityForNavigationButtons();
-    	displayCard();
+    	setVisibilityForViewingHand();
     }
     
     @FXML
     void developButtonPressed(ActionEvent event) {
     	Player.addToHand(currentCard); //Should have checked if card can be developed;
     	developButton.setVisible(false);
-    	System.out.println("Develop Button used");
     }
     
     @FXML
     void collectButtonPressed(ActionEvent event) throws IOException {
     	currentCard = currentDeck.removeCard();
-    	displayCard();
     	Player.addToHand(currentCard); //Should have checked if card can be developed
-    	setCorrectVisibilityForNavigationButtons();
+    	setVisibilityForViewingHand();
+    	if(!Player.isOnboarded()) {
+			objectiveDeckButton.setVisible(true);
+			upgradeDeckButton.setVisible(true);
+			actionDeckButton.setVisible(true);
+    		Player.setOnboarded(true);
+    	}
     	System.out.println("Collect Button used");
-    	
     	// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose scene
     	if(Player.getSprintNumber() > 10 || (Player.getrp() >= 50 && Player.getxp() >= 50)) {
     		displayPlayerResults();
@@ -230,41 +211,28 @@ public class GameController {
 
     @FXML
     void drawFromActionDeck(ActionEvent event) {
-    	// first do some checks to see if the player can remove the card
-    	// draw card a random-ish from actionDeck: currentCard = actionDeck.remove();
-//    	currentCard = actionDeck.removeCard();
-//    	displayCard();
     	currentDeck = actionDeck;
-    	displayBackOfCard();
+    	setVisibilityForChoosingNewCard();
     }
 
     @FXML
     void drawFromObjectiveDeck(ActionEvent event) {
-    	// first do some checks to see if the player can remove the card
-    	// draw card a random-ish from objectiveDeck: currentCard = objectiveDeck.remove()
-//    	currentCard = objectiveDeck.removeCard();
-//    	displayCard();
     	currentDeck = objectiveDeck;
-    	displayBackOfCard();
+    	setVisibilityForChoosingNewCard();
     }
 
     @FXML
     void drawFromUpgradeDeck(ActionEvent event) {
-    	// first do some checks to see if the player can remove the card
-    	// draw card a random-ish from upgradeDeck: currentCard = upgradeDeck.remove();
-//    	currentCard = upgradeDeck.removeCard();
-//    	displayCard();
     	currentDeck = upgradeDeck;
-    	displayBackOfCard();
+    	setVisibilityForChoosingNewCard();
     }
 
     void displayCard() {
     	cardRectangle.setFill(currentCard.getColor());
     	titleText.setText(currentCard.getName());
     	storyText.setText(currentCard.getStory());
-    	descriptionText.setText(currentCard.getDescription());
+    	descriptionText.setText(currentCard.getReward());
     	cardImage.setImage(currentCard.getPicture());
-    	collectButton.setVisible(false);
     }
     
     void displayBackOfCard() {
@@ -273,6 +241,29 @@ public class GameController {
     	storyText.setText("");
     	descriptionText.setText("");
     	cardImage.setImage(currentCard.getPicture());
+    }
+    
+    void setVisibilityForViewingHand(){
+    	viewingHand = true;
+    	int currentCardIndex = Player.getHand().indexOf(currentCard);
+    	viewHandButton.setVisible(false);
+    	nextButton.setVisible(false);
+    	previousButton.setVisible(false);
+    	collectButton.setVisible(false);
+    	if(Player.getHand().size() > 1) {
+	    	if(currentCardIndex > 0) {
+	    		previousButton.setVisible(true);
+	    	}
+	    	if(currentCardIndex < Player.getHand().size()-1) {
+	    		nextButton.setVisible(true);
+	    	}
+    	}
+    	displayCard();
+    }
+    
+    void setVisibilityForChoosingNewCard() {
+    	viewingHand = false;
+    	displayBackOfCard();
     	previousButton.setVisible(false);
     	nextButton.setVisible(false);
     	viewHandButton.setVisible(true);
@@ -305,27 +296,42 @@ public class GameController {
     	Image logo = new Image("images/developers-hand-logo.png");
     	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
     	stage.getIcons().add(logo);
-    	stage.setTitle("Game Result");
+    	stage.setTitle("Developer's Hand - Game Result");
     	stage.setScene(scene);
     	stage.show();
     }
 
 	public void initialize() throws IOException {
 		nameLabel.setText(Player.getName());
-		Player.setSprintNumber(1);
 		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
-		currentCard = new Card("Onboarding","RP 1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
 		objectiveDeck = new ObjectiveDeck();
 		actionDeck = new ActionDeck();
 		upgradeDeck = new UpgradeDeck();
+		if(!Player.isOnboarded()) {
+			onboardPlayer();
+		}
+		if(viewingHand) {
+			setVisibilityForViewingHand();
+		}
+		else {
+			setVisibilityForChoosingNewCard();
+		}
+	}
+	
+	public void onboardPlayer() throws IOException {
+		objectiveDeckButton.setVisible(false);
+		upgradeDeckButton.setVisible(false);
+		actionDeckButton.setVisible(false);
+		Player.setSprintNumber(1);
+		currentCard = new Card("Onboarding","RP 1",new Image(new FileInputStream("src/images/developers-hand-logo.png")), "It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",Color.SILVER);
 		objectiveDeck.loadDeck("objectiveDeck.csv");
 		upgradeDeck.loadDeck("upgradeDeck.csv");
 		actionDeck.loadDeck("actionDeck.csv");
 		currentDeck = actionDeck;
-		displayBackOfCard();
 		actionDeck.addCard(currentCard);
-		setCorrectVisibilityForNavigationButtons();
+		setVisibilityForViewingHand();
+		viewingHand = false;
 	}
 
 }
