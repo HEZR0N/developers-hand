@@ -185,6 +185,8 @@ public class GameController {
     	collectButton.setVisible(false);
     	System.out.println("Collect Button used");
     	
+    	displayPlayerStats();
+    	
     	// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose scene
     	if(Player.getSprintNumber() > 10 || (Player.getrp() >= 50 && Player.getxp() >= 50)) {
     		displayPlayerResults();
@@ -259,6 +261,17 @@ public class GameController {
     	stage.show();
     }
     
+    void displayPlayerStats() {
+    	// Updates the numbers on the screen to match the Player stats
+    	xpNumberText.setText(String.valueOf(Player.getxp()));
+    	rpNumberText.setText(String.valueOf(Player.getrp()));
+    	codingNumberText.setText(String.valueOf(Player.getCoding()));
+    	documentationNumberText.setText(String.valueOf(Player.getDocumentation()));
+    	gitNumberText.setText(String.valueOf(Player.getGit()));
+    	productNumberText.setText(String.valueOf(Player.getProduct()));
+    	troubleshootingNumberText.setText(String.valueOf(Player.getTroubleshooting()));
+    	sprintNumberText.setText(String.valueOf(Player.getSprintNumber()));
+    }    
 
 	public void initialize() throws IOException {
 		nameLabel.setText(Player.getName());
