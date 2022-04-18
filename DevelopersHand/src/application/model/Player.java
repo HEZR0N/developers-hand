@@ -206,5 +206,50 @@ public class Player {
 	public static void setTroubleshooting(int troubleshooting) {
 		Player.troubleshooting = troubleshooting;
 	}
+	
+	/**
+	 * @param cardDesc the String description of a card
+	 * This method will take a card description and input the correct amount of experience
+	 * into the correct player field
+	 */
+	public void addReward(String cardDesc) {
+		String rewardFinal = "";
+
+		String rewardArray[] = cardDesc.split("&");
+
+		for (String reward : rewardArray) {
+			String space[] = reward.split(" ");
+			if (space[0].equalsIgnoreCase("RP")) {
+				if (space[1].startsWith("-")) {
+                    this.rp += Integer.valueOf(space[1]); // for negative values
+				} else {
+					this.rp += Integer.valueOf(space[1]); // for positive values
+					this.xp += Integer.valueOf(space[1]);
+				}
+			} else if (!(space[0].equalsIgnoreCase("RP"))) {
+				xp += Integer.valueOf(space[1]);
+				if(space[0].equalsIgnoreCase("Troubleshooting")){
+					this.troubleshooting += Integer.valueOf(space[1]);
+					this.xp += Integer.valueOf(space[1]);
+                                }
+                                if(space[0].equalsIgnoreCase("Git")){
+                                	this.git += Integer.valueOf(space[1]);
+                                	this.xp += Integer.valueOf(space[1]);
+                                }
+                                if(space[0].equalsIgnoreCase("Coding")){
+                                	this.coding += Integer.valueOf(space[1]);
+                                	this.xp += Integer.valueOf(space[1]);
+                                }
+                                if(space[0].equalsIgnoreCase("Documentation")){
+                                	this.documentation += Integer.valueOf(space[1]);
+                                	this.xp += Integer.valueOf(space[1]);
+                                }
+                                if(space[0].equalsIgnoreCase("Product")){
+                                	this.product += Integer.valueOf(space[1]);
+                                	this.xp += Integer.valueOf(space[1]);
+                                }
+			}
+		}
+	}
 
 }
