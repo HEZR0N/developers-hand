@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 import javafx.scene.image.Image;
@@ -87,6 +88,7 @@ public interface Deck {
 	default public void loadDeck(String fileName) throws IOException {
 		ArrayList<String> cardLines = readLines(fileName);
 		String cardInfo[];
+		Collections.shuffle(cardLines);
 		for (String line : cardLines) {
 			cardInfo = line.split(",");
 			addCard(createCard(cardInfo));
