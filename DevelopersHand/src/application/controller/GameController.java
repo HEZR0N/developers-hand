@@ -218,6 +218,7 @@ public class GameController {
 			actionDeckButton.setVisible(true);
 			Player.setOnboarded(true);
 		}
+		displayPlayerStats();
 		System.out.println("Collect Button used");
 		// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose
 		// scene
@@ -340,6 +341,21 @@ public class GameController {
 		stage.setScene(scene);
 		stage.show();
 	}
+
+	/**
+	 * Updates the player's stats on the UI.
+	 */
+	void displayPlayerStats() {
+    	// Updates the numbers on the screen to match the Player stats
+    	xpNumberText.setText(String.valueOf(Player.getxp()));
+    	rpNumberText.setText(String.valueOf(Player.getrp()));
+    	codingNumberText.setText(String.valueOf(Player.getCoding()));
+    	documentationNumberText.setText(String.valueOf(Player.getDocumentation()));
+    	gitNumberText.setText(String.valueOf(Player.getGit()));
+    	productNumberText.setText(String.valueOf(Player.getProduct()));
+    	troubleshootingNumberText.setText(String.valueOf(Player.getTroubleshooting()));
+    	sprintNumberText.setText(String.valueOf(Player.getSprintNumber()));
+    }
 
 	/**
 	 * Initializes Deck objects and calls onboardPlayer() if necessary.

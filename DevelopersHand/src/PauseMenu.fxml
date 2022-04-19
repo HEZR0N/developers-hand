@@ -8,29 +8,29 @@
 
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #171B2A;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PauseMenuController">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="pauseBackground" prefHeight="200.0" prefWidth="200.0" stylesheets="@application/application.css" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="232.0" layoutY="25.0" text="Pause Menu" textFill="#d74125" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="232.0">
+            <Label fx:id="Title" alignment="CENTER" layoutX="82.0" layoutY="25.0" prefHeight="73.0" prefWidth="529.0" stylesheets="@application/application.css" text="Pause Menu" textFill="#d74125" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="89.0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="40.0" />
                </font>
             </Label>
-            <Button fx:id="buttonAbout" layoutX="250.0" layoutY="325.0" mnemonicParsing="false" onAction="#goAbout" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="About Game" textFill="WHITE" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0">
+            <Button fx:id="button" layoutX="250.0" layoutY="325.0" mnemonicParsing="false" onAction="#goAbout" prefHeight="50.0" prefWidth="200.0" stylesheets="@application/application.css" text="About" textFill="WHITE" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="buttonRules" layoutX="250.0" layoutY="225.0" mnemonicParsing="false" onAction="#goRules" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Game Rules" textFill="WHITE" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0">
+            <Button fx:id="button" layoutX="250.0" layoutY="225.0" mnemonicParsing="false" onAction="#goRules" prefHeight="50.0" prefWidth="200.0" stylesheets="@application/application.css" text="Game Rules" textFill="WHITE" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="buttonResume" layoutX="250.0" layoutY="125.0" mnemonicParsing="false" onAction="#goResume" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Resume" textFill="WHITE">
+            <Button fx:id="button" layoutX="250.0" layoutY="125.0" mnemonicParsing="false" onAction="#goResume" prefHeight="50.0" prefWidth="200.0" stylesheets="@application/application.css" text="Resume" textFill="WHITE">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="buttonQuitGame" layoutX="250.0" layoutY="425.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Quit Game" textFill="WHITE">
+            <Button fx:id="button" layoutX="250.0" layoutY="425.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="50.0" prefWidth="200.0" stylesheets="@application/application.css" text="Quit Game" textFill="WHITE">
                <font>
                   <Font name="Britannic Bold" size="25.0" />
                </font>

@@ -16,8 +16,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+/**
+ * this class is the controller for Configure.FXML and handles all of the buttons labels, and textfield variables
+ * 
+ * 
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
+ *         Valenciana
+ */
 public class ConfigureController {
-
+    
     @FXML
     private BorderPane borderPane;
 
@@ -34,6 +41,7 @@ public class ConfigureController {
    private Label nullName;
 
    @FXML
+    // takes player to intro page asking for players name and displaying it to the Main Game Screen
    void goGame(ActionEvent event) {
    	try {
    		Player.setName(playerName.getText().trim());
@@ -49,12 +57,13 @@ public class ConfigureController {
    		 nullName.setText("Please Enter Name");
 
    	 }
-      	 //creates player info file and adds player 
+      	
    	}catch (Exception e) {
    		e.printStackTrace();
    	}
    }
     @FXML
+    // takes player to main menu upon button press
     void goMain(ActionEvent event) {
     	try {
         	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();

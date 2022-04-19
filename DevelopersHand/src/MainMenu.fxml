@@ -6,27 +6,26 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainMenuController">
    <center>
-      <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #171B2A;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="mainBackground" prefHeight="500.0" prefWidth="800.0" stylesheets="@application/application.css" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="186.0" layoutY="29.0" text="Developer's Hand" textFill="#d74125" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="183.0">
+            <Label fx:id="Title" alignment="CENTER" layoutX="186.0" layoutY="29.0" text="Developer's Hand" textFill="#d74125" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="183.0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="50.0" />
                </font>
             </Label>
-            <Button fx:id="buttonPlay" layoutX="264.0" layoutY="136.0" mnemonicParsing="false" onAction="#goPlay" prefHeight="31.0" prefWidth="274.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Play" textFill="WHITE" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="262.0">
+            <Button fx:id="button" layoutX="264.0" layoutY="136.0" mnemonicParsing="false" onAction="#goPlay" prefHeight="31.0" prefWidth="274.0" stylesheets="@application/application.css" text="Play" textFill="WHITE" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="262.0">
                <font>
                   <Font name="Britannic Bold" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="buttonAbout" layoutX="263.0" layoutY="225.0" mnemonicParsing="false" onAction="#goAbout" prefHeight="31.0" prefWidth="274.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="About" textFill="WHITE" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="262.0">
+            <Button fx:id="button" layoutX="263.0" layoutY="225.0" mnemonicParsing="false" onAction="#goAbout" prefHeight="31.0" prefWidth="274.0" style=": 12px;" stylesheets="@application/application.css" text="About" textFill="WHITE" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="262.0">
                <font>
                   <Font name="Britannic Bold" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="buttonRules" layoutX="264.0" layoutY="315.0" mnemonicParsing="false" onAction="#goRules" prefHeight="31.0" prefWidth="274.0" style="-fx-background-color: #d74125; -fx-background-radius: 12px;" text="Rules" textFill="WHITE" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="262.0">
+            <Button fx:id="button" layoutX="264.0" layoutY="315.0" mnemonicParsing="false" onAction="#goRules" prefHeight="31.0" prefWidth="274.0" stylesheets="@application/application.css" text="Rules" textFill="WHITE" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="262.0">
                <font>
                   <Font name="Britannic Bold" size="30.0" />
                </font>
