@@ -225,7 +225,7 @@ public class Player {
 	}
 	
 	/**
-	 * Increments spring number depending on amount of cards in hand 
+	 * Increments sprintNumber depending on amount of cards in hand 
 	 */
 	public static void increaseSprintNumber() {
 		int sprintLength = 3;
