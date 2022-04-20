@@ -213,40 +213,38 @@ public class Player {
 	 * into the correct player field
 	 */
 	public void addReward(String cardDesc) {
-		String rewardFinal = "";
-
 		String rewardArray[] = cardDesc.split("&");
 
 		for (String reward : rewardArray) {
 			String space[] = reward.split(" ");
 			if (space[0].equalsIgnoreCase("RP")) {
 				if (space[1].startsWith("-")) {
-                    this.rp += Integer.valueOf(space[1]); // for negative values
+                    rp += Integer.valueOf(space[1]); // for negative values
 				} else {
-					this.rp += Integer.valueOf(space[1]); // for positive values
-					this.xp += Integer.valueOf(space[1]);
+					rp += Integer.valueOf(space[1]); // for positive values
+					xp += Integer.valueOf(space[1]);
 				}
 			} else if (!(space[0].equalsIgnoreCase("RP"))) {
 				xp += Integer.valueOf(space[1]);
 				if(space[0].equalsIgnoreCase("Troubleshooting")){
-					this.troubleshooting += Integer.valueOf(space[1]);
-					this.xp += Integer.valueOf(space[1]);
+					troubleshooting += Integer.valueOf(space[1]);
+					xp += Integer.valueOf(space[1]);
                                 }
                                 if(space[0].equalsIgnoreCase("Git")){
-                                	this.git += Integer.valueOf(space[1]);
-                                	this.xp += Integer.valueOf(space[1]);
+                                	git += Integer.valueOf(space[1]);
+                                	xp += Integer.valueOf(space[1]);
                                 }
                                 if(space[0].equalsIgnoreCase("Coding")){
-                                	this.coding += Integer.valueOf(space[1]);
-                                	this.xp += Integer.valueOf(space[1]);
+                                	coding += Integer.valueOf(space[1]);
+                                	xp += Integer.valueOf(space[1]);
                                 }
                                 if(space[0].equalsIgnoreCase("Documentation")){
-                                	this.documentation += Integer.valueOf(space[1]);
-                                	this.xp += Integer.valueOf(space[1]);
+                                	documentation += Integer.valueOf(space[1]);
+                                	xp += Integer.valueOf(space[1]);
                                 }
                                 if(space[0].equalsIgnoreCase("Product")){
-                                	this.product += Integer.valueOf(space[1]);
-                                	this.xp += Integer.valueOf(space[1]);
+                                	product += Integer.valueOf(space[1]);
+                                	xp += Integer.valueOf(space[1]);
                                 }
 			}
 		}
