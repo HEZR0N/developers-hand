@@ -76,5 +76,24 @@ public class ObjectiveCard extends Card {
 	private void setStat(String stat) {
 		this.stat = stat;
 	}
+	
+	/** 
+	 * @param cardDesc 
+	 * This method parses a card description and increases/decreases if this.stat is in the description
+	 * */
+	public void updateProgress(String cardDesc) {
+		
+		String parseArray[] = cardDesc.split("&");
+        
+        for(String parse: parseArray){
+            String space[] = parse.split(" ");
+            
+            if(stat.equalsIgnoreCase(space[0])){
+                progress += Integer.valueOf(space[1]);
+                
+            }
+        }
+		
+	}
 
 }
