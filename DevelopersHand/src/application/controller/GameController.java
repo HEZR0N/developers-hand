@@ -304,7 +304,7 @@ public class GameController {
 		displayBackOfCard();
 		previousButton.setVisible(false);
 		nextButton.setVisible(false);
-		viewHandButton.setVisible(true);
+		viewHandButton.setVisible(Player.getHand().size() > 0);
 		collectButton.setVisible(true);
 	}
 	
