@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+import application.model.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,6 +44,7 @@ public class PauseMenuController {
         	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
         	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         	stage.setScene(scene);
+        	stage.setTitle("Developer's Hand");
         	stage.show();
         	}catch (Exception e) {
         		e.printStackTrace();
@@ -81,6 +83,7 @@ public class PauseMenuController {
     
     @FXML
     void quitGame(ActionEvent event) {
+    	Player.clearData();
     	// Quits game and loads main menu scene on click
     	try {
         	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
