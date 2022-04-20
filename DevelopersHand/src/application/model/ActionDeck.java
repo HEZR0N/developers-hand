@@ -22,6 +22,7 @@ import javafx.scene.paint.Color;
 public class ActionDeck implements Deck {
 
 	private static ArrayList<Card> deckOfCards = new ArrayList<Card>();
+	private static final Color deckColor = Color.DODGERBLUE;
 
 	/**
 	 * @return the deckOfCards
@@ -47,7 +48,15 @@ public class ActionDeck implements Deck {
 	@Override
 	public Card createCard(String cardInfo[]) throws FileNotFoundException {
 		return new ActionCard(cardInfo[0], cardInfo[1],
-				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], Color.DODGERBLUE);
+				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], deckColor);
+	}
+	
+	/**
+	 * @return the deckColor
+	 */
+	@Override
+	public Color getDeckcolor() {
+		return ActionDeck.deckColor;
 	}
 
 }

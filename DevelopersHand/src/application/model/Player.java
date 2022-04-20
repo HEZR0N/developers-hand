@@ -22,8 +22,8 @@ public class Player {
 	private static int git;
 	private static int product;
 	private static int troubleshooting;
+	private static boolean onboarded;
 	private static int sprintNumber;
-	
 	
 	/**
 	 * @return the sprintNumber
@@ -39,6 +39,22 @@ public class Player {
 		Player.sprintNumber = sprintNumber;
 	}
 
+	/**
+	 * @return the name
+	 */
+	public static void clearData() {
+		Player.xp = 0;
+		Player.rp = 0;
+		Player.bugs = 0;
+		Player.coding = 0;
+		Player.documentation = 0;
+		Player.git = 0;
+		Player.product = 0;
+		Player.troubleshooting = 0;
+		Player.onboarded = false;
+		Player.hand.clear();
+	}
+	
 	/**
 	 * @return the name
 	 */
@@ -239,5 +255,21 @@ public class Player {
 			}
 		}
 	}
+
+	/**
+	 * @return the onboarded
+	 */
+	public static boolean isOnboarded() {
+		return onboarded;
+	}
+
+	/**
+	 * @param onboarded the onboarded to set
+	 */
+	public static void setOnboarded(boolean onboarded) {
+		Player.onboarded = onboarded;
+	}
+	
+	
 
 }

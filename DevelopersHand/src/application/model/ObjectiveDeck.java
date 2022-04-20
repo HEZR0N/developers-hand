@@ -23,6 +23,7 @@ import javafx.scene.paint.Color;
 public class ObjectiveDeck implements Deck {
 
 	private static ArrayList<Card> deckOfCards = new ArrayList<Card>();
+	private static final Color deckColor = Color.GOLD;
 
 	/**
 	 * @return the deckOfCards
@@ -48,8 +49,16 @@ public class ObjectiveDeck implements Deck {
 	@Override
 	public Card createCard(String cardInfo[]) throws FileNotFoundException {
 		return new ObjectiveCard(cardInfo[0], cardInfo[1],
-				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], Color.GOLD,
+				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], deckColor,
 				Integer.valueOf(cardInfo[3]), cardInfo[4]);
+	}
+
+	/**
+	 * @return the deckColor
+	 */
+	@Override
+	public Color getDeckcolor() {
+		return ObjectiveDeck.deckColor;
 	}
 
 }
