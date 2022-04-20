@@ -229,7 +229,7 @@ public class Player {
 	 */
 	public static void increaseSprintNumber() {
 		int sprintLength = 3;
-		Player.setSprintNumber((int)Math.ceil(Player.hand.size()/sprintLength));
+		Player.setSprintNumber((int)Math.ceil(Player.hand.size()/sprintLength) + 1);
 	}
 	/*
 	 * This method will take a card description and input the correct amount of experience
