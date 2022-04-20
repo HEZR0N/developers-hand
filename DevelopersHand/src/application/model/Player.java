@@ -206,5 +206,38 @@ public class Player {
 	public static void setTroubleshooting(int troubleshooting) {
 		Player.troubleshooting = troubleshooting;
 	}
+	
+	/**
+	 * This method will take a card description and input the correct amount of experience
+	 * into the correct player field
+	 * @param cardDesc the String description of a card
+	 */
+	public static void addReward(String cardDesc) {
+		String rewardArray[] = cardDesc.split("&");
+
+		for (String reward : rewardArray) {
+			String space[] = reward.split(" ");
+			if (space[0].equalsIgnoreCase("RP")) {
+				rp += Integer.valueOf(space[1]);
+			} else if (!(space[0].equalsIgnoreCase("RP"))) {
+				xp += Integer.valueOf(space[1]);
+				if(space[0].equalsIgnoreCase("Troubleshooting")){
+					troubleshooting += Integer.valueOf(space[1]);
+                }
+                if(space[0].equalsIgnoreCase("Git")){
+                	git += Integer.valueOf(space[1]);
+                }
+                if(space[0].equalsIgnoreCase("Coding")){
+                	coding += Integer.valueOf(space[1]);
+                }
+                if(space[0].equalsIgnoreCase("Documentation")){
+                	documentation += Integer.valueOf(space[1]);
+                }
+                if(space[0].equalsIgnoreCase("Product")){
+                	product += Integer.valueOf(space[1]);
+                }
+			}
+		}
+	}
 
 }
