@@ -225,14 +225,13 @@ public class Player {
 	}
 	
 	/**
-
 	 * Increments spring number depending on amount of cards in hand 
 	 */
 	public static void increaseSprintNumber() {
 		int sprintLength = 3;
 		Player.setSprintNumber((int)Math.ceil(Player.hand.size()/sprintLength));
 	}
-
+	/*
 	 * This method will take a card description and input the correct amount of experience
 	 * into the correct player field
 	 * @param cardDesc the String description of a card
