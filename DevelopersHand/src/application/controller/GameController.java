@@ -218,6 +218,7 @@ public class GameController {
 			actionDeckButton.setVisible(true);
 			Player.setOnboarded(true);
 		}
+		Player.addReward(currentCard.getDescription());
 		displayPlayerStats();
 		System.out.println("Collect Button used");
 		// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose
@@ -375,6 +376,7 @@ public class GameController {
 		} else {
 			setVisibilityForChoosingNewCard();
 		}
+		displayPlayerStats();
 	}
 	/**
 	 * Sets up the UI for the beginning of a game.
