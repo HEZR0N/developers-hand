@@ -208,11 +208,11 @@ public class Player {
 	}
 	
 	/**
-	 * @param cardDesc the String description of a card
 	 * This method will take a card description and input the correct amount of experience
 	 * into the correct player field
+	 * @param cardDesc the String description of a card
 	 */
-	public void addReward(String cardDesc) {
+	public static void addReward(String cardDesc) {
 		String rewardArray[] = cardDesc.split("&");
 
 		for (String reward : rewardArray) {
@@ -222,30 +222,24 @@ public class Player {
                     rp += Integer.valueOf(space[1]); // for negative values
 				} else {
 					rp += Integer.valueOf(space[1]); // for positive values
-					xp += Integer.valueOf(space[1]);
 				}
 			} else if (!(space[0].equalsIgnoreCase("RP"))) {
 				xp += Integer.valueOf(space[1]);
 				if(space[0].equalsIgnoreCase("Troubleshooting")){
 					troubleshooting += Integer.valueOf(space[1]);
-					xp += Integer.valueOf(space[1]);
-                                }
-                                if(space[0].equalsIgnoreCase("Git")){
-                                	git += Integer.valueOf(space[1]);
-                                	xp += Integer.valueOf(space[1]);
-                                }
-                                if(space[0].equalsIgnoreCase("Coding")){
-                                	coding += Integer.valueOf(space[1]);
-                                	xp += Integer.valueOf(space[1]);
-                                }
-                                if(space[0].equalsIgnoreCase("Documentation")){
-                                	documentation += Integer.valueOf(space[1]);
-                                	xp += Integer.valueOf(space[1]);
-                                }
-                                if(space[0].equalsIgnoreCase("Product")){
-                                	product += Integer.valueOf(space[1]);
-                                	xp += Integer.valueOf(space[1]);
-                                }
+                }
+                if(space[0].equalsIgnoreCase("Git")){
+                	git += Integer.valueOf(space[1]);
+                }
+                if(space[0].equalsIgnoreCase("Coding")){
+                	coding += Integer.valueOf(space[1]);
+                }
+                if(space[0].equalsIgnoreCase("Documentation")){
+                	documentation += Integer.valueOf(space[1]);
+                }
+                if(space[0].equalsIgnoreCase("Product")){
+                	product += Integer.valueOf(space[1]);
+                }
 			}
 		}
 	}
