@@ -135,6 +135,7 @@ public class Player {
 	 */
 	public static void addToHand(Card c) {
 		Player.hand.add(c);
+		Player.increaseSprintNumber();
 	}
 
 	/**
@@ -205,6 +206,14 @@ public class Player {
 	 */
 	public static void setTroubleshooting(int troubleshooting) {
 		Player.troubleshooting = troubleshooting;
+	}
+	
+	/**
+	 * Increments spring number depending on amount of cards in hand 
+	 */
+	public static void increaseSprintNumber() {
+		int sprintLength = 3;
+		Player.setSprintNumber((int)Math.ceil(Player.hand.size()/sprintLength));
 	}
 
 }
