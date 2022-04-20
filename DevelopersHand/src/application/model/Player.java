@@ -218,11 +218,7 @@ public class Player {
 		for (String reward : rewardArray) {
 			String space[] = reward.split(" ");
 			if (space[0].equalsIgnoreCase("RP")) {
-				if (space[1].startsWith("-")) {
-                    rp += Integer.valueOf(space[1]); // for negative values
-				} else {
-					rp += Integer.valueOf(space[1]); // for positive values
-				}
+				rp += Integer.valueOf(space[1]); // for positive values
 			} else if (!(space[0].equalsIgnoreCase("RP"))) {
 				xp += Integer.valueOf(space[1]);
 				if(space[0].equalsIgnoreCase("Troubleshooting")){
