@@ -91,6 +91,7 @@ public class PauseMenuController {
         	Scene scene = new Scene(borderPane);
         	scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
         	Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        	stage.setTitle("Developer's Hand");
         	stage.setScene(scene);
         	stage.show();
         	}catch (Exception e) {
