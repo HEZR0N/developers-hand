@@ -89,7 +89,6 @@ public class ObjectiveCard extends Card {
             String space[] = parse.split(" ");
             
             if(stat.equalsIgnoreCase(space[0])){
-                //progress += Integer.valueOf(space[1]);
             	if(stat.equalsIgnoreCase("rp")) {
             		if(!(space[0].startsWith("-"))) {
             			progress += Integer.valueOf(space[1]);
