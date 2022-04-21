@@ -96,6 +96,13 @@ public interface Deck {
 	}
 	
 	/**
+	 * clears the contents of the deck to 0 cards
+	 */
+	default public void clearDeck() {
+		getDeckOfCards().clear();
+	}
+	
+	/**
 	 * @return the deckColor
 	 */
 	public Color getDeckcolor();

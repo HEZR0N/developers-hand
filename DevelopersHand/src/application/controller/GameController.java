@@ -390,6 +390,9 @@ public class GameController {
 				new Image(new FileInputStream("src/images/developers-hand-logo.png")),
 				"It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",
 				Color.SILVER);
+		objectiveDeck.clearDeck();
+		upgradeDeck.clearDeck();
+		actionDeck.clearDeck();
 		objectiveDeck.loadDeck("objectiveDeck.csv");
 		upgradeDeck.loadDeck("upgradeDeck.csv");
 		actionDeck.loadDeck("actionDeck.csv");
