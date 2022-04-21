@@ -104,5 +104,9 @@ public class ObjectiveCard extends Card {
 		}
 
 	}
+	
+	public boolean goalMet() {
+		return progress >= goal;
+	}
 
 }
