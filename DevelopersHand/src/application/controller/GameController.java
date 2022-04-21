@@ -47,9 +47,9 @@ import javafx.stage.Stage;
  */
 public class GameController {
 
-	private ActionDeck actionDeck; // Cards that increase RP (Reputation Points) by a lot, XP by a little
-	private UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
-	private ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
+	private static ActionDeck actionDeck; // Cards that increase RP (Reputation Points) by a lot, XP by a little
+	private static UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
+	private static ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
 	private static Card currentCard;
 	private static Deck currentDeck;
 	private static boolean viewingHand;
