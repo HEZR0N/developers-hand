@@ -51,6 +51,7 @@ public class GameController {
 	private static UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
 	private static ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
 	private static Card currentCard;
+	private static Card currentObjectiveCard;
 	private static Deck currentDeck;
 	private static boolean viewingHand;
 
@@ -218,7 +219,12 @@ public class GameController {
 			actionDeckButton.setVisible(true);
 			Player.setOnboarded(true);
 		}
-		Player.addReward(currentCard.getDescription());
+		if(currentDeck != objectiveDeck) {
+			Player.addReward(currentCard.getDescription());
+		}else {
+			currentObjectiveCard = currentCard;
+			displayObjective();
+		}
 		displayPlayerStats();
 		System.out.println("Collect Button used");
 		// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose
@@ -226,6 +232,10 @@ public class GameController {
 		if (Player.getSprintNumber() > 10 || (Player.getrp() >= 50 && Player.getxp() >= 50)) {
 			displayPlayerResults();
 		}
+	}
+	
+	public void displayObjective() {
+		//objectiveText  = currentObjectiveCard.getStory() + ": " + currentObjectiveCard.getProgress() + "/" + currentObjectiveCard.getGoal(); 
 	}
 
 	/**
