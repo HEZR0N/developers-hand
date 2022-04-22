@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import application.model.ActionDeck;
 import application.model.Card;
 import application.model.Deck;
+import application.model.ObjectiveCard;
 import application.model.ObjectiveDeck;
 import application.model.Player;
 import application.model.UpgradeDeck;
@@ -51,7 +52,7 @@ public class GameController {
 	private static UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
 	private static ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
 	private static Card currentCard;
-	private static Card currentObjectiveCard;
+	private static ObjectiveCard currentObjectiveCard;
 	private static Deck currentDeck;
 	private static boolean viewingHand;
 
@@ -228,7 +229,7 @@ public class GameController {
 		if(currentDeck != objectiveDeck) {
 			Player.addReward(currentCard.getDescription());
 		}else {
-			currentObjectiveCard = currentCard;
+			currentObjectiveCard = (ObjectiveCard) currentCard;
 			displayObjective();
 		}
 		displayPlayerStats();
@@ -241,7 +242,7 @@ public class GameController {
 	}
 	
 	public void displayObjective() {
-		//objectiveText  = currentObjectiveCard.getStory() + ": " + currentObjectiveCard.getProgress() + "/" + currentObjectiveCard.getGoal(); 
+		objectiveText.setText(currentObjectiveCard.getStory() + ": " + currentObjectiveCard.getProgress() + "/" + currentObjectiveCard.getGoal()); 
 	}
 
 	/**
