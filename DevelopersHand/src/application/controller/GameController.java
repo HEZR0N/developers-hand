@@ -147,6 +147,12 @@ public class GameController {
 
 	@FXML
 	private Text sprintNumberText;
+	
+	@FXML
+    	private Label objectiveLabel;
+	
+	@FXML
+	private Text objectiveText;
 
 	@FXML
 	private Button collectButton;
