@@ -1,8 +1,5 @@
 package application.model;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
