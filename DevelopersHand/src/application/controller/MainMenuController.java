@@ -18,6 +18,14 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+ * The MainMenuController class has BorderPane, and Buttons fields. 
+ * It has methods goPlay, goAbout, and goRules.
+ * This controller handles events on the Main menu screen (ie MainMenu.fxml).
+ * 
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
+ *         Valenciana
+ */
 public class MainMenuController {
 
     @FXML
@@ -32,6 +40,10 @@ public class MainMenuController {
     @FXML
     private Button buttonRules;
 
+    /**
+     * Changes the scene to Configure.fxml
+     * @param event
+     */
     @FXML
     void goPlay(ActionEvent event) {
     	try {
@@ -47,6 +59,11 @@ public class MainMenuController {
     	}
     }
 
+    /**
+     * Pop ups a window About which gives information about game
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void goAbout(ActionEvent event) throws IOException {
     	URL url = new File("src/About.fxml").toURI().toURL();
@@ -61,6 +78,11 @@ public class MainMenuController {
     	stage.show();
     }
 
+    /**
+     * Pop ups a window Rule which shows the rules of game
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void goRules(ActionEvent event) throws IOException {
     	URL url = new File("src/Rules.fxml").toURI().toURL();
