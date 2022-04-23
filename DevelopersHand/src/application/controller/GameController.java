@@ -228,6 +228,15 @@ public class GameController {
 		}
 		if(currentDeck != objectiveDeck) {
 			Player.addReward(currentCard.getDescription());
+			if(currentObjectiveCard != null) {
+				currentObjectiveCard.updateProgress(currentCard.getDescription());
+				displayObjective();
+				if(currentObjectiveCard.goalMet()) {
+					Player.addReward(currentObjectiveCard.getDescription());
+					clearObjective();
+					currentObjectiveCard = null;
+				}
+			}
 		}else {
 			currentObjectiveCard = (ObjectiveCard) currentCard;
 			displayObjective();
@@ -241,8 +250,18 @@ public class GameController {
 		}
 	}
 	
+	/**
+	 * displays the objective
+	 */
 	public void displayObjective() {
-		objectiveText.setText(currentObjectiveCard.getStory() + ": " + currentObjectiveCard.getProgress() + "/" + currentObjectiveCard.getGoal()); 
+		objectiveText.setText(currentObjectiveCard.getStory() + ": " + currentObjectiveCard.getProgress() + "/" + currentObjectiveCard.getGoal() + " " + currentObjectiveCard.getStat()); 
+	}
+	
+	/**
+	 * clears the objective
+	 */
+	public void clearObjective() {
+		objectiveText.setText("Completed. Earned " + currentObjectiveCard.getReward());
 	}
 
 	/**
@@ -388,6 +407,9 @@ public class GameController {
 		if (!Player.isOnboarded()) {
 			onboardPlayer();
 		}
+		if(currentObjectiveCard != null) {
+			displayObjective();
+		}
 		if (viewingHand) {
 			setVisibilityForViewingHand();
 		} else {
@@ -407,6 +429,7 @@ public class GameController {
 				new Image(new FileInputStream("src/images/developers-hand-logo.png")),
 				"It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",
 				Color.SILVER);
+		currentObjectiveCard = null;
 		objectiveDeck.clearDeck();
 		upgradeDeck.clearDeck();
 		actionDeck.clearDeck();

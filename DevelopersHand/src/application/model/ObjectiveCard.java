@@ -59,21 +59,21 @@ public class ObjectiveCard extends Card {
 	/**
 	 * @param progress the progress to set
 	 */
-	private void setProgress(int progress) {
+	public void setProgress(int progress) {
 		this.progress = progress;
 	}
 
 	/**
 	 * @return the stat
 	 */
-	private String getStat() {
+	public String getStat() {
 		return stat;
 	}
 
 	/**
 	 * @param stat the stat to set
 	 */
-	private void setStat(String stat) {
+	public void setStat(String stat) {
 		this.stat = stat;
 	}
 
