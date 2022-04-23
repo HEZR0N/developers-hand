@@ -38,7 +38,7 @@ public class ObjectiveCard extends Card {
 	/**
 	 * @return the goal
 	 */
-	private int getGoal() {
+	public int getGoal() {
 		return goal;
 	}
 
@@ -52,7 +52,7 @@ public class ObjectiveCard extends Card {
 	/**
 	 * @return the progress
 	 */
-	private int getProgress() {
+	public int getProgress() {
 		return progress;
 	}
 
@@ -66,7 +66,7 @@ public class ObjectiveCard extends Card {
 	/**
 	 * @return the stat
 	 */
-	private String getStat() {
+	public String getStat() {
 		return stat;
 	}
 

@@ -11,6 +11,7 @@ import application.model.ActionDeck;
 import application.model.Card;
 import application.model.Deck;
 import application.model.Game;
+import application.model.ObjectiveCard;
 import application.model.ObjectiveDeck;
 import application.model.Player;
 import application.model.UpgradeDeck;
@@ -220,7 +221,21 @@ public class GameController {
 			actionDeckButton.setVisible(true);
 			Player.setOnboarded(true);
 		}
-		Player.addReward(devHand.getCurrentCard().getDescription());
+		if(devHand.getCurrentDeck() != devHand.getObjectiveDeck()) {
+			Player.addReward(devHand.getCurrentCard().getDescription());
+			if(devHand.getCurrentObjectiveCard() != null) {
+				devHand.getCurrentObjectiveCard().updateProgress(devHand.getCurrentCard().getDescription());
+				displayObjective();
+				if(devHand.getCurrentObjectiveCard().goalMet()) {
+					Player.addReward(devHand.getCurrentObjectiveCard().getDescription());
+					clearObjective();
+					devHand.setCurrentObjectiveCard(null);
+				}
+			}
+		}else {
+			devHand.setCurrentObjectiveCard((ObjectiveCard)devHand.getCurrentCard());
+			displayObjective();
+		}
 		displayPlayerStats();
 		System.out.println("Collect Button used");
 		// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose
@@ -229,6 +244,21 @@ public class GameController {
 			displayPlayerResults();
 		}
 	}
+	
+	/**
+	 * displays the objective
+	 */
+	public void displayObjective() {
+		objectiveText.setText(devHand.getCurrentObjectiveCard().getStory() + ": " + devHand.getCurrentObjectiveCard().getProgress() + "/" + devHand.getCurrentObjectiveCard().getGoal() + " " + devHand.getCurrentObjectiveCard().getStat()); 
+	}
+	
+	/**
+	 * clears the objective
+	 */
+	public void clearObjective() {
+		objectiveText.setText("Completed. Earned " + devHand.getCurrentObjectiveCard().getReward());
+	}
+
 
 	/**
 	 * Sets the actionDeck to upgradeDeck and calls setVisibilityForChoosingNewCard()
@@ -370,6 +400,9 @@ public class GameController {
 		if (!Player.isOnboarded()) {
 			onboardPlayer();
 		}
+		if(devHand.getCurrentObjectiveCard() != null) {
+			displayObjective();
+		}
 		if (devHand.isViewingHand()) {
 			setVisibilityForViewingHand();
 		} else {
@@ -389,6 +422,7 @@ public class GameController {
 				new Image(new FileInputStream("src/images/developers-hand-logo.png")),
 				"It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",
 				Color.SILVER));
+		devHand.setCurrentObjectiveCard(null);
 		devHand.getObjectiveDeck().clearDeck();
 		devHand.getUpgradeDeck().clearDeck();
 		devHand.getActionDeck().clearDeck();

@@ -14,6 +14,7 @@ public class Game {
 	private static UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
 	private static ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
 	private static Card currentCard;
+	private static ObjectiveCard currentObjectiveCard;
 	private static Deck currentDeck;
 	private static boolean viewingHand;
 
@@ -82,6 +83,20 @@ public class Game {
 	 */
 	public static void setCurrentCard(Card currentCard) {
 		Game.currentCard = currentCard;
+	}
+
+	/**
+	 * @return the currentObjectiveCard
+	 */
+	public static ObjectiveCard getCurrentObjectiveCard() {
+		return currentObjectiveCard;
+	}
+
+	/**
+	 * @param currentObjectiveCard the currentObjectiveCard to set
+	 */
+	public static void setCurrentObjectiveCard(ObjectiveCard currentObjectiveCard) {
+		Game.currentObjectiveCard = currentObjectiveCard;
 	}
 
 	/**
