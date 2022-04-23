@@ -50,7 +50,7 @@ import javafx.stage.Stage;
 public class GameController {
 
 	
-	private static Game devHand = new Game();
+	private static Game dev;
 
 
 	@FXML
@@ -179,7 +179,7 @@ public class GameController {
 	 */
 	@FXML
 	void nextButtonPressed(ActionEvent event) {
-		devHand.setCurrentCard(Player.getHand().get(Player.getHand().indexOf(devHand.getCurrentCard()) + 1));
+		Game.setCurrentCard(Player.getHand().get(Player.getHand().indexOf(Game.getCurrentCard()) + 1));
 		setVisibilityForViewingHand();
 	}
 
@@ -188,7 +188,7 @@ public class GameController {
 	 */
 	@FXML
 	void previousButtonPressed(ActionEvent event) {
-		devHand.setCurrentCard(Player.getHand().get(Player.getHand().indexOf(devHand.getCurrentCard()) - 1));
+		Game.setCurrentCard(Player.getHand().get(Player.getHand().indexOf(Game.getCurrentCard()) - 1));
 		setVisibilityForViewingHand();
 	}
 
@@ -205,7 +205,7 @@ public class GameController {
 	 */
 	@FXML
 	void developButtonPressed(ActionEvent event) {
-		Player.addToHand(devHand.getCurrentCard()); // Should have checked if card can be developed;
+		Player.addToHand(Game.getCurrentCard()); // Should have checked if card can be developed;
 		developButton.setVisible(false);
 	}
 
@@ -214,8 +214,8 @@ public class GameController {
 	 */
 	@FXML
 	void collectButtonPressed(ActionEvent event) throws IOException {
-		devHand.setCurrentCard(devHand.getCurrentDeck().removeCard());
-		Player.addToHand(devHand.getCurrentCard()); // Should have checked if card can be developed
+		Game.setCurrentCard(Game.getCurrentDeck().removeCard());
+		Player.addToHand(Game.getCurrentCard()); // Should have checked if card can be developed
 		setVisibilityForViewingHand();
 		if (!Player.isOnboarded()) {
 			objectiveDeckButton.setVisible(true);
@@ -223,19 +223,19 @@ public class GameController {
 			actionDeckButton.setVisible(true);
 			Player.setOnboarded(true);
 		}
-		if(devHand.getCurrentDeck() != devHand.getObjectiveDeck()) {
-			Player.addReward(devHand.getCurrentCard().getDescription());
-			if(devHand.getCurrentObjectiveCard() != null) {
-				devHand.getCurrentObjectiveCard().updateProgress(devHand.getCurrentCard().getDescription());
+		if(Game.getCurrentDeck() != Game.getObjectiveDeck()) {
+			Player.addReward(Game.getCurrentCard().getDescription());
+			if(Game.getCurrentObjectiveCard() != null) {
+				Game.getCurrentObjectiveCard().updateProgress(Game.getCurrentCard().getDescription());
 				displayObjective();
-				if(devHand.getCurrentObjectiveCard().goalMet()) {
-					Player.addReward(devHand.getCurrentObjectiveCard().getDescription());
+				if(Game.getCurrentObjectiveCard().goalMet()) {
+					Player.addReward(Game.getCurrentObjectiveCard().getDescription());
 					clearObjective();
-					devHand.setCurrentObjectiveCard(null);
+					Game.setCurrentObjectiveCard(null);
 				}
 			}
 		}else {
-			devHand.setCurrentObjectiveCard((ObjectiveCard)devHand.getCurrentCard());
+			Game.setCurrentObjectiveCard((ObjectiveCard)Game.getCurrentCard());
 			displayObjective();
 		}
 		displayPlayerStats();
@@ -251,7 +251,7 @@ public class GameController {
 	 * displays the objective
 	 */
 	public void displayObjective() {
-		objectiveText.setText(devHand.getCurrentObjectiveCard().getStory() + ": " + devHand.getCurrentObjectiveCard().getProgress() + "/" + devHand.getCurrentObjectiveCard().getGoal() + " " + devHand.getCurrentObjectiveCard().getStat()); 
+		objectiveText.setText(Game.getCurrentObjectiveCard().getStory() + ": " + Game.getCurrentObjectiveCard().getProgress() + "/" + Game.getCurrentObjectiveCard().getGoal() + " " + Game.getCurrentObjectiveCard().getStat()); 
 
 	}
 	
@@ -259,7 +259,7 @@ public class GameController {
 	 * clears the objective
 	 */
 	public void clearObjective() {
-		objectiveText.setText("Completed. Earned " + devHand.getCurrentObjectiveCard().getReward());
+		objectiveText.setText("Completed. Earned " + Game.getCurrentObjectiveCard().getReward());
 	}
 
 
@@ -269,7 +269,7 @@ public class GameController {
 	 */
 	@FXML
 	void drawFromActionDeck(ActionEvent event) {
-		devHand.setCurrentDeck(devHand.getActionDeck());
+		Game.setCurrentDeck(Game.getActionDeck());
 		setVisibilityForChoosingNewCard();
 	}
 
@@ -278,7 +278,7 @@ public class GameController {
 	 */
 	@FXML
 	void drawFromObjectiveDeck(ActionEvent event) {
-		devHand.setCurrentDeck(devHand.getObjectiveDeck());
+		Game.setCurrentDeck(Game.getObjectiveDeck());
 		setVisibilityForChoosingNewCard();
 	}
 	
@@ -287,7 +287,7 @@ public class GameController {
 	 */
 	@FXML
 	void drawFromUpgradeDeck(ActionEvent event) {
-		devHand.setCurrentDeck(devHand.getUpgradeDeck());
+		Game.setCurrentDeck(Game.getUpgradeDeck());
 		setVisibilityForChoosingNewCard();
 	}
 
@@ -295,30 +295,30 @@ public class GameController {
 	 * Displays the front of a card
 	 */
 	void displayCard() {
-		cardRectangle.setFill(devHand.getCurrentCard().getColor());
-		titleText.setText(devHand.getCurrentCard().getName());
-		storyText.setText(devHand.getCurrentCard().getStory());
-		descriptionText.setText(devHand.getCurrentCard().getReward());
-		cardImage.setImage(devHand.getCurrentCard().getPicture());
+		cardRectangle.setFill(Game.getCurrentCard().getColor());
+		titleText.setText(Game.getCurrentCard().getName());
+		storyText.setText(Game.getCurrentCard().getStory());
+		descriptionText.setText(Game.getCurrentCard().getReward());
+		cardImage.setImage(Game.getCurrentCard().getPicture());
 	}
 
 	/**
 	 * Displays the back of a card
 	 */
 	void displayBackOfCard() {
-		cardRectangle.setFill(devHand.getCurrentDeck().getDeckcolor());
+		cardRectangle.setFill(Game.getCurrentDeck().getDeckcolor());
 		titleText.setText("");
 		storyText.setText("");
 		descriptionText.setText("");
-		cardImage.setImage(devHand.getCurrentCard().getPicture());
+		cardImage.setImage(Game.getCurrentDeck().getDeckOfCards().get(0).getPicture());
 	}
 	
 	/**
 	 * Sets up UI for viewing a card that has already been selected
 	 */
 	void setVisibilityForViewingHand() {
-		devHand.setViewingHand(true);
-		int currentCardIndex = Player.getHand().indexOf(devHand.getCurrentCard());
+		Game.setViewingHand(true);
+		int currentCardIndex = Player.getHand().indexOf(Game.getCurrentCard());
 		viewHandButton.setVisible(false);
 		nextButton.setVisible(false);
 		previousButton.setVisible(false);
@@ -337,7 +337,7 @@ public class GameController {
 	 * Sets up UI for choosing a new card from a Deck
 	 */
 	void setVisibilityForChoosingNewCard() {
-		devHand.setViewingHand(false);
+		Game.setViewingHand(false);
 		displayBackOfCard();
 		previousButton.setVisible(false);
 		nextButton.setVisible(false);
@@ -401,14 +401,15 @@ public class GameController {
 		nameLabel.setText(Player.getName());
 		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
+		dev = new Game();
 		if (!Player.isOnboarded()) {
 			onboardPlayer();
 		}
 
-		if(devHand.getCurrentObjectiveCard() != null) {
+		if(Game.getCurrentObjectiveCard() != null) {
 			displayObjective();
 		}
-		if (devHand.isViewingHand()) {
+		if (Game.isViewingHand()) {
 
 			setVisibilityForViewingHand();
 		} else {
@@ -424,22 +425,22 @@ public class GameController {
 		upgradeDeckButton.setVisible(false);
 		actionDeckButton.setVisible(false);
 		Player.setSprintNumber(1);
-		devHand.setCurrentCard(new Card("Onboarding", "RP 1",
+		Game.setCurrentCard(new Card("Onboarding", "RP 1",
 				new Image("application/view/developers-hand-logo.png"),
 				"It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",
 				Color.SILVER));
-		devHand.setCurrentObjectiveCard(null);
-		devHand.getObjectiveDeck().clearDeck();
-		devHand.getUpgradeDeck().clearDeck();
-		devHand.getActionDeck().clearDeck();
-		devHand.getObjectiveDeck().loadDeck("objectiveDeck.csv");
-		devHand.getUpgradeDeck().loadDeck("upgradeDeck.csv");
-		devHand.getActionDeck().loadDeck("actionDeck.csv");
-		devHand.setCurrentDeck(devHand.getActionDeck());
-		devHand.getActionDeck().addCard(devHand.getCurrentCard());
+		Game.setCurrentObjectiveCard(null);
+		Game.getObjectiveDeck().clearDeck();
+		Game.getUpgradeDeck().clearDeck();
+		Game.getActionDeck().clearDeck();
+		Game.getObjectiveDeck().loadDeck("objectiveDeck.csv");
+		Game.getUpgradeDeck().loadDeck("upgradeDeck.csv");
+		Game.getActionDeck().loadDeck("actionDeck.csv");
+		Game.setCurrentDeck(Game.getActionDeck());
+		Game.getActionDeck().addCard(Game.getCurrentCard());
 
 		setVisibilityForViewingHand();
-		devHand.setViewingHand(false);
+		Game.setViewingHand(false);
 	}
 
 }
