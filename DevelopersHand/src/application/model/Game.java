@@ -19,7 +19,7 @@ public class Game {
 	private static boolean viewingHand;
 
 	/**
-	 * 
+	 * The game constructor/initializer
 	 */
 	public Game() {
 		
