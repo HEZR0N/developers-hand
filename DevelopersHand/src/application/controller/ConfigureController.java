@@ -41,7 +41,9 @@ public class ConfigureController {
    private Label nullName;
 
    @FXML
-    // takes player to intro page asking for players name and displaying it to the Main Game Screen
+   /**
+    * Saves the player's name and takes the player to the Main Game Screen
+    */
    void goGame(ActionEvent event) {
    	try {
    		Player.setName(playerName.getText().trim());
@@ -63,7 +65,9 @@ public class ConfigureController {
    	}
    }
     @FXML
-    // takes player to main menu upon button press
+    /*
+     * Takes player to main menu upon button press
+     */
     void goMain(ActionEvent event) {
     	try {
         	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
