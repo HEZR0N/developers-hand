@@ -398,6 +398,7 @@ public class GameController {
 	 * Initializes Deck objects and calls onboardPlayer() if necessary.
 	 */
 	public void initialize() throws IOException {
+		viewDictionaryButton.setVisible(false);
 		nameLabel.setText(Player.getName());
 		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
