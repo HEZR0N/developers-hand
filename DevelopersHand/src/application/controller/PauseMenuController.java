@@ -17,6 +17,14 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+ * The PauseMenuController class has BorderPane, and Buttons fields. 
+ * It has methods goResume, goAbout, goRules, and quitGame.
+ * This controller handles events on the Pause menu screen (ie PauseMenu.fxml).
+ * 
+ * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
+ *         Valenciana
+ */
 public class PauseMenuController {
 
     @FXML
@@ -34,6 +42,10 @@ public class PauseMenuController {
     @FXML
     private Button buttonQuitGame;
  
+    /**
+     * Changes the scene back to Game.fxml (resumes game)
+     * @param event
+     */
     @FXML
     void goResume(ActionEvent event) {
     	// When clicked loads game scene back
@@ -51,6 +63,11 @@ public class PauseMenuController {
         	}
     }
 
+    /**
+     * Pop ups a window About which gives information about game
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void goAbout(ActionEvent event) throws IOException {
     	// Loads about scene on click
@@ -66,6 +83,11 @@ public class PauseMenuController {
     	stage.show();
     }
 
+    /**
+     * Pop ups a window Rule which shows the rules of game
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void goRules(ActionEvent event) throws IOException {
     	// Loads rules scene on click
@@ -81,6 +103,10 @@ public class PauseMenuController {
     	stage.show();
     }
     
+    /**
+     * Quits the current game and changes scene to MainMenu.fxml
+     * @param event
+     */
     @FXML
     void quitGame(ActionEvent event) {
     	Player.clearData();
