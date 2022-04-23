@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import application.model.ActionDeck;
 import application.model.Card;
 import application.model.Deck;
+import application.model.ObjectiveCard;
 import application.model.ObjectiveDeck;
 import application.model.Player;
 import application.model.UpgradeDeck;
@@ -51,6 +52,7 @@ public class GameController {
 	private static UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
 	private static ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
 	private static Card currentCard;
+	private static ObjectiveCard currentObjectiveCard;
 	private static Deck currentDeck;
 	private static boolean viewingHand;
 
@@ -224,7 +226,21 @@ public class GameController {
 			actionDeckButton.setVisible(true);
 			Player.setOnboarded(true);
 		}
-		Player.addReward(currentCard.getDescription());
+		if(currentDeck != objectiveDeck) {
+			Player.addReward(currentCard.getDescription());
+			if(currentObjectiveCard != null) {
+				currentObjectiveCard.updateProgress(currentCard.getDescription());
+				displayObjective();
+				if(currentObjectiveCard.goalMet()) {
+					Player.addReward(currentObjectiveCard.getDescription());
+					clearObjective();
+					currentObjectiveCard = null;
+				}
+			}
+		}else {
+			currentObjectiveCard = (ObjectiveCard) currentCard;
+			displayObjective();
+		}
 		displayPlayerStats();
 		System.out.println("Collect Button used");
 		// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose
@@ -232,6 +248,20 @@ public class GameController {
 		if (Player.getSprintNumber() > 10 || (Player.getrp() >= 50 && Player.getxp() >= 50)) {
 			displayPlayerResults();
 		}
+	}
+	
+	/**
+	 * displays the objective
+	 */
+	public void displayObjective() {
+		objectiveText.setText(currentObjectiveCard.getStory() + ": " + currentObjectiveCard.getProgress() + "/" + currentObjectiveCard.getGoal() + " " + currentObjectiveCard.getStat()); 
+	}
+	
+	/**
+	 * clears the objective
+	 */
+	public void clearObjective() {
+		objectiveText.setText("Completed. Earned " + currentObjectiveCard.getReward());
 	}
 
 	/**
@@ -377,6 +407,9 @@ public class GameController {
 		if (!Player.isOnboarded()) {
 			onboardPlayer();
 		}
+		if(currentObjectiveCard != null) {
+			displayObjective();
+		}
 		if (viewingHand) {
 			setVisibilityForViewingHand();
 		} else {
@@ -396,6 +429,7 @@ public class GameController {
 				new Image(new FileInputStream("src/images/developers-hand-logo.png")),
 				"It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",
 				Color.SILVER);
+		currentObjectiveCard = null;
 		objectiveDeck.clearDeck();
 		upgradeDeck.clearDeck();
 		actionDeck.clearDeck();
