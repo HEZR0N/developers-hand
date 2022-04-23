@@ -48,8 +48,10 @@ import javafx.stage.Stage;
  *         Valenciana
  */
 public class GameController {
+
 	
 	private static Game devHand = new Game();
+
 
 	@FXML
 	private BorderPane borderPane;
@@ -250,6 +252,7 @@ public class GameController {
 	 */
 	public void displayObjective() {
 		objectiveText.setText(devHand.getCurrentObjectiveCard().getStory() + ": " + devHand.getCurrentObjectiveCard().getProgress() + "/" + devHand.getCurrentObjectiveCard().getGoal() + " " + devHand.getCurrentObjectiveCard().getStat()); 
+
 	}
 	
 	/**
@@ -258,6 +261,7 @@ public class GameController {
 	public void clearObjective() {
 		objectiveText.setText("Completed. Earned " + devHand.getCurrentObjectiveCard().getReward());
 	}
+
 
 
 	/**
@@ -400,10 +404,12 @@ public class GameController {
 		if (!Player.isOnboarded()) {
 			onboardPlayer();
 		}
+
 		if(devHand.getCurrentObjectiveCard() != null) {
 			displayObjective();
 		}
 		if (devHand.isViewingHand()) {
+
 			setVisibilityForViewingHand();
 		} else {
 			setVisibilityForChoosingNewCard();
@@ -431,6 +437,7 @@ public class GameController {
 		devHand.getActionDeck().loadDeck("actionDeck.csv");
 		devHand.setCurrentDeck(devHand.getActionDeck());
 		devHand.getActionDeck().addCard(devHand.getCurrentCard());
+
 		setVisibilityForViewingHand();
 		devHand.setViewingHand(false);
 	}

@@ -20,20 +20,26 @@
 	-fx-padding:15.0px ;
 }
 
-#mainBackground {
+#mainBackground, #aboutBackground, #pauseBackground, #rulesBackground, #nameBackground {
 	-fx-background-color: #343434 ;
 }
 
-#aboutBackground {
-	-fx-background-color: #343434 ;
+#buttonStart, #buttonBack {
+	-fx-font-family: "Brittanic Bold";
+	-fx-background-radius: 12px;
+	-fx-font-size: 20px;
+	-fx-background-color: #2B2D2C;
+	-fx-text-fill: #858A87;
 }
 
-#pauseBackground {
-	-fx-background-color: #343434 ;
-}
-
-#rulesBackground {
-	-fx-background-color: #343434 ;
+#buttonStart:hover, #buttonBack:hover {
+	-fx-font-family: "Brittanic Bold";
+	-fx-background-radius: 12px;
+	-fx-font-size: 20px;
+	-fx-background-color: #2B2D2C;
+	-fx-text-fill: #00EC10;
+	-fx-border-color: #00EC10;
+	-fx-border-radius: 12px;
 }
 
 #gameBackground {
@@ -54,7 +60,7 @@
 }
 
 #button {
-	-fx-background-color: #2B2D2C ;
+	-fx-background-color: #2B2D2C;
 	-fx-text-fill: #858A87;
 	-fx-font-family: "Brittanic Bold";
 	-fx-background-radius: 12px;
@@ -140,6 +146,12 @@
 
 .centered-text-area .text {
   -fx-text-alignment: center;
+}
+
+#nameTitle{
+	-fx-text-fill: #2CFF2C;
+	-fx-font-family: "Brittanic Bold";
+	-fx-font-size: 32px;
 }
 
 .root{
