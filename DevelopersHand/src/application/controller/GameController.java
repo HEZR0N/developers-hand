@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import application.model.ActionDeck;
 import application.model.Card;
 import application.model.Deck;
+import application.model.Game;
 import application.model.ObjectiveDeck;
 import application.model.Player;
 import application.model.UpgradeDeck;
@@ -46,13 +47,8 @@ import javafx.stage.Stage;
  *         Valenciana
  */
 public class GameController {
-
-	private static ActionDeck actionDeck; // Cards that increase RP (Reputation Points) by a lot, XP by a little
-	private static UpgradeDeck upgradeDeck; // Cards that increase XP by a lot
-	private static ObjectiveDeck objectiveDeck; // Cards that increase RP by a lot
-	private static Card currentCard;
-	private static Deck currentDeck;
-	private static boolean viewingHand;
+	
+	private static Game devHand = new Game();
 
 	@FXML
 	private BorderPane borderPane;
@@ -180,7 +176,7 @@ public class GameController {
 	 */
 	@FXML
 	void nextButtonPressed(ActionEvent event) {
-		currentCard = Player.getHand().get(Player.getHand().indexOf(currentCard) + 1);
+		devHand.setCurrentCard(Player.getHand().get(Player.getHand().indexOf(devHand.getCurrentCard()) + 1));
 		setVisibilityForViewingHand();
 	}
 
@@ -189,7 +185,7 @@ public class GameController {
 	 */
 	@FXML
 	void previousButtonPressed(ActionEvent event) {
-		currentCard = Player.getHand().get(Player.getHand().indexOf(currentCard) - 1);
+		devHand.setCurrentCard(Player.getHand().get(Player.getHand().indexOf(devHand.getCurrentCard()) - 1));
 		setVisibilityForViewingHand();
 	}
 
@@ -206,7 +202,7 @@ public class GameController {
 	 */
 	@FXML
 	void developButtonPressed(ActionEvent event) {
-		Player.addToHand(currentCard); // Should have checked if card can be developed;
+		Player.addToHand(devHand.getCurrentCard()); // Should have checked if card can be developed;
 		developButton.setVisible(false);
 	}
 
@@ -215,8 +211,8 @@ public class GameController {
 	 */
 	@FXML
 	void collectButtonPressed(ActionEvent event) throws IOException {
-		currentCard = currentDeck.removeCard();
-		Player.addToHand(currentCard); // Should have checked if card can be developed
+		devHand.setCurrentCard(devHand.getCurrentDeck().removeCard());
+		Player.addToHand(devHand.getCurrentCard()); // Should have checked if card can be developed
 		setVisibilityForViewingHand();
 		if (!Player.isOnboarded()) {
 			objectiveDeckButton.setVisible(true);
@@ -224,7 +220,7 @@ public class GameController {
 			actionDeckButton.setVisible(true);
 			Player.setOnboarded(true);
 		}
-		Player.addReward(currentCard.getDescription());
+		Player.addReward(devHand.getCurrentCard().getDescription());
 		displayPlayerStats();
 		System.out.println("Collect Button used");
 		// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose
@@ -239,7 +235,7 @@ public class GameController {
 	 */
 	@FXML
 	void drawFromActionDeck(ActionEvent event) {
-		currentDeck = actionDeck;
+		devHand.setCurrentDeck(devHand.getActionDeck());
 		setVisibilityForChoosingNewCard();
 	}
 
@@ -248,7 +244,7 @@ public class GameController {
 	 */
 	@FXML
 	void drawFromObjectiveDeck(ActionEvent event) {
-		currentDeck = objectiveDeck;
+		devHand.setCurrentDeck(devHand.getObjectiveDeck());
 		setVisibilityForChoosingNewCard();
 	}
 	
@@ -257,7 +253,7 @@ public class GameController {
 	 */
 	@FXML
 	void drawFromUpgradeDeck(ActionEvent event) {
-		currentDeck = upgradeDeck;
+		devHand.setCurrentDeck(devHand.getUpgradeDeck());
 		setVisibilityForChoosingNewCard();
 	}
 
@@ -265,30 +261,30 @@ public class GameController {
 	 * Displays the front of a card
 	 */
 	void displayCard() {
-		cardRectangle.setFill(currentCard.getColor());
-		titleText.setText(currentCard.getName());
-		storyText.setText(currentCard.getStory());
-		descriptionText.setText(currentCard.getReward());
-		cardImage.setImage(currentCard.getPicture());
+		cardRectangle.setFill(devHand.getCurrentCard().getColor());
+		titleText.setText(devHand.getCurrentCard().getName());
+		storyText.setText(devHand.getCurrentCard().getStory());
+		descriptionText.setText(devHand.getCurrentCard().getReward());
+		cardImage.setImage(devHand.getCurrentCard().getPicture());
 	}
 
 	/**
 	 * Displays the back of a card
 	 */
 	void displayBackOfCard() {
-		cardRectangle.setFill(currentDeck.getDeckcolor());
+		cardRectangle.setFill(devHand.getCurrentDeck().getDeckcolor());
 		titleText.setText("");
 		storyText.setText("");
 		descriptionText.setText("");
-		cardImage.setImage(currentCard.getPicture());
+		cardImage.setImage(devHand.getCurrentCard().getPicture());
 	}
 	
 	/**
 	 * Sets up UI for viewing a card that has already been selected
 	 */
 	void setVisibilityForViewingHand() {
-		viewingHand = true;
-		int currentCardIndex = Player.getHand().indexOf(currentCard);
+		devHand.setViewingHand(true);
+		int currentCardIndex = Player.getHand().indexOf(devHand.getCurrentCard());
 		viewHandButton.setVisible(false);
 		nextButton.setVisible(false);
 		previousButton.setVisible(false);
@@ -307,7 +303,7 @@ public class GameController {
 	 * Sets up UI for choosing a new card from a Deck
 	 */
 	void setVisibilityForChoosingNewCard() {
-		viewingHand = false;
+		devHand.setViewingHand(false);
 		displayBackOfCard();
 		previousButton.setVisible(false);
 		nextButton.setVisible(false);
@@ -371,13 +367,10 @@ public class GameController {
 		nameLabel.setText(Player.getName());
 		sprintNumberText.setText("" + Player.getSprintNumber());
 		developButton.setVisible(false);
-		objectiveDeck = new ObjectiveDeck();
-		actionDeck = new ActionDeck();
-		upgradeDeck = new UpgradeDeck();
 		if (!Player.isOnboarded()) {
 			onboardPlayer();
 		}
-		if (viewingHand) {
+		if (devHand.isViewingHand()) {
 			setVisibilityForViewingHand();
 		} else {
 			setVisibilityForChoosingNewCard();
@@ -392,20 +385,20 @@ public class GameController {
 		upgradeDeckButton.setVisible(false);
 		actionDeckButton.setVisible(false);
 		Player.setSprintNumber(1);
-		currentCard = new Card("Onboarding", "RP 1",
+		devHand.setCurrentCard(new Card("Onboarding", "RP 1",
 				new Image(new FileInputStream("src/images/developers-hand-logo.png")),
 				"It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",
-				Color.SILVER);
-		objectiveDeck.clearDeck();
-		upgradeDeck.clearDeck();
-		actionDeck.clearDeck();
-		objectiveDeck.loadDeck("objectiveDeck.csv");
-		upgradeDeck.loadDeck("upgradeDeck.csv");
-		actionDeck.loadDeck("actionDeck.csv");
-		currentDeck = actionDeck;
-		actionDeck.addCard(currentCard);
+				Color.SILVER));
+		devHand.getObjectiveDeck().clearDeck();
+		devHand.getUpgradeDeck().clearDeck();
+		devHand.getActionDeck().clearDeck();
+		devHand.getObjectiveDeck().loadDeck("objectiveDeck.csv");
+		devHand.getUpgradeDeck().loadDeck("upgradeDeck.csv");
+		devHand.getActionDeck().loadDeck("actionDeck.csv");
+		devHand.setCurrentDeck(devHand.getActionDeck());
+		devHand.getActionDeck().addCard(devHand.getCurrentCard());
 		setVisibilityForViewingHand();
-		viewingHand = false;
+		devHand.setViewingHand(false);
 	}
 
 }
