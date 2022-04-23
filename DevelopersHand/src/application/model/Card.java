@@ -109,8 +109,9 @@ public class Card {
 	}
 
 	/**
-	 * @return the reward message This method parses a card's description into a
+	 * This method parses a card's description into a
 	 *         more suitable reward format
+	 * @return the reward message 
 	 */
 	public String getReward() {
 		String rewardFinal = "";

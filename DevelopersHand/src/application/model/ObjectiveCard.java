@@ -78,8 +78,9 @@ public class ObjectiveCard extends Card {
 	}
 
 	/**
-	 * @param cardDesc This method parses a card description and increases/decreases
+	 * This method parses a card description and increases/decreases
 	 *                 if this.stat is in the description
+	 * @param cardDesc 
 	 */
 	public void updateProgress(String cardDesc) {
 
