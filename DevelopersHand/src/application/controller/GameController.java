@@ -171,7 +171,7 @@ public class GameController {
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		Scene scene = new Scene(borderPane);
 		stage.setTitle("Developer's Hand - Pause");
-		Image logo = new Image("images/developers-hand-logo.png");
+		Image logo = new Image("application/view/developers-hand-logo.png");
 		stage.getIcons().add(logo);
 		stage.setScene(scene);
 		stage.show();
@@ -371,7 +371,7 @@ public class GameController {
 
 		Stage stage = (Stage) borderPane.getScene().getWindow();
 		Scene scene = new Scene(root);
-		Image logo = new Image("images/developers-hand-logo.png");
+		Image logo = new Image("application/view/developers-hand-logo.png");
 		scene.getStylesheets().add(new File("src/application/application.css").toURI().toURL().toExternalForm());
 		stage.getIcons().add(logo);
 		stage.setTitle("Developer's Hand - Game Result");
@@ -426,7 +426,7 @@ public class GameController {
 		actionDeckButton.setVisible(false);
 		Player.setSprintNumber(1);
 		currentCard = new Card("Onboarding", "RP 1",
-				new Image(new FileInputStream("src/images/developers-hand-logo.png")),
+				new Image("application/view/developers-hand-logo.png"),
 				"It's your first day on the job! You filled out forms and learned basic procedures. You didn't code, but you got a free lunch.",
 				Color.SILVER);
 		currentObjectiveCard = null;

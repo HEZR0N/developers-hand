@@ -59,7 +59,7 @@ public class PauseMenuController {
     	Stage stage = new Stage();
     	Scene scene = new Scene(root);
     	stage.setTitle("About");
-    	Image logo = new Image("images/developers-hand-logo.png");
+    	Image logo = new Image("application/view/developers-hand-logo.png");
     	stage.getIcons().add(logo);
     	stage.setScene(scene);
     	stage.initModality(Modality.APPLICATION_MODAL);
@@ -74,7 +74,7 @@ public class PauseMenuController {
     	Stage stage = new Stage();
     	Scene scene = new Scene(root);
     	stage.setTitle("Rules");
-    	Image logo = new Image("images/developers-hand-logo.png");
+    	Image logo = new Image("application/view/developers-hand-logo.png");
     	stage.getIcons().add(logo);
     	stage.setScene(scene);
     	stage.initModality(Modality.APPLICATION_MODAL);

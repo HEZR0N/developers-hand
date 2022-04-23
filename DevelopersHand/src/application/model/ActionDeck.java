@@ -48,7 +48,7 @@ public class ActionDeck implements Deck {
 	@Override
 	public Card createCard(String cardInfo[]) throws FileNotFoundException {
 		return new ActionCard(cardInfo[0], cardInfo[1],
-				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], deckColor);
+				new Image(new FileInputStream("src/application/view/developers-hand-logo.png")), cardInfo[2], deckColor);
 	}
 	
 	/**

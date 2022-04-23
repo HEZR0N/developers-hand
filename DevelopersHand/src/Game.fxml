@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -18,20 +11,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
    <left>
       <AnchorPane fx:id="gameBackground" prefHeight="500.0" prefWidth="800.0" stylesheets="@application/application.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="objectiveDeckButton" alignment="CENTER" layoutX="76.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromObjectiveDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="OBJECTIVE">
+            <Button fx:id="objectiveDeckButton" alignment="BOTTOM_CENTER" layoutX="76.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromObjectiveDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="OBJECTIVE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Button>
-            <Button fx:id="actionDeckButton" alignment="CENTER" layoutX="226.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromActionDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="ACTION">
+            <Button fx:id="actionDeckButton" alignment="BOTTOM_CENTER" layoutX="226.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromActionDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="ACTION">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button fx:id="upgradeDeckButton" alignment="CENTER" layoutX="376.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromUpgradeDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="UPGRADE" textAlignment="CENTER">
+            <Button fx:id="upgradeDeckButton" alignment="BOTTOM_CENTER" layoutX="376.0" layoutY="90.0" mnemonicParsing="false" onAction="#drawFromUpgradeDeck" prefHeight="130.0" prefWidth="80.0" stylesheets="@application/application.css" text="UPGRADE" textAlignment="CENTER">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -54,9 +47,9 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="previousButton" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" stylesheets="@application/application.css" onAction="#previousButtonPressed" text="Previous" />
-            <Button fx:id="viewHandButton" layoutX="563.0" layoutY="442.0" mnemonicParsing="false" stylesheets="@application/application.css" onAction="#viewHandButtonPressed" text="View Hand" />
-            <Button fx:id="nextButton" layoutX="726.0" layoutY="394.0" mnemonicParsing="false" stylesheets="@application/application.css" onAction="#nextButtonPressed" text="Next" />
+            <Button fx:id="previousButton" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" onAction="#previousButtonPressed" stylesheets="@application/application.css" text="Previous" />
+            <Button fx:id="viewHandButton" layoutX="563.0" layoutY="442.0" mnemonicParsing="false" onAction="#viewHandButtonPressed" stylesheets="@application/application.css" text="View Hand" />
+            <Button fx:id="nextButton" layoutX="726.0" layoutY="394.0" mnemonicParsing="false" onAction="#nextButtonPressed" stylesheets="@application/application.css" text="Next" />
             <Text fx:id="storyText" fill="#2b2d2c" layoutX="556.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Britannic Bold;" text="Text" wrappingWidth="179.13671875" />
             <Text fx:id="descriptionText" fill="#2b2d2c" layoutX="558.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Britannic Bold; -fx-font-weight: bold;" text="Text">
                <font>
