@@ -231,7 +231,7 @@ public class Player {
 		int sprintLength = 3;
 		Player.setSprintNumber((int)Math.ceil(Player.hand.size()/sprintLength) + 1);
 	}
-	/*
+	/**
 	 * This method will take a card description and input the correct amount of experience
 	 * into the correct player field
 	 * @param cardDesc the String description of a card
