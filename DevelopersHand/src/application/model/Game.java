@@ -4,9 +4,13 @@
 package application.model;
 
 /**
- * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
- *         Valenciana
- *
+ * This class contains the Game's information. It contains 
+ * getters, setters, and a constructor.
+ * 
+ * @author Colby Bailey (nib667), Ahmet Bilici (ejr617), Jack Huerta (qhq704), Hezron Perez (uih310), Antonio
+ *         Valenciana (qpd898). 
+ *         UTSA CS 3443 - Group 07. 
+ *         Spring 2022
  */
 public class Game {
 	

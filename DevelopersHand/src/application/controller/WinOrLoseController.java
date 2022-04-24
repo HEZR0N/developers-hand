@@ -13,6 +13,16 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+/**
+ * The WinOrLoseController class has BorderPane, textArea, and Buttons fields. 
+ * It has methods setPageLabel and goMainMenu.
+ * This controller handles events on the Win/Lose screen (ie WinOrLose.fxml).
+ * 
+ * @author Colby Bailey (nib667), Ahmet Bilici (ejr617), Jack Huerta (qhq704), Hezron Perez (uih310), Antonio
+ *         Valenciana (qpd898). 
+ *         UTSA CS 3443 - Group 07. 
+ *         Spring 2022 
+ */
 public class WinOrLoseController {
 
     @FXML
@@ -24,6 +34,10 @@ public class WinOrLoseController {
     @FXML
     private TextArea textArea;
 
+    /**
+     * Officially ends the game and changes scene to MainMenu.fxml
+     * @param event
+     */
     @FXML
     void goMainMenu(ActionEvent event) {
     	// Loads main menu on click
@@ -41,8 +55,10 @@ public class WinOrLoseController {
         	}
     }
     
+    /*
+     * Sets label on loading
+     */
     public void setPageLabel(String label) {
-    	// Sets label on loading 
     	textArea.getStyleClass().add("centered-text-area");
     	textArea.setText(label);   	   	
 

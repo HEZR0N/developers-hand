@@ -3,11 +3,13 @@ package application.model;
 import java.util.*;
 
 /**
- * This class is a basic definition of a Player object. It contains a
- * definition, constructor, getters, and setters.
+ * This class contains a Player's information. It contains 
+ * getters, setters, and methods addReward and increaseSprintNumber.
  * 
- * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
- *         Valenciana
+ * @author Colby Bailey (nib667), Ahmet Bilici (ejr617), Jack Huerta (qhq704), Hezron Perez (uih310), Antonio
+ *         Valenciana (qpd898). 
+ *         UTSA CS 3443 - Group 07. 
+ *         Spring 2022 
  */
 public class Player {
 
