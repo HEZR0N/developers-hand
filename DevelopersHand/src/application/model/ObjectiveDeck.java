@@ -48,7 +48,7 @@ public class ObjectiveDeck implements Deck {
 	@Override
 	public Card createCard(String cardInfo[]) throws FileNotFoundException {
 		return new ObjectiveCard(cardInfo[0], cardInfo[1],
-				new Image(new FileInputStream("src/images/developers-hand-logo.png")), cardInfo[2], deckColor,
+				new Image(new FileInputStream("src/application/view/objective.jpg")), cardInfo[2], deckColor,
 				Integer.valueOf(cardInfo[3]), cardInfo[4]);
 	}
 

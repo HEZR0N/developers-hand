@@ -74,7 +74,7 @@ public interface Deck {
 	 *                 object
 	 */
 	default public Card createCard(String cardInfo[]) throws FileNotFoundException {
-		return new Card(cardInfo[0], cardInfo[1], new Image(new FileInputStream("src/images/developers-hand-logo.png")),
+		return new Card(cardInfo[0], cardInfo[1], new Image("application/view/developers-hand-logo.png"),
 				cardInfo[2], deckColor);
 	}
 

@@ -1,25 +1,4 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-#internDeck {
-	-fx-background-color: skyblue;
-	-fx-text-fill: black;
-	-fx-border-insets: 70.0% ;
-	-fx-padding:15.0px ;
-}
-
-#juniorDeck {
-	-fx-background-color: blueviolet;
-	-fx-text-fill: white;
-	-fx-border-insets: 70.0% ;
-	-fx-padding:15.0px ;
-}
-
-#itemDeck {
-	-fx-background-color: darkorange ;
-	-fx-text-fill: white;
-	-fx-border-insets: 70.0% ;
-	-fx-padding:15.0px ;
-}
-
 #mainBackground, #aboutBackground, #pauseBackground, #rulesBackground, #nameBackground {
 	-fx-background-color: #343434 ;
 }
@@ -98,6 +77,10 @@
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
 	-fx-font-weight: bold; 
+	-fx-background-image:url('view/upgrade.png');
+	-fx-background-size:90%;
+	-fx-background-position: center;
+	-fx-background-repeat:no-repeat;
 }
 
 #upgradeDeckButton:hover {
@@ -115,6 +98,10 @@
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
 	-fx-font-weight: bold; 
+	-fx-background-image:url('view/developers-hand-logo.png');
+	-fx-background-size:90%;
+	-fx-background-position: center;
+	-fx-background-repeat:no-repeat;
 }
 
 #actionDeckButton:hover {
@@ -132,6 +119,10 @@
 	-fx-text-fill: #2B2D2C;
 	-fx-font-family: "Brittanic Bold";
 	-fx-font-weight: bold; 
+	-fx-background-image:url('view/objective.jpg');
+	-fx-background-size:90%;
+	-fx-background-position: center;
+	-fx-background-repeat:no-repeat;
 }
 
 #objectiveDeckButton:hover {
