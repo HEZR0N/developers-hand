@@ -51,8 +51,8 @@
             <Button fx:id="previousButton" layoutX="519.0" layoutY="394.0" mnemonicParsing="false" onAction="#previousButtonPressed" stylesheets="@application/application.css" text="Previous" />
             <Button fx:id="viewHandButton" layoutX="563.0" layoutY="442.0" mnemonicParsing="false" onAction="#viewHandButtonPressed" stylesheets="@application/application.css" text="View Hand" />
             <Button fx:id="nextButton" layoutX="726.0" layoutY="394.0" mnemonicParsing="false" onAction="#nextButtonPressed" stylesheets="@application/application.css" text="Next" />
-            <Text fx:id="storyText" fill="#2b2d2c" layoutX="556.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Britannic Bold;" text="Text" wrappingWidth="179.13671875" />
-            <Text fx:id="descriptionText" fill="#2b2d2c" layoutX="558.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Britannic Bold; -fx-font-weight: bold;" text="Text">
+            <Text fx:id="storyText" fill="#2b2d2c" layoutX="556.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Britannic Bold;" text="Text" wrappingWidth="179.13671875" />
+            <Text fx:id="descriptionText" fill="#2b2d2c" layoutX="558.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Britannic Bold; -fx-font-weight: bold;" text="Text">
                <font>
                   <Font name="Britannic Bold" size="12.0" />
                </font></Text>

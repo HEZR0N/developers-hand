@@ -234,7 +234,7 @@ public class GameController {
 		System.out.println("Collect Button used");
 		// If sprint number exceeds 10 or player gets enough xp and rp load WinOrLose
 		// scene
-		if (Player.getSprintNumber() > 10 || (Player.getrp() >= 50 && Player.getxp() >= 50)) {
+		if (Player.getSprintNumber() > 10 || (Player.getrp() >= 10 && Player.getxp() >= 10)) {
 			displayPlayerResults();
 		}
 	}
@@ -348,16 +348,16 @@ public class GameController {
 
 		WinOrLoseController winOrLose = loader.getController();
 
-		if ((Player.getrp() >= 50 && Player.getxp() >= 50)) {
-			winOrLose.setPageLabel("Congratulations\nYou gained new skills\nand\nshowcased them to the company");
-		} else if ((Player.getrp() < 50 || Player.getxp() < 50)) {
-			if (Player.getrp() < 50 && Player.getxp() >= 50) {
-				winOrLose.setPageLabel("You Lost\nYou might have the skills\nbut your boss thinks you slacked off");
-			} else if (Player.getrp() >= 50 && Player.getxp() < 50) {
+		if ((Player.getrp() >= 10 && Player.getxp() >= 10)) {
+			winOrLose.setPageLabel("WIN - Congratulations\nYou gained new skills\nand\nshowcased them to the company");
+		} else if ((Player.getrp() < 10 || Player.getxp() < 10)) {
+			if (Player.getrp() < 10 && Player.getxp() >= 10) {
+				winOrLose.setPageLabel("You Lost (RP too low)\nYou might have the skills\nbut your boss thinks you slacked off");
+			} else if (Player.getrp() >= 10 && Player.getxp() < 10) {
 				winOrLose.setPageLabel(
-						"You Lost\nNo one can deny you work hard\nbut your boss thinks you lack some skills");
+						"You Lost (XP too low)\nNo one can deny you work hard\nbut your boss thinks you lack some skills");
 			} else {
-				winOrLose.setPageLabel("You Lost\nYour boss wasn't impressed with your progress");
+				winOrLose.setPageLabel("You Lost (XP & RP too low)\nYour boss wasn't impressed with your progress");
 			}
 		}
 

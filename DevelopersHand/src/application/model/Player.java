@@ -54,6 +54,7 @@ public class Player {
 		Player.product = 0;
 		Player.troubleshooting = 0;
 		Player.onboarded = false;
+		sprintNumber = 0;
 		Player.hand.clear();
 	}
 	
@@ -230,7 +231,7 @@ public class Player {
 	 * Increments sprintNumber depending on amount of cards in hand 
 	 */
 	public static void increaseSprintNumber() {
-		int sprintLength = 3;
+		int sprintLength = 2;
 		Player.setSprintNumber((int)Math.ceil(Player.hand.size()/sprintLength) + 1);
 	}
 	/**

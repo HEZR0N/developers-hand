@@ -3,6 +3,7 @@ package application.controller;
 import java.io.File;
 import java.net.URL;
 
+import application.model.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,6 +42,7 @@ public class WinOrLoseController {
     @FXML
     void goMainMenu(ActionEvent event) {
     	// Loads main menu on click
+    	Player.clearData();
     	try {
         	URL playURL = new File("src/MainMenu.fxml").toURI().toURL();
         	borderPane = FXMLLoader.load(playURL);
