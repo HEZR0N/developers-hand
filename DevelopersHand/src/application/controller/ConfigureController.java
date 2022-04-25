@@ -20,8 +20,10 @@ import javafx.stage.Stage;
  * this class is the controller for Configure.FXML and handles all of the buttons labels, and textfield variables
  * 
  * 
- * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
- *         Valenciana
+ * @author Colby Bailey (nib667), Ahmet Bilici (ejr617), Jack Huerta (qhq704), Hezron Perez (uih310), Antonio
+ *         Valenciana (qpd898). 
+ *         UTSA CS 3443 - Group 07. 
+ *         Spring 2022 
  */
 public class ConfigureController {
     

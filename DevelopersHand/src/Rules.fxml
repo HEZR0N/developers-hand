@@ -40,72 +40,82 @@
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="2.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    i. Action: Cards from this Deck are assigned tasks, and increase RP" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="2.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    i. Action: Cards from this Deck are assigned tasks, and mostly increases RP" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="2.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   ii. Upgrade: Cards from this Deck are learning experiences, and increase skills &amp; XP" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="2.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   ii. Upgrade: Cards from this Deck are learning experiences, and mostly increases XP" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="2.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  iii. Objective: Cards from this Deck give you goal - increase a skill by a certain amount." wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="2.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  iii. Objective: Cards from here give RP when you increase a skill by a certain amount." wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="3.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5. Press the &quot;Collect&quot; button to collect a card from the Deck you selected" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="3.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5. Press the &quot;Collect&quot; button to collect a card from the Deck you selected" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   i. If you have 2+ cards, you can press &quot;previous&quot;/&quot;next&quot; to see the cards you collected" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   i. If you have 2+ cards, you can press &quot;previous&quot;/&quot;next&quot; to see the cards you collected" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="2.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6. Press &quot;View Hand&quot; to view cards you collected" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="2.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6. Press &quot;View Hand&quot; to view cards you collected" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="3.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7. Once you collect an objective card, the objective will be displayed on the screen" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="3.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7. Once you collect an objective card, the objective will be displayed on the screen" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="2.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   i. The skill you need to increase and amount you need to increase it will be listed" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="2.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   i. The skill you need to increase and amount you need to increase it will be listed" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="2.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   ii. Collecting another objective card will overwrite the current objective and its progress" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="2.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   ii. Collecting another objective card will overwrite the current objective and its progress" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="3.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8. Press the pause the button in the top-left button to pause the game anytime" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="3.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8. Press the pause the button in the top-left button to pause the game anytime" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="6.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   i. From the pause menu, you can view the &quot;Game Rules&quot;, &quot;About&quot;, or quit the game" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="6.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   i. From the pause menu, you can view the &quot;Game Rules&quot;, &quot;About&quot;, or quit the game" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="5.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  iii. You won't get the points from an objective card until you meet its goal" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="5.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="  iii. You won't get the points from an objective card until you meet its goal" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="6.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RP (Reputation Points): You need a good reputation if you want to get promoted" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="6.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RP (Reputation Points): You need a good reputation if you want to get promoted" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="6.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XP (Experience Points): This measures what you learned. XP is equal to all the points you gained in Git, Documentation, Product, Coding, &amp; troubleshooting COMBINED!" wrappingWidth="600.0">
+            <Text fill="WHITE" layoutX="6.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XP (Experience Points): This measures what you learned. XP is equal to all the points you gained in Git, Documentation, Product, Coding, &amp; troubleshooting COMBINED!" wrappingWidth="600.0">
+               <font>
+                  <Font name="Britannic Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="5.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9. Win by having at least 10 XP and 10 RP before the end of 10 sprints" wrappingWidth="600.0">
+               <font>
+                  <Font name="Britannic Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="6.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10. Every time you draw 2 cards, the sprint (round) increases by 1" wrappingWidth="600.0">
                <font>
                   <Font name="Britannic Bold" size="15.0" />
                </font>

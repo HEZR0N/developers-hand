@@ -21,8 +21,10 @@ import javafx.stage.Stage;
  * It has methods goPlay, goAbout, and goRules.
  * This controller handles events on the Main menu screen (ie MainMenu.fxml).
  * 
- * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
- *         Valenciana
+ * @author Colby Bailey (nib667), Ahmet Bilici (ejr617), Jack Huerta (qhq704), Hezron Perez (uih310), Antonio
+ *         Valenciana (qpd898). 
+ *         UTSA CS 3443 - Group 07. 
+ *         Spring 2022 
  */
 public class MainMenuController {
 

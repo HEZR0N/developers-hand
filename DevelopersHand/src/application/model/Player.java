@@ -3,11 +3,13 @@ package application.model;
 import java.util.*;
 
 /**
- * This class is a basic definition of a Player object. It contains a
- * definition, constructor, getters, and setters.
+ * This class contains a Player's information. It contains 
+ * getters, setters, and methods addReward and increaseSprintNumber.
  * 
- * @author Colby Bailey, Ahmet Bilici, Jack Huerta, Hezron Perez, Antonio
- *         Valenciana
+ * @author Colby Bailey (nib667), Ahmet Bilici (ejr617), Jack Huerta (qhq704), Hezron Perez (uih310), Antonio
+ *         Valenciana (qpd898). 
+ *         UTSA CS 3443 - Group 07. 
+ *         Spring 2022 
  */
 public class Player {
 
@@ -52,6 +54,7 @@ public class Player {
 		Player.product = 0;
 		Player.troubleshooting = 0;
 		Player.onboarded = false;
+		sprintNumber = 0;
 		Player.hand.clear();
 	}
 	
@@ -228,7 +231,7 @@ public class Player {
 	 * Increments sprintNumber depending on amount of cards in hand 
 	 */
 	public static void increaseSprintNumber() {
-		int sprintLength = 3;
+		int sprintLength = 2;
 		Player.setSprintNumber((int)Math.ceil(Player.hand.size()/sprintLength) + 1);
 	}
 	/**
