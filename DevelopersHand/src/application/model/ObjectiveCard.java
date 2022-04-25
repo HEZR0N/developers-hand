@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 /**
  * This class enables the creation of an ObjectiveCard which extends the card
  * card class with the exception of three new fields: int goal, int progress,
- * and String stat.
+ * and String stat, and has two new methods: goalMet and updateProgress.
  * 
  * @author Colby Bailey (nib667), Ahmet Bilici (ejr617), Jack Huerta (qhq704), Hezron Perez (uih310), Antonio
  *         Valenciana (qpd898). 
